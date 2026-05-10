@@ -1,0 +1,19 @@
+# Angular
+/.angular/
+/dist/
+/node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Oversized raw video files
+poze galerie/20220115_202206.mp4
+poze galerie/Medieval Ardud 2023/IMG_3321.MOV
+poze galerie/Medieval Ardud 2023/IMG_3339.MOV

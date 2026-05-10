@@ -1,0 +1,178 @@
+<header class="site-header">
+  <a class="brand" href="#top" aria-label="Sigma Sound">
+    <img src="assets/poze galerie/logo.png" alt="Sigma Sound logo">
+  </a>
+  <nav aria-label="Navigare principală">
+    <a href="#servicii">Servicii</a>
+    <a href="#echipamente">Echipamente</a>
+    <a href="#galerie">Galerie</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero" aria-label="Sigma Sound">
+    <div class="hero-media">
+      <img [src]="heroImages[activeHero]" alt="Scenă Sigma Sound cu lumini și public">
+      <div class="hero-controls" aria-label="Schimbă imaginea principală">
+        <button type="button" (click)="previousHero()" aria-label="Imaginea anterioară">‹</button>
+        <button type="button" (click)="nextHero()" aria-label="Imaginea următoare">›</button>
+      </div>
+    </div>
+    <div class="hero-copy">
+      <p class="eyebrow">Satu Mare · peste 20 de ani de experiență</p>
+      <h1>Sigma Sound</h1>
+      <p class="tagline">Scenă, sunet, lumini și video pentru evenimente care trebuie să iasă impecabil.</p>
+      <div class="hero-actions">
+        <a class="button primary" href="#contact">Cere ofertă</a>
+        <a class="button secondary" href="#galerie">Vezi evenimente</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="intro section">
+    <div class="section-heading">
+      <p class="eyebrow">Producție evenimente</p>
+      <h2>O echipă tehnică pentru tot ce se vede, se aude și se simte pe scenă.</h2>
+    </div>
+    <div class="intro-text">
+      <p>Oferim spre închiriere echipamente de scenă, sunet, lumini și video pentru concerte live, spectacole, conferințe, lansări, inaugurări și evenimente publice.</p>
+      <p>Rolul nostru este să simplificăm munca organizatorului: venim cu soluții complete, experiență de teren și adaptare la fiecare spațiu.</p>
+    </div>
+  </section>
+
+  <section id="servicii" class="section services">
+    <div class="section-heading">
+      <p class="eyebrow">Servicii</p>
+      <h2>Închiriere echipamente și deservire tehnică pentru evenimente.</h2>
+    </div>
+    <div class="service-showcase">
+      <article class="service-card" *ngFor="let service of services; trackBy: trackByTitle">
+        <img [src]="service.image" [alt]="service.title">
+        <div>
+          <p class="service-kicker">{{ service.kicker }}</p>
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.description }}</p>
+          <ul>
+            <li *ngFor="let point of service.points; trackBy: trackByValue">{{ point }}</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="process">
+    <div>
+      <p class="eyebrow">Cum lucrăm</p>
+      <h2>Clar înainte de eveniment, prezent când contează.</h2>
+    </div>
+    <ol>
+      <li *ngFor="let step of workflow; let index = index; trackBy: trackByValue">
+        <span>{{ index + 1 }}</span>
+        {{ step }}
+      </li>
+    </ol>
+  </section>
+
+  <section id="echipamente" class="section equipment">
+    <div class="section-heading">
+      <p class="eyebrow">Echipamente</p>
+      <h2>Setup-uri reale, pregătite pentru evenimente mari.</h2>
+    </div>
+    <div class="equipment-list">
+      <article class="equipment-item" *ngFor="let group of equipment; trackBy: trackByTitle">
+        <div class="equipment-copy">
+          <h3>{{ group.title }}</h3>
+          <p *ngIf="group.intro">{{ group.intro }}</p>
+          <ul>
+            <li *ngFor="let item of group.items; trackBy: trackByValue">{{ item }}</li>
+          </ul>
+        </div>
+        <div class="equipment-images">
+          <img *ngFor="let image of group.images; trackBy: trackByValue" [src]="image" [alt]="group.title">
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="galerie" class="section gallery">
+    <div class="section-heading">
+      <p class="eyebrow">Portofoliu</p>
+      <h2>Scene, concerte și evenimente puse în mișcare de Sigma Sound.</h2>
+    </div>
+    <div class="portfolio-shell">
+      <div class="portfolio-feature">
+        <img [src]="selectedImage.image" [alt]="selectedImage.title">
+        <div>
+          <p>{{ selectedImage.category }}</p>
+          <h3>{{ selectedImage.title }}</h3>
+        </div>
+      </div>
+      <div class="portfolio-grid">
+        <button
+          type="button"
+          *ngFor="let item of portfolio; trackBy: trackByTitle"
+          [class.active]="item === selectedImage"
+          (click)="selectImage(item)">
+          <img [src]="item.image" [alt]="item.title">
+          <span>{{ item.title }}</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="contact-copy">
+      <p class="eyebrow">Contact</p>
+      <h2>Spune-ne ce pregătești și revenim cu o variantă tehnică potrivită.</h2>
+      <p class="contact-lead">Pentru o ofertă bună ajută să știm data, locația, tipul evenimentului, dimensiunea publicului și ce există deja la fața locului.</p>
+      <dl>
+        <div>
+          <dt>Adresă</dt>
+          <dd>Bulevardul Transilvania nr. 3, Satu Mare</dd>
+        </div>
+        <div>
+          <dt>Email</dt>
+          <dd><a href="mailto:vaviloga76@gmail.com">vaviloga76@gmail.com</a></dd>
+        </div>
+        <div>
+          <dt>Telefon</dt>
+          <dd><a href="tel:+40744125740">0744 125 740</a> · <a href="tel:+40744845891">0744 845 891</a></dd>
+        </div>
+        <div>
+          <dt>Social</dt>
+          <dd>
+            <a href="https://www.facebook.com/Sonorizari.Evenimente.SatuMare.SigmaSound" target="_blank" rel="noreferrer">Facebook</a>
+            ·
+            <a href="https://www.instagram.com/sigma.sound/" target="_blank" rel="noreferrer">Instagram</a>
+          </dd>
+        </div>
+      </dl>
+      <div class="quick-contact">
+        <a href="tel:+40744125740">Sună acum</a>
+        <a href="mailto:vaviloga76@gmail.com">Trimite email</a>
+      </div>
+    </div>
+    <form action="https://formspree.io/f/xpzbkvez" method="POST" class="contact-form">
+      <h3>Cere ofertă</h3>
+      <label>
+        Nume
+        <input type="text" name="name" autocomplete="name" placeholder="Nume Prenume">
+      </label>
+      <label>
+        Email
+        <input type="email" name="email" autocomplete="email" placeholder="email@exemplu.ro">
+      </label>
+      <label>
+        Mesaj
+        <textarea name="message" rows="6" placeholder="Spune-ne data, locul și tipul evenimentului"></textarea>
+      </label>
+      <button type="submit">Trimite mesajul</button>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <span>Sigma Sound</span>
+  <span>Scenă · Sunet · Lumini · Video</span>
+</footer>
