@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evenimente</title>
+  <link rel="icon" href="poze%20galerie/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" sizes="180x180" href="poze%20galerie/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="poze%20galerie/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="poze%20galerie/favicon-16x16.png">
+  <link rel="manifest" href="poze%20galerie/site.webmanifest">
+  <link rel="stylesheet" href="./header.css">
+  <link rel="stylesheet" href="./main.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="poze galerie/poze icon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="poze galerie/poze icon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="poze galerie/poze icon/favicon-16x16.png">
+  <link rel="manifest" href="poze galerie/poze icon/site.webmanifest">
+  <link rel="mask-icon" href="poze galerie/poze icon/safari-pinned-tab.svg" color="#dacfc5">
+  <link rel="shortcut icon" href="poze galerie/poze icon/favicon.ico">
+  <meta name="apple-mobile-web-app-title" content="Sigma Sound">
+  <meta name="application-name" content="Sigma Sound">
+  <meta name="msapplication-TileColor" content="#dacfc5">
+  <meta name="msapplication-config" content="poze galerie/poze icon/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  <script src="https://kit.fontawesome.com/8d3aee3b1c.js" crossorigin="anonymous"></script>
+  <style type="text/css">
+    .text {
+      width: 97.5%;
+      height: 80vh;
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(contact.jpeg);
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgb(255, 255, 255);
+      font-size: 2vw;
+    }
+  </style>
+
+  <style>
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      font-family: Verdana, sans-serif;
+      margin: 0
+    }
+
+    .mySlides {
+      display: none
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+      max-width: 1500px;
+      position: relative;
+      margin: auto;
+    }
+
+    /* Next & previous buttons */
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+      background-color: rgb(0, 0, 0);
+    }
+
+    /* Caption text */
+    .text {
+      color: #f2f2f2;
+      font-size: 15px;
+      padding: 8px 12px;
+      position: absolute;
+      bottom: 8px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+      color: #f2f2f2;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+      cursor: pointer;
+      height: 13px;
+      width: 13px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .active,
+    .dot:hover {
+      background-color: #686868;
+    }
+
+    /* Fading animation */
+    .fade {
+      -webkit-animation-name: fade;
+      -webkit-animation-duration: 1.5s;
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @-webkit-keyframes fade {
+      from {
+        opacity: .4
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    @keyframes fade {
+      from {
+        opacity: .4
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+
+      .prev,
+      .next,
+      .text {
+        font-size: 11px
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="header">
+    <nav>
+      <a id="go-to-top" href="javascript:void(0);">
+        <img src="poze galerie/logo.png" alt="Go to Top" class="logo">
+      </a>
+      <ul class="nav-links">
+        <li><a href="javascript:void(0);" id="refresh-link">Galerie</a></li>
+        <li><a href="index.html#bottom">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <h1>Galerie</h1>
+  <br><br>
+
+  <h3>MedievArtFest Ardud 2022</h3>
+  <br>
+  <div id="slideshow2" class="slideshow-container">
+
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="poze galerie/medieval1.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="poze galerie/medieval3.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="poze galerie/medieval2.jpg" style="width:100%">
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1, this.parentNode)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1, this.parentNode)">&#10095;</a>
+    <br>
+
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1, slideshow2)"></span>
+      <span class="dot" onclick="currentSlide(2, slideshow2)"></span>
+      <span class="dot" onclick="currentSlide(3, slideshow2)"></span>
+    </div>
+  </div>
+  <br><br><br>
+
+  <h3>MedievArtFest Ardud 2023</h3>
+  <br>
+  <div id="slideshow9" class="slideshow-container">
+
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="poze galerie/Medieval Ardud 2023/IMG_3410.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="poze galerie/Medieval Ardud 2023/IMG_3390.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="poze galerie/Medieval Ardud 2023/IMG_3310.jpg" style="width:100%">
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1, this.parentNode)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1, this.parentNode)">&#10095;</a>
+    <br>
+
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1, slideshow9)"></span>
+      <span class="dot" onclick="currentSlide(2, slideshow9)"></span>
+      <span class="dot" onclick="currentSlide(3, slideshow9)"></span>
+    </div>
+  </div>
+  <br><br><br>
+
+  <h3>Zilele Orașului Ardud 2023</h3>
+  <br>
+  <div id="slideshow10" class="slideshow-container">
+
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="poze galerie/zilele ardudului 2023/IMG_3576.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="poze galerie/zilele ardudului 2023/IMG_3604.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="poze galerie/zilele ardudului 2023/IMG_3578.jpg" style="width:100%">
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1,slideshow10)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1, slideshow10)">&#10095;</a>
+    <br>
+
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1, slideshow10)"></span>
+      <span class="dot" onclick="currentSlide(2, slideshow10)"></span>
+      <span class="dot" onclick="currentSlide(3, slideshow10)"></span>
+    </div>
+  </div>
+  <br><br><br>
+
+  <h3>Latino Night Ardud 2022</h3>
+  <br>
+  <div id="slideshow3" class="slideshow-container">
+
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="poze galerie/ln2.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="poze galerie/ln4.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="poze galerie/ln1.jpg" style="width:100%">
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1,slideshow3)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1, slideshow3)">&#10095;</a>
+    <br>
+
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1, slideshow3)"></span>
+      <span class="dot" onclick="currentSlide(2, slideshow3)"></span>
+      <span class="dot" onclick="currentSlide(3, slideshow3)"></span>
+    </div>
+  </div>
+  <br><br><br>
+
+  <h3>Spectacol Holograf Ardud</h3>
+  <br>
+  <div id="slideshow7" class="slideshow-container">
+
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="poze galerie/holograf/hg6.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="poze galerie/holograf/hg4.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="poze galerie/holograf/hg 1.jpg" style="width:100%">
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1,slideshow7)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1, slideshow7)">&#10095;</a>
+    <br>
+
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1, slideshow7)"></span>
+      <span class="dot" onclick="currentSlide(2, slideshow7)"></span>
+      <span class="dot" onclick="currentSlide(3, slideshow7)"></span>
+    </div>
+  </div>
+  <br><br><br>
+
+ 
+  <h3>Balul Caritabil Interact 2022</h3>
+  <br>
+  <div id="slideshow5" class="slideshow-container">
+
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="poze galerie/bal interact/EP_1712_0235_6270.JPG" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="poze galerie/bal interact/IMG-20221216-WA0004.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="poze galerie/bal interact/EP_1612_2356_5547.JPG" style="width:100%">
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1,slideshow5)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1, slideshow5)">&#10095;</a>
+    <br>
+
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1, slideshow5)"></span>
+      <span class="dot" onclick="currentSlide(2, slideshow5)"></span>
+      <span class="dot" onclick="currentSlide(3, slideshow5)"></span>
+    </div>
+  </div>
+  <br><br><br>
+
+  <h3>Balul Caritabil Interact 2023</h3>
+  <br>
+  <div id="slideshow12" class="slideshow-container">
+
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="poze galerie/poze interact 2023/p2 p.png" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="poze galerie/poze interact 2023/p1 p.png" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="poze galerie/poze interact 2023/p3.jpg" style="width:100%">
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1,slideshow12)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1, slideshow12)">&#10095;</a>
+    <br>
+
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1, slideshow12)"></span>
+      <span class="dot" onclick="currentSlide(2, slideshow12)"></span>
+      <span class="dot" onclick="currentSlide(3, slideshow12)"></span>
+    </div>
+  </div>
+  <br><br><br>
+
+  <h3>Festivalul Concurs Național de Muzică Folk Octavian Bud 2022</h3>
+  <br>
+  <div id="slideshow4" class="slideshow-container">
+
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="poze galerie/octavian bud1.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="poze galerie/octavian bud3.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="poze galerie/octavian bud2.jpg" style="width:100%">
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1,slideshow4)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1, slideshow4)">&#10095;</a>
+
+    <br>
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1, slideshow4)"></span>
+      <span class="dot" onclick="currentSlide(2, slideshow4)"></span>
+      <span class="dot" onclick="currentSlide(3, slideshow4)"></span>
+    </div>
+  </div>
+  <br><br><br>
+
+
+  <h3>Ziua Comunei Botiz 2023</h3>
+  <br>
+  <div id="slideshow8" class="slideshow-container">
+
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="poze galerie/botiz/bt1.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="poze galerie/botiz/bt2.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="poze galerie/botiz/bt3.jpg" style="width:100%">
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1,slideshow8)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1, slideshow8)">&#10095;</a>
+    <br>
+
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1, slideshow8)"></span>
+      <span class="dot" onclick="currentSlide(2, slideshow8)"></span>
+      <span class="dot" onclick="currentSlide(3, slideshow8)"></span>
+    </div>
+  </div>
+  <br><br><br>
+
+  <h3>Gala Loga Dance 2023</h3>
+  <br>
+  <div id="slideshow11" class="slideshow-container">
+
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="poze galerie/loga dance/IMG_3898.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="poze galerie/loga dance/IMG_3903.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="poze galerie/loga dance/IMG_3895.jpg" style="width:100%">
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1,slideshow11)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1, slideshow11)">&#10095;</a>
+    <br>
+
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1, slideshow11)"></span>
+      <span class="dot" onclick="currentSlide(2, slideshow11)"></span>
+      <span class="dot" onclick="currentSlide(3, slideshow11)"></span>
+    </div>
+  </div>
+  <br><br><br>
+
+  <h3>Ziua Orașului Satu Mare 2023</h3>
+  <br>
+  <div id="slideshow1" class="slideshow-container">
+
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="poze galerie/zo2023/zo3.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="poze galerie/zo2023/zo1.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="poze galerie/zo2023/zo5.jpg" style="width:100%">
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1,slideshow1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1, slideshow1)">&#10095;</a>
+
+    <br>
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1, slideshow1)"></span>
+      <span class="dot" onclick="currentSlide(2, slideshow1)"></span>
+      <span class="dot" onclick="currentSlide(3, slideshow1)"></span>
+    </div>
+  </div>
+  <br><br><br>
+
+  <h3>Ziua Orașului Satu Mare 2022</h3>
+  <br>
+  <div id="slideshow6" class="slideshow-container">
+
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="poze galerie/zo1 copy.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="poze galerie/zo9.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="poze galerie/zo5.jpg" style="width:100%">
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1,slideshow6)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1, slideshow6)">&#10095;</a>
+    <br>
+
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1, slideshow6)"></span>
+      <span class="dot" onclick="currentSlide(2, slideshow6)"></span>
+      <span class="dot" onclick="currentSlide(3, slideshow6)"></span>
+    </div>
+  </div>
+  <br><br><br>
+
+  <script>
+    var slideshow1 = document.getElementById("slideshow1");
+    slideshow1.currentSlideIndex = 1;
+    showSlides(slideshow1.currentSlideIndex, slideshow1);
+
+    var slideshow2 = document.getElementById("slideshow2");
+    slideshow2.currentSlideIndex = 1;
+    showSlides(slideshow2.currentSlideIndex, slideshow2);
+
+    var slideshow3 = document.getElementById("slideshow3");
+    slideshow3.currentSlideIndex = 1;
+    showSlides(slideshow3.currentSlideIndex, slideshow3);
+
+    var slideshow4 = document.getElementById("slideshow4");
+    slideshow4.currentSlideIndex = 1;
+    showSlides(slideshow4.currentSlideIndex, slideshow4);
+
+    var slideshow5 = document.getElementById("slideshow5");
+    slideshow5.currentSlideIndex = 1;
+    showSlides(slideshow5.currentSlideIndex, slideshow5);
+
+    var slideshow6 = document.getElementById("slideshow6");
+    slideshow6.currentSlideIndex = 1;
+    showSlides(slideshow6.currentSlideIndex, slideshow6);
+
+    var slideshow7 = document.getElementById("slideshow7");
+    slideshow7.currentSlideIndex = 1;
+    showSlides(slideshow7.currentSlideIndex, slideshow7);
+
+    var slideshow8 = document.getElementById("slideshow8");
+    slideshow8.currentSlideIndex = 1;
+    showSlides(slideshow8.currentSlideIndex, slideshow8);
+
+    var slideshow9 = document.getElementById("slideshow9");
+    slideshow9.currentSlideIndex = 1;
+    showSlides(slideshow9.currentSlideIndex, slideshow9);
+
+    var slideshow10 = document.getElementById("slideshow10");
+    slideshow10.currentSlideIndex = 1;
+    showSlides(slideshow10.currentSlideIndex, slideshow10);
+
+    var slideshow11 = document.getElementById("slideshow11");
+    slideshow11.currentSlideIndex = 1;
+    showSlides(slideshow11.currentSlideIndex, slideshow11);
+
+    var slideshow12 = document.getElementById("slideshow12");
+    slideshow12.currentSlideIndex = 1;
+    showSlides(slideshow12.currentSlideIndex, slideshow12);
+
+    function plusSlides(n, slideshow) {
+      showSlides(slideshow.currentSlideIndex += n, slideshow);
+    }
+
+    function currentSlide(n, slideshow) {
+      showSlides(slideshow.currentSlideIndex = n, slideshow);
+    }
+
+    function showSlides(n, slideshow) {
+
+
+
+      var i;
+      var slides = slideshow.getElementsByClassName("mySlides");
+      var dots = slideshow.getElementsByClassName("dot");
+      if (n > slides.length) { slideshow.currentSlideIndex = 1 }
+      if (n < 1) { slideshow.currentSlideIndex = slides.length }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideshow.currentSlideIndex - 1].style.display = "block";
+      dots[slideshow.currentSlideIndex - 1].className += " active";
+    }
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var goToTopLink = document.getElementById('go-to-top');
+      goToTopLink.addEventListener('click', function () {
+        window.parent.location = 'index.html'; // Replace with your first HTML document filename
+      });
+    });
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var refreshLink = document.getElementById('refresh-link');
+      refreshLink.addEventListener('click', function () {
+        window.scrollTo(0, 0); // Scrolls to the top of the page
+        window.location.reload(); // Refreshes the page
+      });
+    });
+  </script>
+
+</body>
+
+</html>
