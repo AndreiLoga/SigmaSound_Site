@@ -1,0 +1,117 @@
+<main id="top">
+  <section class="hero" aria-label="Sigma Sound">
+    <div class="hero-backdrop" aria-hidden="true">
+      <img
+        *ngFor="let image of heroImages; let index = index"
+        [src]="image"
+        [class.active]="index === activeHero"
+        alt="">
+    </div>
+    <div class="hero-media">
+      <img
+        *ngFor="let image of heroImages; let index = index"
+        [src]="image"
+        [class.active]="index === activeHero"
+        alt="Scena Sigma Sound cu lumini si public">
+      <div class="hero-dots" aria-hidden="true">
+        <span *ngFor="let image of heroImages; let index = index" [class.active]="index === activeHero"></span>
+      </div>
+    </div>
+    <div class="hero-copy">
+      <p class="eyebrow">Satu Mare · productie tehnica evenimente</p>
+      <h1>Sigma Sound</h1>
+      <p class="tagline">Scena, sunet si lumini pentru evenimente care trebuie sa se auda bine si sa arate puternic.</p>
+      <div class="hero-actions">
+        <a class="button primary" href="#contact">Cere oferta</a>
+        <a class="button secondary" routerLink="/portofoliu">Portofoliu</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicii" class="services-section">
+    <div class="services-intro">
+      <h2>Patru zone tehnice care acopera evenimentul cap-coada.</h2>
+    </div>
+
+    <div class="service-lines">
+      <article *ngFor="let item of services; let index = index; trackBy: trackByTitle">
+        <div class="service-index">{{ index + 1 | number: '2.0-0' }}</div>
+        <div class="service-main">
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.lead }}</p>
+        </div>
+        <div class="service-detail">
+          <span *ngFor="let capability of item.capabilities; trackBy: trackByValue">{{ capability }}</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="equipment-section">
+    <div class="equipment-copy">
+      <p class="eyebrow">Echipamente</p>
+      <h2>Setup-uri complete pentru scena, sunet si lumini.</h2>
+      <p>Lucram cu echipamente testate pe evenimente reale: sisteme audio DAS, mixere Yamaha, microfoane Shure, lumini inteligente si efecte de scena.</p>
+    </div>
+
+    <div class="equipment-grid">
+      <article *ngFor="let category of equipment; trackBy: trackByTitle">
+        <h3>{{ category.title }}</h3>
+        <ul>
+          <li *ngFor="let item of category.items; trackBy: trackByValue">{{ item }}</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="portfolio-cta">
+    <div>
+      <p class="eyebrow">Portofoliu</p>
+      <h2>Galeria completa e separata, ca prima pagina sa ramana curata.</h2>
+      <p>Pe homepage pastram doar un semnal vizual puternic si trimitem catre pagina unde pozele pot fi parcurse in liniste.</p>
+      <a class="button primary" routerLink="/portofoliu">Vezi galeria</a>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="contact-copy">
+      <p class="eyebrow">Contact</p>
+      <h2>Ai un eveniment? Spune-ne data, locul si ce ai nevoie.</h2>
+      <p class="contact-lead">Revenim cu o varianta tehnica potrivita pentru spatiu, public si program.</p>
+      <dl>
+        <div>
+          <dt>Adresa</dt>
+          <dd>Bulevardul Transilvania nr. 3, Satu Mare</dd>
+        </div>
+        <div>
+          <dt>Email</dt>
+          <dd><a href="mailto:vaviloga76@gmail.com">vaviloga76@gmail.com</a></dd>
+        </div>
+        <div>
+          <dt>Telefon</dt>
+          <dd><a href="tel:+40744125740">0744 125 740</a> · <a href="tel:+40744845891">0744 845 891</a></dd>
+        </div>
+      </dl>
+      <div class="quick-contact">
+        <a href="tel:+40744125740">Suna acum</a>
+        <a href="mailto:vaviloga76@gmail.com">Trimite email</a>
+      </div>
+    </div>
+    <form action="https://formspree.io/f/xpzbkvez" method="POST" class="contact-form">
+      <h3>Cere oferta</h3>
+      <label>
+        Nume
+        <input type="text" name="name" autocomplete="name" placeholder="Nume Prenume">
+      </label>
+      <label>
+        Email
+        <input type="email" name="email" autocomplete="email" placeholder="email@exemplu.ro">
+      </label>
+      <label>
+        Mesaj
+        <textarea name="message" rows="6" placeholder="Data, locatia si tipul evenimentului"></textarea>
+      </label>
+      <button type="submit">Trimite mesajul</button>
+    </form>
+  </section>
+</main>
