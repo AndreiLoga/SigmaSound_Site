@@ -89,11 +89,11 @@
   <section id="contact" class="contact">
     <div class="contact-copy">
       <p class="eyebrow">Contact</p>
-      <h2>Ai un eveniment? Spune-ne data, locul si ce ai nevoie.</h2>
-      <p class="contact-lead">Revenim cu o varianta tehnica potrivita pentru spatiu, public si program.</p>
+      <h2>Spune-ne unde, când și ce pregătești.</h2>
+      <p class="contact-lead">Descrie evenimentul pentru a putea stabili configurația de scenă, sunet, lumini și LED.</p>
       <dl>
         <div>
-          <dt>Adresa</dt>
+          <dt>Adresă</dt>
           <dd>Bulevardul Transilvania nr. 3, Satu Mare</dd>
         </div>
         <div>
@@ -106,25 +106,41 @@
         </div>
       </dl>
       <div class="quick-contact">
-        <a href="tel:+40744125740">Suna acum</a>
+        <a href="tel:+40744125740">Sună acum</a>
         <a href="mailto:vaviloga76@gmail.com">Trimite email</a>
       </div>
     </div>
-    <form action="https://formspree.io/f/xpzbkvez" method="POST" class="contact-form">
-      <h3>Cere oferta</h3>
+    <form action="https://formspree.io/f/xpzbkvez" method="POST" class="contact-form" (submit)="submitQuote($event)" (input)="clearFieldError($event)" [attr.aria-busy]="sending" aria-describedby="form-note">
+      <h3>Cere ofertă</h3>
+      <p id="form-note">Toate câmpurile sunt obligatorii. Datele sunt transmise prin Formspree pentru a răspunde cererii tale.</p>
       <label>
         Nume
-        <input type="text" name="name" autocomplete="name" placeholder="Nume Prenume">
+        <input type="text" name="name" autocomplete="name" required maxlength="100">
       </label>
       <label>
         Email
-        <input type="email" name="email" autocomplete="email" placeholder="email@exemplu.ro">
+        <input type="email" name="email" autocomplete="email" required maxlength="254">
       </label>
       <label>
-        Mesaj
-        <textarea name="message" rows="6" placeholder="Data, locatia si tipul evenimentului"></textarea>
+        Tip de eveniment
+        <select name="event_type" required>
+          <option value="">Alege tipul evenimentului</option>
+          <option value="concert">Concert</option>
+          <option value="festival">Festival</option>
+          <option value="corporate">Eveniment corporate</option>
+          <option value="public">Eveniment public</option>
+          <option value="other">Altă producție live</option>
+        </select>
       </label>
-      <button type="submit">Trimite mesajul</button>
+      <div class="form-row">
+        <label>Locație<input type="text" name="location" required maxlength="200" autocomplete="off"></label>
+        <label>Data evenimentului<input type="date" name="event_date" required [min]="minDate"></label>
+      </div>
+      <label>Detalii<textarea name="details" rows="5" required maxlength="3000" aria-describedby="details-help"></textarea></label>
+      <p id="details-help">Include numărul estimat de participanți, spațiul indoor sau outdoor și serviciile necesare.</p>
+      <button type="submit" [disabled]="sending">{{ sending ? 'Se trimite…' : 'Trimite cererea' }}</button>
+      <p role="status" aria-live="polite" class="form-status" *ngIf="formStatus === 'success'">Cererea a fost trimisă. Îți vom răspunde pe email.</p>
+      <p role="alert" class="form-status" *ngIf="formStatus === 'error'">Cererea nu a fost trimisă. Încearcă din nou sau contactează-ne telefonic ori prin email. Datele completate au fost păstrate.</p>
     </form>
   </section>
 </main>

@@ -803,3 +803,10 @@ dd {
   .portfolio-controls { display: flex; right: 16px; left: 16px; }
   .portfolio-frame { margin: 0; }
 }
+.contact-form select { width: 100%; min-height: 48px; padding: 12px; background: #173b3d; color: #fff; border: 1px solid #829b9b; border-radius: 8px; }
+.contact-form input, .contact-form textarea { border-color: #829b9b; min-width: 0; color-scheme: dark; }
+.contact-form p { margin: 0; line-height: 1.6; color: #e0e8e8; font-size: .92rem; }
+.contact-form button:disabled { opacity: .7; cursor: wait; }
+.form-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; }
+.contact-form .form-status { padding: 16px; border: 1px solid #f1a934; color: #fff; border-radius: 8px; }
+@media(max-width: 480px) { .form-row { grid-template-columns: minmax(0, 1fr); } }
