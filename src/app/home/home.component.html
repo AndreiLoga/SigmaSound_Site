@@ -14,7 +14,7 @@
         [class.active]="index === activeHero"
         [attr.fetchpriority]="index === 0 ? 'high' : 'low'"
         [alt]="'Scenă Sigma Sound cu lumini și public' | t">
-      <div class="hero-dots" (focusin)="pauseHero()">
+      <div class="hero-dots">
         <button type="button" (click)="previousHero()" [attr.aria-label]="'Imaginea anterioară' | t">‹</button>
         <button type="button" (click)="toggleHero()" [attr.aria-label]="(heroPaused ? 'Pornește prezentarea' : 'Oprește prezentarea') | t">{{ heroPaused ? '▶' : 'Ⅱ' }}</button>
         <button type="button" (click)="nextHero()" [attr.aria-label]="'Imaginea următoare' | t">›</button>
