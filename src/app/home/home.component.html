@@ -119,6 +119,7 @@
     <form action="https://formspree.io/f/xpzbkvez" method="POST" class="contact-form" (submit)="submitQuote($event)" (input)="clearFieldError($event)" [attr.aria-busy]="sending" aria-describedby="form-note">
       <h3>{{ 'Cere ofertă' | t }}</h3>
       <p id="form-note">{{ 'Toate câmpurile sunt obligatorii. Datele sunt transmise prin Formspree pentru a răspunde cererii tale.' | t }}</p>
+      <fieldset [disabled]="sending">
       <label>
         {{ 'Nume' | t }}
         <input type="text" name="name" autocomplete="name" required maxlength="100">
@@ -145,6 +146,7 @@
       <label>{{ 'Detalii' | t }}<textarea name="details" rows="5" required maxlength="3000" aria-describedby="details-help"></textarea></label>
       <p id="details-help">{{ 'Include numărul estimat de participanți, spațiul indoor sau outdoor și serviciile necesare.' | t }}</p>
       <button type="submit" [disabled]="sending">{{ (sending ? 'Se trimite…' : 'Trimite cererea') | t }}</button>
+      </fieldset>
       <p role="status" aria-live="polite" class="form-status" *ngIf="formStatus === 'success'">{{ 'Cererea a fost trimisă. Îți vom răspunde pe email.' | t }}</p>
       <p role="alert" class="form-status" *ngIf="formStatus === 'error'">{{ 'Cererea nu a fost trimisă. Încearcă din nou sau contactează-ne telefonic ori prin email. Datele completate au fost păstrate.' | t }}</p>
     </form>
