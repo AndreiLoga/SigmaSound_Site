@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { PortfolioImage, portfolioImages } from '../site-data';
+import { TranslatePipe } from '../locale.service';
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, TranslatePipe],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.scss'
 })

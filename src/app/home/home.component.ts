@@ -1,16 +1,18 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, inject } from '@angular/core';
+import { LocaleService, TranslatePipe } from '../locale.service';
 import { RouterLink } from '@angular/router';
 import { equipment, heroImages, portfolioImages, services } from '../site-data';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, TranslatePipe],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit, OnDestroy {
+  readonly locale = inject(LocaleService);
   readonly heroImages = heroImages;
   readonly services = services;
   readonly equipment = equipment;
@@ -33,7 +35,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     const data = new FormData(form);
     for (const name of ['name', 'location', 'details']) {
       const input = form.elements.namedItem(name) as HTMLInputElement | HTMLTextAreaElement;
-      input.setCustomValidity(input.value.trim() ? '' : 'Completează acest câmp.');
+      input.setCustomValidity(input.value.trim() ? '' : this.locale.t('Completează acest câmp.'));
     }
     if (!form.reportValidity()) return;
     this.sending = true;

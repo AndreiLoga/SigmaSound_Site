@@ -1,17 +1,22 @@
+<a class="skip-link" href="#main-content">{{ 'Sari la conținut' | t }}</a>
 <header class="site-header">
   <a class="brand" routerLink="/" aria-label="Sigma Sound">
-    <img src="assets/poze galerie/logo.svg" alt="Sigma Sound logo">
+    <img src="assets/poze galerie/logo.svg" alt="" width="132" height="40">
   </a>
-  <nav aria-label="Navigare principală">
-    <a routerLink="/" fragment="servicii" routerLinkActive="active">Servicii</a>
-    <a routerLink="/portofoliu" routerLinkActive="active">Portofoliu</a>
-    <a routerLink="/" fragment="contact">Contact</a>
+  <nav [attr.aria-label]="'Navigare principală' | t">
+    <a routerLink="/" fragment="servicii">{{ 'Servicii' | t }}</a>
+    <a routerLink="/portofoliu" routerLinkActive="active" ariaCurrentWhenActive="page">{{ 'Portofoliu' | t }}</a>
+    <a routerLink="/" fragment="contact">{{ 'Contact' | t }}</a>
   </nav>
+  <div class="language-switch" role="group" [attr.aria-label]="'Limba site-ului' | t">
+    <button type="button" lang="ro" aria-label="Română" [attr.aria-pressed]="locale.language() === 'ro'" (click)="locale.language.set('ro')">RO</button>
+    <button type="button" lang="en" aria-label="English" [attr.aria-pressed]="locale.language() === 'en'" (click)="locale.language.set('en')">EN</button>
+  </div>
 </header>
 
 <router-outlet></router-outlet>
 
 <footer>
   <span>Sigma Sound</span>
-  <span>Scenă · Sunet · Lumini · Video</span>
+  <span>{{ 'Scenă · Sunet · Lumini · Ecrane LED' | t }}</span>
 </footer>

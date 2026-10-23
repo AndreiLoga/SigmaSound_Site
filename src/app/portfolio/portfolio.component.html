@@ -1,17 +1,17 @@
-<main class="portfolio-page">
+<main class="portfolio-page" id="main-content" tabindex="-1">
   <section class="portfolio-hero">
     <div>
-      <h1>Evenimente realizate împreună cu Sigma Sound.</h1>
+      <h1>{{ 'Evenimente realizate împreună cu Sigma Sound.' | t }}</h1>
     </div>
-    <a class="button secondary" routerLink="/" fragment="contact">Cere ofertă</a>
+    <a class="button secondary" routerLink="/" fragment="contact">{{ 'Cere ofertă' | t }}</a>
   </section>
 
   <section class="portfolio-shell">
     <div class="portfolio-feature" aria-live="polite" aria-atomic="true" id="selected-event">
-      <img [src]="selectedImage.image" [alt]="selectedImage.title">
+      <img [src]="selectedImage.image" [alt]="selectedImage.title | t">
       <div>
-        <p>{{ selectedImage.category }}</p>
-        <h2>{{ selectedImage.title }}</h2>
+        <p>{{ selectedImage.category | t }}</p>
+        <h2>{{ selectedImage.title | t }}</h2>
       </div>
     </div>
 
@@ -24,7 +24,7 @@
         aria-controls="selected-event"
         (click)="selectImage(item)">
         <img [src]="item.thumbnail" alt="" loading="lazy" decoding="async" width="480" height="320">
-        <span>{{ item.title }}</span>
+        <span>{{ item.title | t }}</span>
       </button>
     </div>
   </section>

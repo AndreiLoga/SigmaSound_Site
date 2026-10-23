@@ -106,3 +106,15 @@ footer {
     flex-direction: column;
   }
 }
+.site-header { background: rgba(23, 59, 61, .97); }
+nav { margin-right: 0; gap: clamp(18px, 3vw, 48px); }
+nav a { padding: 12px 0; }
+.language-switch { display: flex; flex-shrink: 0; gap: 4px; }
+.language-switch button { min-width: 44px; min-height: 44px; border: 1px solid #829b9b; border-radius: 50%; color: #fff; background: transparent; cursor: pointer; font: inherit; font-weight: 700; }
+.language-switch button[aria-pressed="true"] { color: #191715; background: #f1a934; border-color: #f1a934; }
+@media (max-width: 600px) {
+  .site-header { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; padding: 8px 14px; border-radius: 16px; }
+  .brand { grid-column: 1; grid-row: 1; }
+  .language-switch { grid-column: 2; grid-row: 1; }
+  nav { grid-column: 1 / -1; grid-row: 2; justify-content: space-between; width: 100%; font-size: .95rem; margin: 0; gap: 12px; }
+}
