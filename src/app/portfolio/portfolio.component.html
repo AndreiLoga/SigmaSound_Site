@@ -1,15 +1,13 @@
 <main class="portfolio-page">
   <section class="portfolio-hero">
     <div>
-      <p class="eyebrow">Portofoliu</p>
-      <h1>Evenimente, scene și show-uri lucrate de Sigma Sound.</h1>
-      <p>Am scos galeria din prima pagină ca site-ul să fie mai aerisit. Aici putem adăuga treptat mai multe lucrări, pe măsură ce alegem pozele cele mai bune.</p>
+      <h1>Evenimente realizate împreună cu Sigma Sound.</h1>
     </div>
     <a class="button secondary" routerLink="/" fragment="contact">Cere ofertă</a>
   </section>
 
   <section class="portfolio-shell">
-    <div class="portfolio-feature">
+    <div class="portfolio-feature" aria-live="polite" aria-atomic="true" id="selected-event">
       <img [src]="selectedImage.image" [alt]="selectedImage.title">
       <div>
         <p>{{ selectedImage.category }}</p>
@@ -22,8 +20,10 @@
         type="button"
         *ngFor="let item of portfolio; trackBy: trackByTitle"
         [class.active]="item === selectedImage"
+        [attr.aria-pressed]="item === selectedImage"
+        aria-controls="selected-event"
         (click)="selectImage(item)">
-        <img [src]="item.image" [alt]="item.title">
+        <img [src]="item.thumbnail" alt="" loading="lazy" decoding="async" width="480" height="320">
         <span>{{ item.title }}</span>
       </button>
     </div>

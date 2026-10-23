@@ -12,9 +12,12 @@
         *ngFor="let image of heroImages; let index = index"
         [src]="image"
         [class.active]="index === activeHero"
-        alt="Scena Sigma Sound cu lumini si public">
-      <div class="hero-dots" aria-hidden="true">
-        <span *ngFor="let image of heroImages; let index = index" [class.active]="index === activeHero"></span>
+        [attr.fetchpriority]="index === 0 ? 'high' : 'low'"
+        alt="Scenă Sigma Sound cu lumini și public">
+      <div class="hero-dots" (focusin)="pauseHero()">
+        <button type="button" (click)="previousHero()" aria-label="Imaginea anterioară">‹</button>
+        <button type="button" (click)="toggleHero()" [attr.aria-label]="heroPaused ? 'Pornește prezentarea' : 'Oprește prezentarea'">{{ heroPaused ? '▶' : 'Ⅱ' }}</button>
+        <button type="button" (click)="nextHero()" aria-label="Imaginea următoare">›</button>
       </div>
     </div>
     <div class="hero-copy">
@@ -64,16 +67,17 @@
 
   <section class="portfolio-cta">
     <div class="portfolio-frame" (touchstart)="onPortfolioTouchStart($event)" (touchend)="onPortfolioTouchEnd($event)">
-      <img [src]="portfolioPreview[activePortfolio].image" [alt]="portfolioPreview[activePortfolio].title">
+      <img [src]="portfolioPreview[activePortfolio].image" [alt]="portfolioPreview[activePortfolio].title" loading="lazy" decoding="async" width="1440" height="900">
       <div class="portfolio-controls">
-        <button type="button" (click)="previousPortfolio()" aria-label="Imaginea anterioara">‹</button>
-        <button type="button" (click)="nextPortfolio()" aria-label="Imaginea urmatoare">›</button>
+        <button type="button" (click)="previousPortfolio()" aria-label="Imaginea anterioară">‹</button>
+        <button type="button" (click)="nextPortfolio()" aria-label="Imaginea următoare">›</button>
       </div>
       <div class="portfolio-dots" aria-label="Alege imaginea">
         <button
           type="button"
           *ngFor="let item of portfolioPreview; let index = index; trackBy: trackByTitle"
           [class.active]="index === activePortfolio"
+          [attr.aria-pressed]="index === activePortfolio"
           (click)="selectPortfolio(index)"
           [attr.aria-label]="'Imaginea ' + (index + 1)">
         </button>
@@ -81,9 +85,9 @@
     </div>
     <div class="portfolio-copy">
       <h2>Portofoliu</h2>
-      <a class="portfolio-link" routerLink="/portofoliu">Arata galeria</a>
+      <a class="portfolio-link" routerLink="/portofoliu">Arată galeria</a>
     </div>
-    <a class="portfolio-link portfolio-link-mobile" routerLink="/portofoliu">Arata galeria</a>
+    <a class="portfolio-link portfolio-link-mobile" routerLink="/portofoliu">Arată galeria</a>
   </section>
 
   <section id="contact" class="contact">

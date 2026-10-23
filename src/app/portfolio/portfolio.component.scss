@@ -3,15 +3,22 @@
 }
 
 .portfolio-hero {
-  display: grid;
-  grid-template-columns: minmax(320px, 1fr) auto;
+  display: flex;
+  flex-direction: column;
   gap: 24px;
-  align-items: end;
+  align-items: center;
+  justify-content: center;
   padding: clamp(64px, 9vw, 126px) clamp(18px, 5vw, 72px) clamp(36px, 6vw, 76px);
   background:
     radial-gradient(circle at 85% 18%, rgba(241, 169, 52, 0.14), transparent 30%),
     linear-gradient(135deg, #173b3d, #214f4d);
   color: #fff;
+  text-align: center;
+}
+
+.portfolio-hero h1 {
+  max-width: 860px;
+  margin: 0;
 }
 
 .portfolio-hero p:not(.eyebrow) {
@@ -150,3 +157,9 @@
     grid-template-columns: 1fr;
   }
 }
+.portfolio-hero { padding-top: 150px; }
+.portfolio-shell { grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr); }
+.portfolio-grid button { height: 220px; }
+.portfolio-feature p { text-transform: none; letter-spacing: normal; font-size: .95rem; }
+@media (max-width: 980px) { .portfolio-shell { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 680px) { .portfolio-hero { padding-top: 160px; } }

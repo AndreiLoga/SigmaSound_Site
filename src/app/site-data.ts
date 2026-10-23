@@ -14,11 +14,12 @@ export interface PortfolioImage {
   title: string;
   image: string;
   category: string;
+  thumbnail: string;
 }
 
 export const heroImages = [
-  'assets/poze galerie/zilele ardudului 2023/IMG_3578.jpg',
-  'assets/poze galerie/Medieval Ardud 2023/IMG_3401.jpg'
+  'assets/poze galerie/web/event-01.jpg',
+  'assets/poze galerie/web/event-02.jpg'
 ];
 
 export const services: ServiceLine[] = [
@@ -68,16 +69,16 @@ export const equipment: EquipmentCategory[] = [
 ];
 
 export const portfolioImages: PortfolioImage[] = [
-  { title: 'MedievArtFest Ardud', category: 'festival', image: 'assets/poze galerie/medieval1.jpg' },
-  { title: 'Scenă outdoor', category: 'scenă', image: 'assets/poze galerie/Medieval Ardud 2023/IMG_3366.jpg' },
-  { title: 'Lumini concert', category: 'lumini', image: 'assets/poze galerie/Medieval Ardud 2023/IMG_3401.jpg' },
-  { title: 'Zilele Ardudului', category: 'eveniment public', image: 'assets/poze galerie/zilele ardudului 2023/IMG_3578.jpg' },
-  { title: 'Gala Loga Dance', category: 'gală', image: 'assets/poze galerie/loga dance/IMG_3903.jpg' },
-  { title: 'Ziua Orașului Satu Mare', category: 'concert', image: 'assets/poze galerie/zo2023/zo3.jpg' },
-  { title: 'Rock Filarmonica', category: 'live', image: 'assets/poze galerie/rock filarmonica/rk 1.jpg' },
-  { title: 'Producție lumini', category: 'show', image: 'assets/poze/LUMINI 05.jpg' },
-  { title: 'Bal Interact', category: 'indoor', image: 'assets/poze galerie/bal interact/1.JPG' },
-  { title: 'Sunet outdoor', category: 'audio', image: 'assets/poze galerie/1 decembrie 2023/sunet 1.jpg' },
-  { title: 'Lumini indoor', category: 'lumini', image: 'assets/poze galerie/poze interact 2023/lumini 1.png' },
-  { title: 'Ziua Orașului 2022', category: 'eveniment public', image: 'assets/poze galerie/zo9.jpg' }
+  { title: 'MedievArtFest Ardud', category: 'festival', image: 'assets/poze galerie/web/event-03.jpg', thumbnail: 'assets/poze galerie/web/event-03-thumb.jpg' },
+  { title: 'Scenă outdoor', category: 'scenă', image: 'assets/poze galerie/web/event-04.jpg', thumbnail: 'assets/poze galerie/web/event-04-thumb.jpg' },
+  { title: 'Lumini concert', category: 'lumini', image: 'assets/poze galerie/web/event-02.jpg', thumbnail: 'assets/poze galerie/web/event-02-thumb.jpg' },
+  { title: 'Zilele Ardudului', category: 'eveniment public', image: 'assets/poze galerie/web/event-01.jpg', thumbnail: 'assets/poze galerie/web/event-01-thumb.jpg' },
+  { title: 'Gala Loga Dance', category: 'gală', image: 'assets/poze galerie/web/event-05.jpg', thumbnail: 'assets/poze galerie/web/event-05-thumb.jpg' },
+  { title: 'Ziua Orașului Satu Mare', category: 'concert', image: 'assets/poze galerie/web/event-06.jpg', thumbnail: 'assets/poze galerie/web/event-06-thumb.jpg' },
+  { title: 'Rock Filarmonica', category: 'live', image: 'assets/poze galerie/web/event-07.jpg', thumbnail: 'assets/poze galerie/web/event-07-thumb.jpg' },
+  { title: 'Producție lumini', category: 'show', image: 'assets/poze galerie/web/event-08.jpg', thumbnail: 'assets/poze galerie/web/event-08-thumb.jpg' },
+  { title: 'Bal Interact', category: 'indoor', image: 'assets/poze galerie/web/event-09.jpg', thumbnail: 'assets/poze galerie/web/event-09-thumb.jpg' },
+  { title: 'Sunet outdoor', category: 'audio', image: 'assets/poze galerie/web/event-10.jpg', thumbnail: 'assets/poze galerie/web/event-10-thumb.jpg' },
+  { title: 'Lumini indoor', category: 'lumini', image: 'assets/poze galerie/web/event-11.jpg', thumbnail: 'assets/poze galerie/web/event-11-thumb.jpg' },
+  { title: 'Ziua Orașului 2022', category: 'eveniment public', image: 'assets/poze galerie/web/event-12.jpg', thumbnail: 'assets/poze galerie/web/event-12-thumb.jpg' }
 ];

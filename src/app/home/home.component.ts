@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     .filter((item) => !heroImages.includes(item.image))
     .slice(1, 5);
   activeHero = 0;
+  heroPaused = false;
   activePortfolio = 0;
   readonly minDate = new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 10);
   sending = false;
@@ -58,7 +59,24 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.heroTimer = setInterval(() => this.nextHero(), 5200);
+    this.heroPaused = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.startHero();
+  }
+
+  private startHero(): void {
+    if (!this.heroPaused) this.heroTimer = setInterval(() => this.nextHero(), 5200);
+  }
+
+  pauseHero(): void {
+    if (this.heroTimer) clearInterval(this.heroTimer);
+    this.heroPaused = true;
+  }
+
+  toggleHero(): void {
+    if (this.heroPaused) {
+      this.heroPaused = false;
+      this.startHero();
+    } else this.pauseHero();
   }
 
   ngOnDestroy(): void {
