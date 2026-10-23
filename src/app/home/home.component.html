@@ -18,11 +18,11 @@
       </div>
     </div>
     <div class="hero-copy">
-      <p class="eyebrow">Satu Mare · productie tehnica evenimente</p>
+      <p class="eyebrow">Producție tehnică de evenimente · Satu Mare</p>
       <h1>Sigma Sound</h1>
-      <p class="tagline">Scena, sunet si lumini pentru evenimente care trebuie sa se auda bine si sa arate puternic.</p>
+      <p class="tagline">Scenă, sunet, lumini și ecrane LED pentru concerte, festivaluri și evenimente corporate. Indoor și outdoor.</p>
       <div class="hero-actions">
-        <a class="button primary" href="#contact">Cere oferta</a>
+        <a class="button primary" href="#contact">Cere ofertă</a>
         <a class="button secondary" routerLink="/portofoliu">Portofoliu</a>
       </div>
     </div>
@@ -30,12 +30,11 @@
 
   <section id="servicii" class="services-section">
     <div class="services-intro">
-      <h2>Patru zone tehnice care acopera evenimentul cap-coada.</h2>
+      <h2>Patru zone tehnice. Un eveniment complet.</h2>
     </div>
 
     <div class="service-lines">
       <article *ngFor="let item of services; let index = index; trackBy: trackByTitle">
-        <div class="service-index">{{ index + 1 | number: '2.0-0' }}</div>
         <div class="service-main">
           <h3>{{ item.title }}</h3>
           <p>{{ item.lead }}</p>
@@ -49,9 +48,8 @@
 
   <section class="equipment-section">
     <div class="equipment-copy">
-      <p class="eyebrow">Echipamente</p>
-      <h2>Setup-uri complete pentru scena, sunet si lumini.</h2>
-      <p>Lucram cu echipamente testate pe evenimente reale: sisteme audio DAS, mixere Yamaha, microfoane Shure, lumini inteligente si efecte de scena.</p>
+      <h2>Echipamente pentru producții live.</h2>
+      <p>Sisteme audio DAS, mixere Yamaha, microfoane Shure, lumini inteligente și efecte de scenă. Configurația se stabilește în funcție de spațiu, public și program.</p>
     </div>
 
     <div class="equipment-grid">
@@ -65,12 +63,27 @@
   </section>
 
   <section class="portfolio-cta">
-    <div>
-      <p class="eyebrow">Portofoliu</p>
-      <h2>Galeria completa e separata, ca prima pagina sa ramana curata.</h2>
-      <p>Pe homepage pastram doar un semnal vizual puternic si trimitem catre pagina unde pozele pot fi parcurse in liniste.</p>
-      <a class="button primary" routerLink="/portofoliu">Vezi galeria</a>
+    <div class="portfolio-frame" (touchstart)="onPortfolioTouchStart($event)" (touchend)="onPortfolioTouchEnd($event)">
+      <img [src]="portfolioPreview[activePortfolio].image" [alt]="portfolioPreview[activePortfolio].title">
+      <div class="portfolio-controls">
+        <button type="button" (click)="previousPortfolio()" aria-label="Imaginea anterioara">‹</button>
+        <button type="button" (click)="nextPortfolio()" aria-label="Imaginea urmatoare">›</button>
+      </div>
+      <div class="portfolio-dots" aria-label="Alege imaginea">
+        <button
+          type="button"
+          *ngFor="let item of portfolioPreview; let index = index; trackBy: trackByTitle"
+          [class.active]="index === activePortfolio"
+          (click)="selectPortfolio(index)"
+          [attr.aria-label]="'Imaginea ' + (index + 1)">
+        </button>
+      </div>
     </div>
+    <div class="portfolio-copy">
+      <h2>Portofoliu</h2>
+      <a class="portfolio-link" routerLink="/portofoliu">Arata galeria</a>
+    </div>
+    <a class="portfolio-link portfolio-link-mobile" routerLink="/portofoliu">Arata galeria</a>
   </section>
 
   <section id="contact" class="contact">
