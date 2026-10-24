@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnDestroy, OnInit, inject } from '@angular/core';
-import { LocaleService, TranslatePipe } from '../locale.service';
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { equipment, heroImages, portfolioImages, services } from '../site-data';
+import { LocaleService, TranslatePipe } from '../locale.service';
+import { heroImages, services } from '../site-data';
+import { portfolioEvents } from '../portfolio/portfolio-data';
 
 @Component({
   selector: 'app-home',
@@ -11,22 +12,23 @@ import { equipment, heroImages, portfolioImages, services } from '../site-data';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent implements OnInit, OnDestroy {
+export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   readonly locale = inject(LocaleService);
+  private readonly host = inject<ElementRef<HTMLElement>>(ElementRef);
   readonly heroImages = heroImages;
   readonly services = services;
-  readonly equipment = equipment;
-  readonly portfolioPreview = portfolioImages
-    .filter((item) => !heroImages.includes(item.image))
-    .slice(1, 5);
+  readonly portfolioPreview = ['ziua-orasului-satu-mare-2026', 'ziua-orasului-ardud-2026', 'street-music-festival-2026'].map(id => {
+    const event = portfolioEvents.find(item => item.id === id)!;
+    const photo = event.photos[id === 'ziua-orasului-satu-mare-2026' ? 2 : 0];
+    return { id: event.id, title: event.title, year: event.year, ...photo };
+  });
   activeHero = 0;
   heroPaused = false;
-  activePortfolio = 0;
   readonly minDate = new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 10);
   sending = false;
   formStatus: 'idle' | 'success' | 'error' = 'idle';
   private heroTimer?: ReturnType<typeof setInterval>;
-  private portfolioTouchStartX = 0;
+  private revealObserver?: IntersectionObserver;
 
   async submitQuote(event: Event): Promise<void> {
     event.preventDefault();
@@ -65,6 +67,23 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.startHero();
   }
 
+  ngAfterViewInit(): void {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+    this.revealObserver = new IntersectionObserver(entries => {
+      for (const entry of entries) if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        this.revealObserver?.unobserve(entry.target);
+      }
+    }, { threshold: 0.08 });
+    this.host.nativeElement.classList.add('motion-ready');
+    this.host.nativeElement.querySelectorAll('[data-reveal]').forEach(section => this.revealObserver?.observe(section));
+  }
+
+  ngOnDestroy(): void {
+    if (this.heroTimer) clearInterval(this.heroTimer);
+    this.revealObserver?.disconnect();
+  }
+
   private startHero(): void {
     if (!this.heroPaused) this.heroTimer = setInterval(() => this.nextHero(), 5200);
   }
@@ -81,11 +100,6 @@ export class HomeComponent implements OnInit, OnDestroy {
     } else this.pauseHero();
   }
 
-  ngOnDestroy(): void {
-    if (this.heroTimer) {
-      clearInterval(this.heroTimer);
-    }
-  }
 
   nextHero(): void {
     this.activeHero = (this.activeHero + 1) % this.heroImages.length;
@@ -95,42 +109,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.activeHero = this.activeHero === 0 ? this.heroImages.length - 1 : this.activeHero - 1;
   }
 
-  nextPortfolio(): void {
-    this.activePortfolio = (this.activePortfolio + 1) % this.portfolioPreview.length;
-  }
 
-  previousPortfolio(): void {
-    this.activePortfolio = this.activePortfolio === 0 ? this.portfolioPreview.length - 1 : this.activePortfolio - 1;
-  }
-
-  selectPortfolio(index: number): void {
-    this.activePortfolio = index;
-  }
-
-  onPortfolioTouchStart(event: TouchEvent): void {
-    this.portfolioTouchStartX = event.changedTouches[0]?.clientX ?? 0;
-  }
-
-  onPortfolioTouchEnd(event: TouchEvent): void {
-    const endX = event.changedTouches[0]?.clientX ?? 0;
-    const deltaX = endX - this.portfolioTouchStartX;
-
-    if (Math.abs(deltaX) < 40) {
-      return;
-    }
-
-    if (deltaX < 0) {
-      this.nextPortfolio();
-    } else {
-      this.previousPortfolio();
-    }
-  }
-
-  trackByTitle(_: number, item: { title: string }): string {
-    return item.title;
-  }
-
-  trackByValue(_: number, value: string): string {
-    return value;
-  }
+  trackByTitle(_: number, item: { title: string }): string { return item.title; }
+  trackByValue(_: number, value: string): string { return value; }
 }

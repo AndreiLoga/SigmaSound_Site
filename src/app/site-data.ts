@@ -1,4 +1,8 @@
 export interface ServiceLine {
+  image: string;
+  imageAlt: string;
+  width: number;
+  height: number;
   title: string;
   lead: string;
   capabilities: string[];
@@ -24,22 +28,60 @@ export const heroImages = [
 
 export const services: ServiceLine[] = [
   {
-    title: 'Scenă & structuri',
-    lead: 'Baza tehnică pentru evenimente outdoor și indoor.',
-    capabilities: ['scenă', 'structuri aluminiu', 'montaj', 'adaptare la spațiu'],
-    equipment: ['scene mobile', 'structuri', 'transport tehnic']
+    "title": "Scenă",
+    "lead": "Scene și structuri adaptate locației, pentru concerte, festivaluri și evenimente publice.",
+    "capabilities": [
+      "structuri de scenă",
+      "montaj și demontaj",
+      "adaptare la locație"
+    ],
+    "equipment": [
+      "scene mobile",
+      "structuri aluminiu",
+      "transport tehnic"
+    ],
+    "image": "assets/poze galerie/optimized/v3/83f87b0328807adc26b9d93e-thumb.jpg",
+    "imageAlt": "Ziua Orașului Satu Mare 2026",
+    "width": 520,
+    "height": 390
   },
   {
-    title: 'Sunet & mixaj',
-    lead: 'Sisteme audio pentru concerte, spectacole și evenimente publice.',
-    capabilities: ['front of house', 'monitoare', 'probe de sunet', 'operare live'],
-    equipment: ['DAS Audio Event-210A', 'DAS Audio Event-218A', 'Yamaha TF5']
+    "title": "Sunet",
+    "lead": "Sonorizare pentru public și artiști, cu mixaj live și monitorizare de scenă.",
+    "capabilities": [
+      "sonorizare",
+      "mixaj live",
+      "monitoare de scenă",
+      "probe de sunet"
+    ],
+    "equipment": [
+      "DAS Audio Event-210A",
+      "DAS Audio Event-218A",
+      "Yamaha TF5"
+    ],
+    "image": "assets/poze galerie/optimized/v3/36d1af775537067600f06093-thumb.jpg",
+    "imageAlt": "Ziua Orașului Ardud 2026",
+    "width": 520,
+    "height": 347
   },
   {
-    title: 'Lumini & efecte',
-    lead: 'Design de lumină și atmosferă pentru momente care trebuie să arate puternic.',
-    capabilities: ['moving heads', 'beam', 'wash', 'haze', 'fum greu'],
-    equipment: ['FOS Beam 7R', 'Stairville MH-X 200', 'Daslight DVC 4 Gold']
+    "title": "Lumini",
+    "lead": "Lumină pentru scenă, artiști și decor, programată în ritmul spectacolului.",
+    "capabilities": [
+      "moving heads",
+      "beam și wash",
+      "efecte de scenă",
+      "operare live"
+    ],
+    "equipment": [
+      "FOS Beam 7R",
+      "Stairville MH-X 200",
+      "Daslight DVC 4 Gold"
+    ],
+    "image": "assets/poze galerie/optimized/v3/d4905841fd6fe106f28c37d0-thumb.jpg",
+    "imageAlt": "Street Music Festival 2026",
+    "width": 520,
+    "height": 390
   }
 ];
 
