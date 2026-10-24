@@ -20,8 +20,8 @@
       <p>{{ 'De la structura scenei la mixaj și operarea luminilor, configurăm fiecare componentă în jurul evenimentului.' | t }}</p>
     </div>
     <div class="service-list">
-      <article class="service-card" *ngFor="let item of services; trackBy: trackByTitle" [class.service-lighting]="item.title === 'Lumini'">
-        <div class="service-photo"><img [src]="item.image" [attr.srcset]="item.imageSrcset || null" [attr.sizes]="item.imageSizes || null" [alt]="('Scenă și producție tehnică' | t) + ': ' + item.imageAlt" [width]="item.width" [height]="item.height" loading="lazy" decoding="async"></div>
+      <article class="service-card" *ngFor="let item of services; trackBy: trackByTitle" [class.service-lighting]="item.title === 'Lumini'" [class.service-audio]="item.title === 'Sunet'">
+        <div class="service-photo"><img [src]="item.image" [attr.srcset]="item.imageSrcset || null" [attr.sizes]="item.imageSizes || null" [alt]="('Scenă și producție tehnică' | t) + ': ' + (item.imageAlt | t)" [width]="item.width" [height]="item.height" loading="lazy" decoding="async"></div>
         <div class="service-content">
           <h3>{{ item.title | t }}</h3>
           <p>{{ item.lead | t }}</p>
@@ -42,8 +42,8 @@
     </div>
     <div class="preview-grid">
       <a class="preview-card" *ngFor="let item of portfolioPreview" routerLink="/portofoliu" [fragment]="item.id">
-        <div class="preview-image"><img [src]="item.thumbnail" [alt]="('Producție tehnică de eveniment' | t) + ': ' + previewTitle(item) + ' ' + item.year" [width]="item.width" [height]="item.height" loading="lazy" decoding="async"></div>
-        <div class="preview-caption"><div><h3 [attr.lang]="item.titleKey ? locale.language() : 'ro'">{{ previewTitle(item) }}</h3><p *ngIf="item.summaryKey">{{ item.summaryKey | t }}</p></div><span>{{ item.year }}</span></div>
+        <div class="preview-image"><img [src]="item.thumbnail" [attr.srcset]="item.imageSrcset" [attr.sizes]="item.imageSizes" [alt]="('Producție tehnică de eveniment' | t) + ': ' + item.title + ' ' + item.year" [width]="item.width" [height]="item.height" loading="lazy" decoding="async"></div>
+        <div class="preview-caption"><h3 [attr.lang]="item.id === 'open-air-symphony-2026' ? 'en' : 'ro'">{{ item.title }}</h3><span>{{ item.year }}</span></div>
       </a>
     </div>
   </section>

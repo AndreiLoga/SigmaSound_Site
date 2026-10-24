@@ -42,10 +42,12 @@ export const services: ServiceLine[] = [
       "structuri aluminiu",
       "transport tehnic"
     ],
-    "image": "assets/poze galerie/optimized/v3/83f87b0328807adc26b9d93e-thumb.jpg",
+    "image": "assets/poze galerie/optimized/v3/83f87b0328807adc26b9d93e.jpg",
     "imageAlt": "Ziua Orașului Satu Mare 2026",
-    "width": 520,
-    "height": 390
+    "width": 1600,
+    "height": 1200,
+    "imageSrcset": "assets/poze%20galerie/optimized/v3/83f87b0328807adc26b9d93e-thumb.jpg 520w, assets/poze%20galerie/optimized/v3/83f87b0328807adc26b9d93e.jpg 1600w",
+    "imageSizes": "(min-width: 1050px) 28vw, (min-width: 600px) 90vw, calc(100vw - 40px)"
   },
   {
     "title": "Sunet",
@@ -61,10 +63,12 @@ export const services: ServiceLine[] = [
       "DAS Audio Event-218A",
       "Yamaha TF5"
     ],
-    "image": "assets/poze galerie/optimized/v3/36d1af775537067600f06093-thumb.jpg",
-    "imageAlt": "Ziua Orașului Ardud 2026",
-    "width": 520,
-    "height": 347
+    "image": "assets/poze galerie/optimized/v3/4624e2e5d4b51ff19107047d.jpg",
+    "imageAlt": "Consolă de mixaj și echipamente audio lângă scenă",
+    "width": 1600,
+    "height": 1200,
+    "imageSrcset": "assets/poze%20galerie/optimized/v3/4624e2e5d4b51ff19107047d-thumb.jpg 520w, assets/poze%20galerie/optimized/v3/4624e2e5d4b51ff19107047d.jpg 1600w",
+    "imageSizes": "(min-width: 1050px) 28vw, (min-width: 600px) 90vw, calc(100vw - 40px)"
   },
   {
     "title": "Lumini",

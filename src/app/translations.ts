@@ -15,8 +15,7 @@ export const english: Record<string, string> = {
   "[TODO: email]": "[TODO: email]",
   "[TODO: WhatsApp]": "[TODO: WhatsApp]",
 
-  'Simfonie în aer liber': 'Open Air Symphony',
-  'Concert în aer liber, din portofoliul Sigma Sound.': 'An open-air concert from the Sigma Sound portfolio.',
+  'Consolă de mixaj și echipamente audio lângă scenă': 'Mixing console and audio equipment beside the stage',
   "Scenă, sonorizare și lumini pentru concerte, festivaluri și evenimente corporate. Soluția tehnică se adaptează locației și programului tău.": "Stage, sound and lighting for concerts, festivals and corporate events. The technical setup is tailored to your venue and programme.",
   "Scenă, sunet și lumini pentru evenimente live.": "Stage, sound and lighting for live events.",
   "Închiriem echipamente pentru concerte, festivaluri și evenimente corporate. Configurăm soluția tehnică pentru locația și programul tău.": "Equipment hire for concerts, festivals and corporate events. We plan the technical setup around your venue and programme.",

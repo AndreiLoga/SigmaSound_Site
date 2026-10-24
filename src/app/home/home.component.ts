@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { LocaleService, TranslatePipe } from '../locale.service';
+import { TranslatePipe } from '../locale.service';
 import { contactChannels, heroImages, services } from '../site-data';
 import { portfolioEvents } from '../portfolio/portfolio-data';
 
@@ -13,18 +13,19 @@ import { portfolioEvents } from '../portfolio/portfolio-data';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
-  readonly locale = inject(LocaleService);
   private readonly host = inject<ElementRef<HTMLElement>>(ElementRef);
   readonly heroImages = heroImages;
   readonly services = services;
   readonly contactChannels = contactChannels;
-  readonly portfolioPreview = ['ziua-orasului-satu-mare-2026', 'ziua-orasului-ardud-2026', 'open-air-symphony-2026'].map(id => {
+  readonly portfolioPreview = ['ziua-orasului-satu-mare-2026', 'ziua-orasului-ardud-2026', 'open-air-symphony-2026'].map((id, index) => {
     const event = portfolioEvents.find(item => item.id === id)!;
     const photo = event.photos[id === 'ziua-orasului-ardud-2026' ? 0 : 4];
     return {
       id: event.id, title: event.title, year: event.year, ...photo,
-      titleKey: id === 'open-air-symphony-2026' ? 'Simfonie în aer liber' : null,
-      summaryKey: id === 'open-air-symphony-2026' ? 'Concert în aer liber, din portofoliul Sigma Sound.' : null
+      imageSrcset: `${encodeURI(photo.thumbnail)} ${photo.width}w, ${encodeURI(photo.image)} ${photo.imageWidth}w`,
+      imageSizes: index === 0
+        ? '(min-width: 1050px) 58vw, (min-width: 600px) 53vw, calc(100vw - 40px)'
+        : '(min-width: 1050px) 32vw, (min-width: 600px) 38vw, calc(100vw - 40px)'
     };
   });
   activeHero = 0;
@@ -89,7 +90,4 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   trackByTitle(_: number, item: { title: string }): string { return item.title; }
 
-  previewTitle(item: { title: string; titleKey: string | null }): string {
-    return item.titleKey ? this.locale.t(item.titleKey) : item.title;
-  }
 }
