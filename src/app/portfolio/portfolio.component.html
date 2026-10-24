@@ -7,7 +7,24 @@
             <h2 [id]="event.id + '-title'" lang="ro">{{ event.title }} <span>{{ event.year || ('[TODO: anul evenimentului]' | t) }}</span></h2>
           </div>
         </header>
-        <div class="photo-grid">
+        <div class="mobile-gallery" role="group" [attr.aria-label]="event.title + ' ' + event.year" (keydown)="onEventGalleryKey($event, event)">
+          <figure class="event-feature">
+            <button type="button" class="featured-photo" [id]="event.id + '-featured'" (click)="openPhoto(event, activeIndex(event), $event)" aria-haspopup="dialog" [attr.aria-label]="('Mărește' | t) + ': ' + photoLabel(event, activeIndex(event))">
+              <img [src]="activePhoto(event).thumbnail" [attr.srcset]="photoSources(activePhoto(event))" sizes="calc(100vw - 40px)" [alt]="photoLabel(event, activeIndex(event))" [width]="activePhoto(event).imageWidth" [height]="activePhoto(event).imageHeight" loading="lazy" decoding="async">
+            </button>
+            <figcaption class="gallery-position" aria-live="polite">{{ 'Fotografia' | t }} {{ activeIndex(event) + 1 }} / {{ event.photos.length }}</figcaption>
+          </figure>
+          <div class="event-controls" *ngIf="event.photos.length > 1">
+            <button type="button" (click)="moveEventPhoto(event, -1)" [attr.aria-controls]="event.id + '-featured'"><span aria-hidden="true">‹</span> {{ 'Anterioară' | t }}</button>
+            <button type="button" (click)="moveEventPhoto(event, 1)" [attr.aria-controls]="event.id + '-featured'">{{ 'Următoare' | t }} <span aria-hidden="true">›</span></button>
+          </div>
+          <div class="event-thumbnails" *ngIf="event.photos.length > 1" role="group" [attr.aria-label]="'Alege fotografia' | t">
+            <button type="button" class="event-thumbnail" *ngFor="let photo of event.photos; let index = index" [class.active]="index === activeIndex(event)" [attr.aria-pressed]="index === activeIndex(event)" [attr.tabindex]="index === activeIndex(event) ? 0 : -1" [attr.aria-controls]="event.id + '-featured'" [attr.aria-label]="('Vezi fotografia' | t) + ': ' + photoLabel(event, index)" (click)="selectEventPhoto(event, index)">
+              <img [src]="photo.thumbnail" alt="" [width]="photo.width" [height]="photo.height" loading="lazy" decoding="async">
+            </button>
+          </div>
+        </div>
+        <div class="photo-grid desktop-gallery">
           <button type="button" class="photo-button" *ngFor="let photo of event.photos; let index = index" (click)="openPhoto(event, index, $event)" aria-haspopup="dialog" [attr.aria-label]="('Mărește' | t) + ': ' + photoLabel(event, index)">
             <img [src]="photo.thumbnail" [alt]="photoLabel(event, index)" loading="lazy" decoding="async" [width]="photo.width" [height]="photo.height">
           </button>

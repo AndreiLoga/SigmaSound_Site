@@ -1,4 +1,9 @@
 export const english: Record<string, string> = {
+  'Fotografia': 'Photo',
+  'Anterioară': 'Previous',
+  'Următoare': 'Next',
+  'Alege fotografia': 'Choose a photo',
+  'Vezi fotografia': 'View photo',
   'Deschide meniul': 'Open menu',
   'Închide meniul': 'Close menu',
   "Cere o ofertă pentru evenimentul tău.": "Request a quote for your event.",

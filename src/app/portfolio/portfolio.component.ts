@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectorRef, Component, ElementRef, OnDestroy, ViewChild, inject } from '@angular/core';
 import { LocaleService, TranslatePipe } from '../locale.service';
-import { PortfolioEvent, portfolioEvents } from './portfolio-data';
+import { EventPhoto, PortfolioEvent, portfolioEvents } from './portfolio-data';
 
 @Component({
   selector: 'app-portfolio',
@@ -13,6 +13,8 @@ import { PortfolioEvent, portfolioEvents } from './portfolio-data';
 export class PortfolioComponent implements OnDestroy {
   @ViewChild('lightbox', { static: true }) private lightbox!: ElementRef<HTMLDialogElement>;
   private readonly changeDetector = inject(ChangeDetectorRef);
+  private readonly host = inject<ElementRef<HTMLElement>>(ElementRef);
+  private readonly eventIndexes: Record<string, number> = {};
   selectedEvent: PortfolioEvent | null = null;
   selectedIndex = 0;
   imageFailed = false;
@@ -22,10 +24,44 @@ export class PortfolioComponent implements OnDestroy {
   readonly locale = inject(LocaleService);
   readonly events = portfolioEvents;
 
+  activeIndex(event: PortfolioEvent): number { return this.eventIndexes[event.id] ?? 0; }
+
+  activePhoto(event: PortfolioEvent): EventPhoto { return event.photos[this.activeIndex(event)]; }
+
+  photoSources(photo: EventPhoto): string {
+    return `${encodeURI(photo.thumbnail)} ${photo.width}w, ${encodeURI(photo.image)} ${photo.imageWidth}w`;
+  }
+
+  selectEventPhoto(event: PortfolioEvent, index: number): void {
+    const selected = (index + event.photos.length) % event.photos.length;
+    this.eventIndexes[event.id] = selected;
+    const strip = this.host.nativeElement.querySelector<HTMLElement>(`#${event.id} .event-thumbnails`);
+    const thumbnail = strip?.children[selected] as HTMLElement | undefined;
+    if (strip && thumbnail && strip.clientWidth > 0) {
+      strip.scrollTo({ left: thumbnail.offsetLeft - (strip.clientWidth - thumbnail.offsetWidth) / 2,
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+    }
+  }
+
+  moveEventPhoto(event: PortfolioEvent, direction: number): void {
+    this.selectEventPhoto(event, this.activeIndex(event) + direction);
+  }
+
+  onEventGalleryKey(event: KeyboardEvent, entry: PortfolioEvent): void {
+    if (event.altKey || event.ctrlKey || event.metaKey || !['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+    event.preventDefault();
+    this.moveEventPhoto(entry, event.key === 'ArrowLeft' ? -1 : 1);
+    if (event.target instanceof Element && event.target.closest('.event-thumbnail')) {
+      const strip = this.host.nativeElement.querySelector(`#${entry.id} .event-thumbnails`);
+      (strip?.children[this.activeIndex(entry)] as HTMLElement | undefined)?.focus({ preventScroll: true });
+    }
+  }
+
   openPhoto(event: PortfolioEvent, index: number, trigger: Event): void {
     this.opener = trigger.currentTarget as HTMLElement;
     this.selectedEvent = event;
     this.selectedIndex = index;
+    this.selectEventPhoto(event, index);
     this.imageFailed = false;
     this.changeDetector.detectChanges();
     if (!this.scrollLocked) {
@@ -52,6 +88,7 @@ export class PortfolioComponent implements OnDestroy {
   movePhoto(direction: number): void {
     if (!this.selectedEvent) return;
     this.selectedIndex = (this.selectedIndex + direction + this.selectedEvent.photos.length) % this.selectedEvent.photos.length;
+    this.selectEventPhoto(this.selectedEvent, this.selectedIndex);
     this.imageFailed = false;
   }
 
