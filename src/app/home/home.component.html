@@ -50,52 +50,31 @@
 
   <section class="contact section-space" id="contact" aria-labelledby="contact-title" data-reveal>
     <div class="contact-copy">
-      <h2 id="contact-title">{{ 'Hai să stabilim configurația evenimentului.' | t }}</h2>
-      <p class="contact-lead">{{ 'Trimite locația, data și programul. Revenim cu detaliile tehnice și oferta potrivită.' | t }}</p>
-      <div class="quick-contact">
-        <a href="tel:+40744125740">{{ 'Sună acum' | t }}</a>
-        <a href="mailto:vaviloga76@gmail.com">{{ 'Trimite email' | t }}</a>
-        <a href="https://wa.me/40744125740" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      <h2 id="contact-title">{{ 'Cere o ofertă pentru evenimentul tău.' | t }}</h2>
+      <p class="contact-lead">{{ 'Spune-ne ce pregătești. Stabilim împreună soluția de scenă, sunet și lumini.' | t }}</p>
+      <h3>{{ 'Pentru o ofertă, pregătește:' | t }}</h3>
+      <ul class="quote-checklist">
+        <li>{{ 'Tipul de eveniment' | t }}</li>
+        <li>{{ 'Locația' | t }}</li>
+        <li>{{ 'Data' | t }}</li>
+        <li>{{ 'Numărul estimat de participanți' | t }}</li>
+      </ul>
+      <div class="coverage">
+        <h3>{{ 'Zona de acoperire' | t }}</h3>
+        <p>{{ '[TODO: zona de acoperire]' | t }}</p>
       </div>
-      <dl>
-        <div><dt>{{ 'Telefon' | t }}</dt><dd><a href="tel:+40744125740">0744 125 740</a><br><a href="tel:+40744845891">0744 845 891</a></dd></div>
-        <div><dt>{{ 'Email' | t }}</dt><dd><a href="mailto:vaviloga76@gmail.com">vaviloga76@gmail.com</a></dd></div>
-        <div><dt>{{ 'Adresă' | t }}</dt><dd>Bulevardul Transilvania nr. 3, Satu Mare</dd></div>
+    </div>
+    <div class="contact-panel">
+      <h3>{{ 'Contact direct' | t }}</h3>
+      <dl class="contact-details">
+        <div *ngFor="let channel of contactChannels">
+          <dt>{{ channel.label | t }}</dt>
+          <dd>
+            <a *ngIf="channel.href; else pendingContact" [href]="channel.href" [attr.target]="channel.label === 'WhatsApp' ? '_blank' : null" [attr.rel]="channel.label === 'WhatsApp' ? 'noopener noreferrer' : null">{{ channel.value }}</a>
+            <ng-template #pendingContact><span>{{ channel.value | t }}</span></ng-template>
+          </dd>
+        </div>
       </dl>
     </div>
-    <form action="https://formspree.io/f/xpzbkvez" method="POST" class="contact-form" (submit)="submitQuote($event)" (input)="clearFieldError($event)" [attr.aria-busy]="sending" aria-describedby="form-note">
-      <h3>{{ 'Detaliile evenimentului' | t }}</h3>
-      <p id="form-note">{{ 'Toate câmpurile sunt obligatorii. Datele sunt transmise prin Formspree pentru a răspunde cererii tale.' | t }}</p>
-      <fieldset [disabled]="sending">
-      <label>
-        {{ 'Nume' | t }}
-        <input type="text" name="name" autocomplete="name" required maxlength="100">
-      </label>
-      <label>
-        {{ 'Email' | t }}
-        <input type="email" name="email" autocomplete="email" required maxlength="254">
-      </label>
-      <label>
-        {{ 'Tip de eveniment' | t }}
-        <select name="event_type" required>
-          <option value="">{{ 'Alege tipul evenimentului' | t }}</option>
-          <option value="concert">{{ 'Concert' | t }}</option>
-          <option value="festival">{{ 'Festival' | t }}</option>
-          <option value="corporate">{{ 'Eveniment corporate' | t }}</option>
-          <option value="public">{{ 'Eveniment public' | t }}</option>
-          <option value="other">{{ 'Altă producție live' | t }}</option>
-        </select>
-      </label>
-      <div class="form-row">
-        <label>{{ 'Locație' | t }}<input type="text" name="location" required maxlength="200" autocomplete="off"></label>
-        <label>{{ 'Data evenimentului' | t }}<input type="date" name="event_date" required [min]="minDate"></label>
-      </div>
-      <label>{{ 'Detalii' | t }}<textarea name="details" rows="5" required maxlength="3000" aria-describedby="details-help"></textarea></label>
-      <p id="details-help">{{ 'Include numărul estimat de participanți, spațiul indoor sau outdoor și serviciile necesare.' | t }}</p>
-      <button type="submit" [disabled]="sending">{{ (sending ? 'Se trimite…' : 'Trimite cererea') | t }}</button>
-      </fieldset>
-      <p role="status" aria-live="polite" class="form-status" *ngIf="formStatus === 'success'">{{ 'Cererea a fost trimisă. Îți vom răspunde pe email.' | t }}</p>
-      <p role="alert" class="form-status" *ngIf="formStatus === 'error'">{{ 'Cererea nu a fost trimisă. Încearcă din nou sau contactează-ne telefonic ori prin email. Datele completate au fost păstrate.' | t }}</p>
-    </form>
   </section>
 </main>

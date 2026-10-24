@@ -117,3 +117,18 @@ export const portfolioImages: PortfolioImage[] = [
   { title: 'Rock Filarmonica', category: 'live', image: 'assets/poze galerie/web/event-07.jpg', thumbnail: 'assets/poze galerie/web/event-07-thumb.jpg' },
   { title: 'Lumini indoor', category: 'lumini', image: 'assets/poze galerie/web/event-11.jpg', thumbnail: 'assets/poze galerie/web/event-11-thumb.jpg' },
 ];
+
+
+export interface ContactChannel {
+  label: string;
+  value: string;
+  href: string | null;
+}
+
+// Add confirmed values and tel:, mailto: or https://wa.me/ URLs together.
+// Pending contact details stay readable without creating fictitious links.
+export const contactChannels: ContactChannel[] = [
+  { label: 'Telefon', value: '[TODO: telefon]', href: null },
+  { label: 'Email', value: '[TODO: email]', href: null },
+  { label: 'WhatsApp', value: '[TODO: WhatsApp]', href: null }
+];

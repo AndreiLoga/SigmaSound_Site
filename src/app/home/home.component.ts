@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { LocaleService, TranslatePipe } from '../locale.service';
-import { heroImages, services } from '../site-data';
+import { contactChannels, heroImages, services } from '../site-data';
 import { portfolioEvents } from '../portfolio/portfolio-data';
 
 @Component({
@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   private readonly host = inject<ElementRef<HTMLElement>>(ElementRef);
   readonly heroImages = heroImages;
   readonly services = services;
+  readonly contactChannels = contactChannels;
   readonly portfolioPreview = ['ziua-orasului-satu-mare-2026', 'ziua-orasului-ardud-2026', 'open-air-symphony-2026'].map(id => {
     const event = portfolioEvents.find(item => item.id === id)!;
     const photo = event.photos[id === 'ziua-orasului-ardud-2026' ? 0 : 4];
@@ -30,44 +31,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   private heroHovered = false;
   private heroFocused = false;
   private motionPreference?: MediaQueryList;
-  readonly minDate = new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 10);
-  sending = false;
-  formStatus: 'idle' | 'success' | 'error' = 'idle';
   private heroTimer?: ReturnType<typeof setInterval>;
   private revealObserver?: IntersectionObserver;
   private readonly onPlaybackPreferenceChange = (): void => this.updateHeroPlayback();
-
-  async submitQuote(event: Event): Promise<void> {
-    event.preventDefault();
-    const form = event.target as HTMLFormElement;
-    if (this.sending || !form.reportValidity()) return;
-    const data = new FormData(form);
-    for (const name of ['name', 'location', 'details']) {
-      const input = form.elements.namedItem(name) as HTMLInputElement | HTMLTextAreaElement;
-      input.setCustomValidity(input.value.trim() ? '' : this.locale.t('Completează acest câmp.'));
-    }
-    if (!form.reportValidity()) return;
-    this.sending = true;
-    this.formStatus = 'idle';
-    try {
-      const response = await fetch(form.action, {
-        method: 'POST', body: data, headers: { Accept: 'application/json' },
-        signal: AbortSignal.timeout(20000)
-      });
-      if (!response.ok) throw new Error('Request failed');
-      this.formStatus = 'success';
-      form.reset();
-    } catch {
-      this.formStatus = 'error';
-    } finally {
-      this.sending = false;
-    }
-  }
-
-  clearFieldError(event: Event): void {
-    (event.target as HTMLInputElement).setCustomValidity('');
-    if (this.formStatus !== 'idle') this.formStatus = 'idle';
-  }
 
   ngOnInit(): void {
     this.motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -122,7 +88,6 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
 
   trackByTitle(_: number, item: { title: string }): string { return item.title; }
-  trackByValue(_: number, value: string): string { return value; }
 
   previewTitle(item: { title: string; titleKey: string | null }): string {
     return item.titleKey ? this.locale.t(item.titleKey) : item.title;
