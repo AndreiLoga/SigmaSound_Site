@@ -81,8 +81,15 @@ export class PortfolioComponent implements OnDestroy {
     if (this.lightbox.nativeElement.open || !this.scrollLocked) return;
     document.body.style.overflow = this.previousOverflow;
     this.scrollLocked = false;
+    const entry = this.selectedEvent;
     this.selectedEvent = null;
-    this.opener?.focus({ preventScroll: true });
+    if (this.opener?.getClientRects().length) {
+      this.opener.focus({ preventScroll: true });
+    } else if (entry) {
+      const section = this.host.nativeElement.querySelector(`#${entry.id}`);
+      const candidates = [section?.querySelector<HTMLElement>('.featured-photo'), section?.querySelectorAll<HTMLElement>('.photo-button')[this.selectedIndex]];
+      candidates.find(button => button && button.getClientRects().length)?.focus({ preventScroll: true });
+    }
   }
 
   movePhoto(direction: number): void {
