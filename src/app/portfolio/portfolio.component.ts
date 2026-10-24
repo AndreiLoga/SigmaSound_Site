@@ -19,6 +19,7 @@ export class PortfolioComponent implements OnDestroy {
   imageFailed = false;
   private opener: HTMLElement | null = null;
   private previousOverflow = '';
+  private scrollLocked = false;
   readonly locale = inject(LocaleService);
   readonly events = portfolioEvents;
 
@@ -28,8 +29,11 @@ export class PortfolioComponent implements OnDestroy {
     this.selectedIndex = index;
     this.imageFailed = false;
     this.changeDetector.detectChanges();
-    this.previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
+    if (!this.scrollLocked) {
+      this.previousOverflow = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+      this.scrollLocked = true;
+    }
     this.lightbox.nativeElement.showModal();
   }
 
@@ -38,7 +42,10 @@ export class PortfolioComponent implements OnDestroy {
   }
 
   onClose(): void {
+    // A queued close event from an earlier opening must not clear a reopened dialog.
+    if (this.lightbox.nativeElement.open || !this.scrollLocked) return;
     document.body.style.overflow = this.previousOverflow;
+    this.scrollLocked = false;
     this.selectedEvent = null;
     this.opener?.focus({ preventScroll: true });
   }
@@ -69,7 +76,7 @@ export class PortfolioComponent implements OnDestroy {
   }
 
   ngOnDestroy(): void {
-    if (this.lightbox.nativeElement.open) document.body.style.overflow = this.previousOverflow;
+    if (this.scrollLocked) document.body.style.overflow = this.previousOverflow;
   }
 
   title(event: PortfolioEvent): string {
