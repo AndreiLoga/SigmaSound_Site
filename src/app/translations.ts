@@ -1,4 +1,6 @@
 export const english: Record<string, string> = {
+  'Deschide meniul': 'Open menu',
+  'Închide meniul': 'Close menu',
   "Cere o ofertă pentru evenimentul tău.": "Request a quote for your event.",
   "Spune-ne ce pregătești. Stabilim împreună soluția de scenă, sunet și lumini.": "Tell us what you are planning. Together, we will define the stage, sound and lighting setup.",
   "Pentru o ofertă, pregătește:": "For a quote, prepare:",
