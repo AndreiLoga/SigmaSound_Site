@@ -1,5 +1,5 @@
 <main class="home-page" id="main-content" tabindex="-1">
-  <section class="hero" aria-labelledby="home-title">
+  <section class="hero" aria-labelledby="home-title" tabindex="0" (mouseenter)="setHeroHover(true)" (mouseleave)="setHeroHover(false)" (focusin)="setHeroFocus(true)" (focusout)="onHeroFocusOut($event)">
     <div class="hero-copy">
       <p class="hero-location">Sigma Sound · Satu Mare</p>
       <h1 id="home-title">{{ 'De la montaj la ultimul acord.' | t }}</h1>
@@ -11,11 +11,6 @@
     </div>
     <div class="hero-media">
       <img *ngFor="let image of heroImages; let index = index" [src]="image" [class.active]="index === activeHero" [attr.aria-hidden]="index !== activeHero" [attr.fetchpriority]="index === 0 ? 'high' : 'low'" [alt]="'Scenă Sigma Sound cu lumini și public' | t" width="1600" height="1067" decoding="async">
-      <div class="hero-controls">
-        <button type="button" (click)="previousHero()" [attr.aria-label]="'Imaginea anterioară' | t">‹</button>
-        <button type="button" (click)="toggleHero()" [attr.aria-label]="(heroPaused ? 'Pornește prezentarea' : 'Oprește prezentarea') | t">{{ heroPaused ? '▶' : 'Ⅱ' }}</button>
-        <button type="button" (click)="nextHero()" [attr.aria-label]="'Imaginea următoare' | t">›</button>
-      </div>
     </div>
   </section>
 

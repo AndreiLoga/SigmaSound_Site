@@ -27,12 +27,15 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     };
   });
   activeHero = 0;
-  heroPaused = false;
+  private heroHovered = false;
+  private heroFocused = false;
+  private motionPreference?: MediaQueryList;
   readonly minDate = new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 10);
   sending = false;
   formStatus: 'idle' | 'success' | 'error' = 'idle';
   private heroTimer?: ReturnType<typeof setInterval>;
   private revealObserver?: IntersectionObserver;
+  private readonly onPlaybackPreferenceChange = (): void => this.updateHeroPlayback();
 
   async submitQuote(event: Event): Promise<void> {
     event.preventDefault();
@@ -67,8 +70,10 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.heroPaused = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    this.startHero();
+    this.motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+    this.motionPreference.addEventListener('change', this.onPlaybackPreferenceChange);
+    document.addEventListener('visibilitychange', this.onPlaybackPreferenceChange);
+    this.updateHeroPlayback();
   }
 
   ngAfterViewInit(): void {
@@ -85,32 +90,34 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngOnDestroy(): void {
     if (this.heroTimer) clearInterval(this.heroTimer);
+    this.motionPreference?.removeEventListener('change', this.onPlaybackPreferenceChange);
+    document.removeEventListener('visibilitychange', this.onPlaybackPreferenceChange);
     this.revealObserver?.disconnect();
   }
 
-  private startHero(): void {
-    if (!this.heroPaused) this.heroTimer = setInterval(() => this.nextHero(), 5200);
-  }
-
-  pauseHero(): void {
+  private updateHeroPlayback(): void {
     if (this.heroTimer) clearInterval(this.heroTimer);
-    this.heroPaused = true;
+    this.heroTimer = undefined;
+    if (this.motionPreference?.matches || this.heroHovered || this.heroFocused || document.hidden || this.heroImages.length < 2) return;
+    this.heroTimer = setInterval(() => {
+      this.activeHero = (this.activeHero + 1) % this.heroImages.length;
+    }, 5200);
   }
 
-  toggleHero(): void {
-    if (this.heroPaused) {
-      this.heroPaused = false;
-      this.startHero();
-    } else this.pauseHero();
+  setHeroHover(hovered: boolean): void {
+    this.heroHovered = hovered;
+    this.updateHeroPlayback();
+  }
+
+  setHeroFocus(focused: boolean): void {
+    this.heroFocused = focused;
+    this.updateHeroPlayback();
   }
 
 
-  nextHero(): void {
-    this.activeHero = (this.activeHero + 1) % this.heroImages.length;
-  }
-
-  previousHero(): void {
-    this.activeHero = this.activeHero === 0 ? this.heroImages.length - 1 : this.activeHero - 1;
+  onHeroFocusOut(event: FocusEvent): void {
+    const destination = event.relatedTarget;
+    this.setHeroFocus(destination instanceof Node && (event.currentTarget as HTMLElement).contains(destination));
   }
 
 

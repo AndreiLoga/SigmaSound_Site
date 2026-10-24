@@ -1,5 +1,6 @@
 :host { display: block; }
 .home-page { color: #191715; background: #b1bcbd; }
+.hero:focus-visible { outline-offset: -6px; }
 .hero { position: relative; display: grid; gap: 0; overflow: hidden; background: #173b3d; color: #fff; }
 .hero-copy { position: relative; z-index: 2; padding: 160px 20px 48px; animation: hero-arrive .7s ease both; }
 .hero-location { margin: 0 0 24px; color: #e0e8e8; font-size: 1rem; }
@@ -14,9 +15,6 @@ h1 { max-width: 15ch; margin: 0; font-size: clamp(2.8rem, 5vw, 5.6rem); line-hei
 .hero-media { position: relative; min-height: 340px; overflow: hidden; }
 .hero-media > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1s ease; }
 .hero-media > img.active { opacity: 1; }
-.hero-controls { position: absolute; right: 20px; bottom: 24px; z-index: 3; display: flex; gap: 8px; }
-.hero-controls button { width: 44px; height: 44px; border: 1px solid #829b9b; border-radius: 50%; background: #173b3d; color: #fff; cursor: pointer; font: inherit; font-size: 1.2rem; }
-.hero-controls button:hover { background: #326463; }
 .section-space { padding: 64px 20px; }
 .section-space[id] { scroll-margin-top: 140px; }
 .section-heading { display: flex; flex-direction: column; align-items: flex-start; gap: 24px; margin-bottom: 32px; }
@@ -99,7 +97,6 @@ dd { margin: 0; color: #e0e8e8; line-height: 1.75; overflow-wrap: anywhere; }
 .hero-media::after { position: absolute; inset: 0; content: ''; background: linear-gradient(90deg,rgba(23,59,61,.97),rgba(23,59,61,.74) 50%,rgba(23,59,61,.12)); }
 .hero-copy h1 { max-width: 16ch; }
 .hero-lead { max-width: 50ch; }
-.hero-controls { right: 20px; bottom: 24px; }
 .service-card { border: 1px solid #829b9b; background: #d6dddd; color: #191715; }
 .service-content h3 { color: #173b3d; }
 .service-content p, .service-equipment ul { color: #273234; }
@@ -115,7 +112,6 @@ dd { margin: 0; color: #e0e8e8; line-height: 1.75; overflow-wrap: anywhere; }
 }
 @media (min-width: 600px) {
   .hero { padding: 180px 5vw 110px; }
-  .hero-controls { right: 5vw; }
   .preview-grid { grid-template-columns: 1.4fr 1fr; grid-template-rows: repeat(2,230px); }
   .preview-card:first-child { grid-row: span 2; }
   .preview-image img { min-height: 0; }
