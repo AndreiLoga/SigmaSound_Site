@@ -1,4 +1,6 @@
 export interface ServiceLine {
+  imageSrcset?: string;
+  imageSizes?: string;
   image: string;
   imageAlt: string;
   width: number;
@@ -78,10 +80,12 @@ export const services: ServiceLine[] = [
       "Stairville MH-X 200",
       "Daslight DVC 4 Gold"
     ],
-    "image": "assets/poze galerie/optimized/v3/dae29f3a74fb5d1b2271d17e-thumb.jpg",
+    "image": "assets/poze galerie/optimized/v3/dae29f3a74fb5d1b2271d17e.jpg",
     "imageAlt": "Ziua Orașului Satu Mare 2026",
-    "width": 520,
-    "height": 347
+    "width": 1600,
+    "height": 1066,
+    "imageSrcset": "assets/poze galerie/optimized/v3/dae29f3a74fb5d1b2271d17e-thumb.jpg 520w, assets/poze galerie/optimized/v3/dae29f3a74fb5d1b2271d17e.jpg 1600w",
+    "imageSizes": "(min-width: 1050px) 28vw, (min-width: 600px) 90vw, calc(100vw - 40px)"
   }
 ];
 

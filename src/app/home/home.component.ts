@@ -17,10 +17,14 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   private readonly host = inject<ElementRef<HTMLElement>>(ElementRef);
   readonly heroImages = heroImages;
   readonly services = services;
-  readonly portfolioPreview = ['ziua-orasului-satu-mare-2026', 'ziua-orasului-ardud-2026', 'street-music-festival-2026'].map(id => {
+  readonly portfolioPreview = ['ziua-orasului-satu-mare-2026', 'ziua-orasului-ardud-2026', 'open-air-symphony-2026'].map(id => {
     const event = portfolioEvents.find(item => item.id === id)!;
-    const photo = event.photos[id === 'ziua-orasului-satu-mare-2026' ? 2 : 0];
-    return { id: event.id, title: event.title, year: event.year, ...photo };
+    const photo = event.photos[id === 'ziua-orasului-ardud-2026' ? 0 : 4];
+    return {
+      id: event.id, title: event.title, year: event.year, ...photo,
+      titleKey: id === 'open-air-symphony-2026' ? 'Simfonie în aer liber' : null,
+      summaryKey: id === 'open-air-symphony-2026' ? 'Concert în aer liber, din portofoliul Sigma Sound.' : null
+    };
   });
   activeHero = 0;
   heroPaused = false;
@@ -112,4 +116,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   trackByTitle(_: number, item: { title: string }): string { return item.title; }
   trackByValue(_: number, value: string): string { return value; }
+
+  previewTitle(item: { title: string; titleKey: string | null }): string {
+    return item.titleKey ? this.locale.t(item.titleKey) : item.title;
+  }
 }
