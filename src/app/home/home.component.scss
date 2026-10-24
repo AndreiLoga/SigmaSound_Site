@@ -89,3 +89,38 @@ dd { margin: 0; color: #e0e8e8; line-height: 1.75; overflow-wrap: anywhere; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
   .service-card:hover, .preview-card:hover img, .primary:hover { transform: none; }
 }
+
+/* B: full-width photograph, service columns and an asymmetric project gallery. */
+.hero { display: flex; align-items: flex-end; min-height: 880px; padding: 170px 20px 100px; }
+.hero-copy { width: min(880px,100%); padding: 0; align-self: auto; }
+.hero-media { position: absolute; inset: 0; min-height: 0; }
+.hero-media::after { position: absolute; inset: 0; content: ''; background: linear-gradient(90deg,rgba(23,59,61,.97),rgba(23,59,61,.74) 50%,rgba(23,59,61,.12)); }
+.hero-copy h1 { max-width: 16ch; }
+.hero-lead { max-width: 50ch; }
+.hero-controls { right: 20px; bottom: 24px; }
+.service-card { border: 1px solid #829b9b; background: #d6dddd; color: #191715; }
+.service-content h3 { color: #173b3d; }
+.service-content p, .service-equipment ul { color: #273234; }
+.service-photo img { aspect-ratio: 4 / 3; }
+.preview-card { position: relative; overflow: hidden; border-radius: 8px; background: #173b3d; color: #fff; }
+.preview-image { height: 100%; }
+.preview-image img { height: 100%; min-height: 280px; }
+.preview-caption { position: absolute; right: 0; bottom: 0; left: 0; align-items: flex-end; padding: 44px 20px 20px; background: linear-gradient(transparent,rgba(0,0,0,.92)); }
+.preview-caption span { color: #fff; }
+@media (max-width: 599px) {
+  .hero { min-height: 860px; }
+  .hero-media::after { background: linear-gradient(0deg,#173b3d 0%,rgba(23,59,61,.88) 45%,rgba(23,59,61,.28) 100%); }
+}
+@media (min-width: 600px) {
+  .hero { padding: 180px 5vw 110px; }
+  .hero-controls { right: 5vw; }
+  .preview-grid { grid-template-columns: 1.4fr 1fr; grid-template-rows: repeat(2,230px); }
+  .preview-card:first-child { grid-row: span 2; }
+  .preview-image img { min-height: 0; }
+}
+@media (min-width: 1050px) {
+  .hero { min-height: 900px; }
+  .service-list { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 22px; }
+  .service-content { padding: 28px; }
+  .preview-grid { grid-template-columns: 1.8fr 1fr; grid-template-rows: repeat(2,260px); }
+}
