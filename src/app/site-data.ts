@@ -78,10 +78,10 @@ export const services: ServiceLine[] = [
       "Stairville MH-X 200",
       "Daslight DVC 4 Gold"
     ],
-    "image": "assets/poze galerie/optimized/v3/d4905841fd6fe106f28c37d0-thumb.jpg",
-    "imageAlt": "Street Music Festival 2026",
+    "image": "assets/poze galerie/optimized/v3/dae29f3a74fb5d1b2271d17e-thumb.jpg",
+    "imageAlt": "Ziua Orașului Satu Mare 2026",
     "width": 520,
-    "height": 390
+    "height": 347
   }
 ];
 

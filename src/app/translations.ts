@@ -1,4 +1,5 @@
 export const english: Record<string, string> = {
+  "Scenă, sonorizare și lumini pentru concerte, festivaluri și evenimente corporate. Soluția tehnică se adaptează locației și programului tău.": "Stage, sound and lighting for concerts, festivals and corporate events. The technical setup is tailored to your venue and programme.",
   "Scenă, sunet și lumini pentru evenimente live.": "Stage, sound and lighting for live events.",
   "Închiriem echipamente pentru concerte, festivaluri și evenimente corporate. Configurăm soluția tehnică pentru locația și programul tău.": "Equipment hire for concerts, festivals and corporate events. We plan the technical setup around your venue and programme.",
   "Descoperă serviciile": "Explore our services",
