@@ -1,13 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectorRef, Component, ElementRef, OnDestroy, ViewChild, inject } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { LocaleService, TranslatePipe } from '../locale.service';
 import { PortfolioEvent, portfolioEvents } from './portfolio-data';
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [CommonModule, RouterLink, TranslatePipe],
+  imports: [CommonModule, TranslatePipe],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.scss'
 })
@@ -77,10 +76,6 @@ export class PortfolioComponent implements OnDestroy {
 
   ngOnDestroy(): void {
     if (this.scrollLocked) document.body.style.overflow = this.previousOverflow;
-  }
-
-  title(event: PortfolioEvent): string {
-    return event.title;
   }
 
   photoLabel(event: PortfolioEvent, index: number): string {
