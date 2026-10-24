@@ -84,7 +84,7 @@ export const services: ServiceLine[] = [
     "imageAlt": "Ziua Orașului Satu Mare 2026",
     "width": 1600,
     "height": 1066,
-    "imageSrcset": "assets/poze galerie/optimized/v3/dae29f3a74fb5d1b2271d17e-thumb.jpg 520w, assets/poze galerie/optimized/v3/dae29f3a74fb5d1b2271d17e.jpg 1600w",
+    "imageSrcset": "assets/poze%20galerie/optimized/v3/dae29f3a74fb5d1b2271d17e-thumb.jpg 520w, assets/poze%20galerie/optimized/v3/dae29f3a74fb5d1b2271d17e.jpg 1600w",
     "imageSizes": "(min-width: 1050px) 28vw, (min-width: 600px) 90vw, calc(100vw - 40px)"
   }
 ];
