@@ -23,7 +23,7 @@
             <p>{{ event.year || ('[TODO: anul evenimentului]' | t) }}</p>
             <h2 [id]="event.id + '-title'">{{ title(event) }}</h2>
           </div>
-          <p>{{ event.photos.length }} {{ 'fotografii' | t }}</p>
+          <p>{{ event.photos.length }} {{ (event.photos.length === 1 ? 'fotografie' : 'fotografii') | t }}</p>
         </header>
         <div class="photo-grid">
           <button type="button" class="photo-button" *ngFor="let photo of event.photos; let index = index" (click)="openPhoto(event, index, $event)" aria-haspopup="dialog" [attr.aria-label]="('Mărește' | t) + ': ' + photoLabel(event, index)">

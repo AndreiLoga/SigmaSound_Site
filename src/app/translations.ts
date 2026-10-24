@@ -5,6 +5,7 @@ export const english: Record<string, string> = {
   'Evenimente': 'Events',
   '[TODO: anul evenimentului]': '[TODO: event year]',
   'fotografii': 'photos',
+  'fotografie': 'photo',
   'fotografia': 'photo',
   'Mărește': 'Enlarge',
   'Închide galeria': 'Close gallery',
