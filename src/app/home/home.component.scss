@@ -819,7 +819,6 @@ dd {
 .portfolio-dots button::after { position: absolute; content: ''; height: 4px; width: 28px; top: 20px; left: 8px; background: #fff; }
 .portfolio-dots button.active { background: transparent; }
 .portfolio-dots button.active::after { background: #f1a934; }
-.service-main .service-note { margin-top: 12px; color: #ffd18a; font-size: .9rem; }
 @media(max-width: 600px) { .hero-media { min-height: 400px; } }
 /* Solid stage teal keeps gallery links readable on the grey page background. */
 .portfolio-link { background: #173b3d; }

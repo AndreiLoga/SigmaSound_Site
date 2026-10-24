@@ -1,6 +1,6 @@
 # Sigma Sound
 
-Site de prezentare Sigma Sound, realizat cu Angular 20 standalone, TypeScript și SCSS. Include servicii de scenă, sunet, lumini și LED, portofoliu, formular de ofertă și interfață RO/EN (română implicit).
+Site de prezentare Sigma Sound, realizat cu Angular 20 standalone, TypeScript și SCSS. Include servicii de scenă, sunet și lumini, portofoliu, formular de ofertă și interfață RO/EN (română implicit).
 
 ## Rulare locală
 
@@ -31,6 +31,5 @@ Verificat cu Node.js v24.21.0 și npm 11.19.0. Proiectul nu definește scripturi
 
 Formularul păstrează endpoint-ul Formspree existent. Validează numele, emailul, tipul evenimentului, locația, data și detaliile. Succesul se afișează doar după un răspuns HTTP reușit; la eroare se păstrează datele. Livrarea efectivă depinde de activarea și setările contului Formspree și trebuie verificată de proprietar înainte de publicare.
 
-Datele de contact, logo-ul și fotografiile provin din proiect. Specificațiile LED rămân marcate vizibil cu `[TODO: specificații ecrane LED]`; nu au fost inventate modele sau caracteristici.
 
 Domeniul de producție trebuie confirmat înainte de adăugarea unui sitemap, a adreselor canonical și a adreselor absolute pentru distribuirea socială. Aplicația este randată în browser; metadatele dinamice pot să nu fie citite de toate platformele sociale.

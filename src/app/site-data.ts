@@ -40,12 +40,6 @@ export const services: ServiceLine[] = [
     lead: 'Design de lumină și atmosferă pentru momente care trebuie să arate puternic.',
     capabilities: ['moving heads', 'beam', 'wash', 'haze', 'fum greu'],
     equipment: ['FOS Beam 7R', 'Stairville MH-X 200', 'Daslight DVC 4 Gold']
-  },
-  {
-    title: 'Ecrane LED',
-    lead: 'Afișare video pentru concerte, festivaluri și evenimente corporate, indoor și outdoor.',
-    capabilities: ['ecrane LED', 'conținut video', 'integrare în scenă'],
-    equipment: ['[TODO: specificații ecrane LED]']
   }
 ];
 

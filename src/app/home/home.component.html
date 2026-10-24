@@ -24,7 +24,7 @@
     <div class="hero-copy">
       <p class="eyebrow">{{ 'Producție tehnică de evenimente · Satu Mare' | t }}</p>
       <h1>Sigma Sound</h1>
-      <p class="tagline">{{ 'Scenă, sunet, lumini și ecrane LED pentru concerte, festivaluri și evenimente corporate. Indoor și outdoor.' | t }}</p>
+      <p class="tagline">{{ 'Scenă, sunet și lumini pentru concerte, festivaluri și evenimente corporate. Indoor și outdoor.' | t }}</p>
       <div class="hero-actions">
         <a class="button primary" href="#contact">{{ 'Cere ofertă' | t }}</a>
         <a class="button secondary" routerLink="/portofoliu">{{ 'Portofoliu' | t }}</a>
@@ -34,7 +34,7 @@
 
   <section id="servicii" class="services-section">
     <div class="services-intro">
-      <h2>{{ 'Patru zone tehnice. Un eveniment complet.' | t }}</h2>
+      <h2>{{ 'Scenă, sunet și lumini. Un singur proiect.' | t }}</h2>
     </div>
 
     <div class="service-lines">
@@ -42,7 +42,6 @@
         <div class="service-main">
           <h3>{{ item.title | t }}</h3>
           <p>{{ item.lead | t }}</p>
-          <p class="service-note" *ngIf="item.title === 'Ecrane LED'">{{ '[TODO: specificații ecrane LED]' | t }}</p>
         </div>
         <div class="service-detail">
           <span *ngFor="let capability of item.capabilities; trackBy: trackByValue">{{ capability | t }}</span>
@@ -97,7 +96,7 @@
     <div class="contact-copy">
       <p class="eyebrow">{{ 'Contact' | t }}</p>
       <h2>{{ 'Spune-ne unde, când și ce pregătești.' | t }}</h2>
-      <p class="contact-lead">{{ 'Descrie evenimentul pentru a putea stabili configurația de scenă, sunet, lumini și LED.' | t }}</p>
+      <p class="contact-lead">{{ 'Descrie evenimentul pentru a putea stabili configurația de scenă, sunet și lumini.' | t }}</p>
       <dl>
         <div>
           <dt>{{ 'Adresă' | t }}</dt>
