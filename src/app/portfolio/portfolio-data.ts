@@ -176,53 +176,6 @@ export const portfolioEvents: PortfolioEvent[] = [
     ]
   },
   {
-    "id": "festivalul-rozmarin-in-coltu-mesii-2026",
-    "title": "Festivalul Rozmarin în colțu mesii",
-    "year": 2026,
-    "photos": [
-      {
-        "image": "assets/poze galerie/optimized/v3/c322161f5a65938304aac782.jpg",
-        "imageWidth": 1600,
-        "imageHeight": 1200,
-        "thumbnail": "assets/poze galerie/optimized/v3/c322161f5a65938304aac782-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/v3/456bd6f514ea59fd6d7c4f70.jpg",
-        "imageWidth": 1600,
-        "imageHeight": 1200,
-        "thumbnail": "assets/poze galerie/optimized/v3/456bd6f514ea59fd6d7c4f70-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/v3/d80204878510be7f9a32421f.jpg",
-        "imageWidth": 1600,
-        "imageHeight": 1200,
-        "thumbnail": "assets/poze galerie/optimized/v3/d80204878510be7f9a32421f-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/v3/328515bb5e5ae31e8a2060cc.jpg",
-        "imageWidth": 1600,
-        "imageHeight": 1200,
-        "thumbnail": "assets/poze galerie/optimized/v3/328515bb5e5ae31e8a2060cc-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/v3/82eec5d3842e3900002ca1a6.jpg",
-        "imageWidth": 1600,
-        "imageHeight": 1200,
-        "thumbnail": "assets/poze galerie/optimized/v3/82eec5d3842e3900002ca1a6-thumb.jpg",
-        "width": 520,
-        "height": 390
-      }
-    ]
-  },
-  {
     "id": "festivalul-folcloric-bogdand-2026",
     "title": "Festivalul Folcloric Bogdand",
     "year": 2026,
@@ -286,6 +239,53 @@ export const portfolioEvents: PortfolioEvent[] = [
         "imageWidth": 1440,
         "imageHeight": 1080,
         "thumbnail": "assets/poze galerie/optimized/v3/3b4703ffca70d9a2dbd242d6-thumb.jpg",
+        "width": 520,
+        "height": 390
+      }
+    ]
+  },
+  {
+    "id": "festivalul-rozmarin-in-coltu-mesii-2026",
+    "title": "Festivalul Rozmarin în colțu mesii",
+    "year": 2026,
+    "photos": [
+      {
+        "image": "assets/poze galerie/optimized/v3/c322161f5a65938304aac782.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1200,
+        "thumbnail": "assets/poze galerie/optimized/v3/c322161f5a65938304aac782-thumb.jpg",
+        "width": 520,
+        "height": 390
+      },
+      {
+        "image": "assets/poze galerie/optimized/v3/456bd6f514ea59fd6d7c4f70.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1200,
+        "thumbnail": "assets/poze galerie/optimized/v3/456bd6f514ea59fd6d7c4f70-thumb.jpg",
+        "width": 520,
+        "height": 390
+      },
+      {
+        "image": "assets/poze galerie/optimized/v3/d80204878510be7f9a32421f.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1200,
+        "thumbnail": "assets/poze galerie/optimized/v3/d80204878510be7f9a32421f-thumb.jpg",
+        "width": 520,
+        "height": 390
+      },
+      {
+        "image": "assets/poze galerie/optimized/v3/328515bb5e5ae31e8a2060cc.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1200,
+        "thumbnail": "assets/poze galerie/optimized/v3/328515bb5e5ae31e8a2060cc-thumb.jpg",
+        "width": 520,
+        "height": 390
+      },
+      {
+        "image": "assets/poze galerie/optimized/v3/82eec5d3842e3900002ca1a6.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1200,
+        "thumbnail": "assets/poze galerie/optimized/v3/82eec5d3842e3900002ca1a6-thumb.jpg",
         "width": 520,
         "height": 390
       }
