@@ -73,10 +73,10 @@ export class PortfolioComponent implements OnDestroy {
   }
 
   title(event: PortfolioEvent): string {
-    return this.locale.language() === 'en' ? event.titleEn : event.title;
+    return event.title;
   }
 
   photoLabel(event: PortfolioEvent, index: number): string {
-    return `${this.title(event)}${event.year ? ' ' + event.year : ''}, ${this.locale.t('fotografia')} ${index + 1}`;
+    return `${this.locale.t('Producție tehnică de eveniment')}: ${event.title}${event.year ? ' ' + event.year : ''}, ${this.locale.t('fotografia')} ${index + 1}`;
   }
 }

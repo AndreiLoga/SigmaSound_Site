@@ -1,4 +1,5 @@
 export const english: Record<string, string> = {
+  'Producție tehnică de eveniment': 'Technical event production',
   'Folosește săgețile pentru navigare și Esc pentru închidere.': 'Use the arrow keys to browse and Esc to close.',
   'Scenă, sunet și lumini în imagini, de la montaj la spectacol.': 'Stage, sound and lighting in pictures, from setup to show.',
   'Navigare evenimente': 'Event navigation',

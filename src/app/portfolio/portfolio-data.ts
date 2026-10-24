@@ -1,48 +1,81 @@
-export interface EventPhoto { image: string; thumbnail: string; width: number; height: number; }
-export interface PortfolioEvent { id: string; title: string; titleEn: string; year: number | null; photos: EventPhoto[]; }
+export interface EventPhoto {
+  image: string;
+  thumbnail: string;
+  width: number;
+  height: number;
+  imageWidth: number;
+  imageHeight: number;
+}
 
-// Event order and photo order follow the reviewed source-folder inventory.
-// JPEG copies replace HEIC with the same stem; originals are preserved.
+export interface PortfolioEvent {
+  id: string;
+  title: string;
+  year: number | null;
+  photos: EventPhoto[];
+}
+
+// All current event-folder images, in natural filename order.
+// Event names remain Romanian in both locales; years come from folder names.
+// Optimized filenames use source SHA-256 so changed originals cannot reuse stale URLs.
 export const portfolioEvents: PortfolioEvent[] = [
   {
     "id": "ziua-orasului-satu-mare-2026",
     "title": "Ziua Orașului Satu Mare",
-    "titleEn": "Satu Mare city festival",
     "year": 2026,
     "photos": [
       {
-        "image": "assets/poze galerie/optimized/ziua-orasului-satu-mare-2026/001.jpg",
-        "thumbnail": "assets/poze galerie/optimized/ziua-orasului-satu-mare-2026/001-thumb.jpg",
+        "image": "assets/poze galerie/optimized/v3/65ff6a71f54dac810e7bd2e1.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1067,
+        "thumbnail": "assets/poze galerie/optimized/v3/65ff6a71f54dac810e7bd2e1-thumb.jpg",
         "width": 520,
         "height": 347
       },
       {
-        "image": "assets/poze galerie/optimized/ziua-orasului-satu-mare-2026/002.jpg",
-        "thumbnail": "assets/poze galerie/optimized/ziua-orasului-satu-mare-2026/002-thumb.jpg",
+        "image": "assets/poze galerie/optimized/v3/6c8e0dc139b80fe2f8673790.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1066,
+        "thumbnail": "assets/poze galerie/optimized/v3/6c8e0dc139b80fe2f8673790-thumb.jpg",
         "width": 520,
         "height": 347
       },
       {
-        "image": "assets/poze galerie/optimized/ziua-orasului-satu-mare-2026/003.jpg",
-        "thumbnail": "assets/poze galerie/optimized/ziua-orasului-satu-mare-2026/003-thumb.jpg",
+        "image": "assets/poze galerie/optimized/v3/dae29f3a74fb5d1b2271d17e.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1066,
+        "thumbnail": "assets/poze galerie/optimized/v3/dae29f3a74fb5d1b2271d17e-thumb.jpg",
         "width": 520,
         "height": 347
       },
       {
-        "image": "assets/poze galerie/optimized/ziua-orasului-satu-mare-2026/004.jpg",
-        "thumbnail": "assets/poze galerie/optimized/ziua-orasului-satu-mare-2026/004-thumb.jpg",
+        "image": "assets/poze galerie/optimized/v3/76359c78a96ddb2ad198d410.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1066,
+        "thumbnail": "assets/poze galerie/optimized/v3/76359c78a96ddb2ad198d410-thumb.jpg",
         "width": 520,
         "height": 347
       },
       {
-        "image": "assets/poze galerie/optimized/ziua-orasului-satu-mare-2026/005.jpg",
-        "thumbnail": "assets/poze galerie/optimized/ziua-orasului-satu-mare-2026/005-thumb.jpg",
+        "image": "assets/poze galerie/optimized/v3/b4475a244d72457c1b6ca999.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1067,
+        "thumbnail": "assets/poze galerie/optimized/v3/b4475a244d72457c1b6ca999-thumb.jpg",
+        "width": 520,
+        "height": 347
+      },
+      {
+        "image": "assets/poze galerie/optimized/v3/83f87b0328807adc26b9d93e.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1200,
+        "thumbnail": "assets/poze galerie/optimized/v3/83f87b0328807adc26b9d93e-thumb.jpg",
         "width": 520,
         "height": 390
       },
       {
-        "image": "assets/poze galerie/optimized/ziua-orasului-satu-mare-2026/006.jpg",
-        "thumbnail": "assets/poze galerie/optimized/ziua-orasului-satu-mare-2026/006-thumb.jpg",
+        "image": "assets/poze galerie/optimized/v3/f91589e6903faabe9375b67a.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1200,
+        "thumbnail": "assets/poze galerie/optimized/v3/f91589e6903faabe9375b67a-thumb.jpg",
         "width": 520,
         "height": 390
       }
@@ -51,42 +84,53 @@ export const portfolioEvents: PortfolioEvent[] = [
   {
     "id": "ziua-orasului-ardud-2026",
     "title": "Ziua Orașului Ardud",
-    "titleEn": "Ardud city festival",
     "year": 2026,
     "photos": [
       {
-        "image": "assets/poze galerie/optimized/ziua-orasului-ardud-2026/001.jpg",
-        "thumbnail": "assets/poze galerie/optimized/ziua-orasului-ardud-2026/001-thumb.jpg",
+        "image": "assets/poze galerie/optimized/v3/36d1af775537067600f06093.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1066,
+        "thumbnail": "assets/poze galerie/optimized/v3/36d1af775537067600f06093-thumb.jpg",
         "width": 520,
         "height": 347
       },
       {
-        "image": "assets/poze galerie/optimized/ziua-orasului-ardud-2026/002.jpg",
-        "thumbnail": "assets/poze galerie/optimized/ziua-orasului-ardud-2026/002-thumb.jpg",
+        "image": "assets/poze galerie/optimized/v3/a7d71b2d48f11ca6ee5498d2.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1066,
+        "thumbnail": "assets/poze galerie/optimized/v3/a7d71b2d48f11ca6ee5498d2-thumb.jpg",
         "width": 520,
         "height": 347
       },
       {
-        "image": "assets/poze galerie/optimized/ziua-orasului-ardud-2026/003.jpg",
-        "thumbnail": "assets/poze galerie/optimized/ziua-orasului-ardud-2026/003-thumb.jpg",
+        "image": "assets/poze galerie/optimized/v3/dc7570ee732b1554246002e7.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1066,
+        "thumbnail": "assets/poze galerie/optimized/v3/dc7570ee732b1554246002e7-thumb.jpg",
         "width": 520,
         "height": 347
       },
       {
-        "image": "assets/poze galerie/optimized/ziua-orasului-ardud-2026/004.jpg",
-        "thumbnail": "assets/poze galerie/optimized/ziua-orasului-ardud-2026/004-thumb.jpg",
+        "image": "assets/poze galerie/optimized/v3/14d8f2def235330bf611b64b.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1200,
+        "thumbnail": "assets/poze galerie/optimized/v3/14d8f2def235330bf611b64b-thumb.jpg",
         "width": 520,
         "height": 390
       },
       {
-        "image": "assets/poze galerie/optimized/ziua-orasului-ardud-2026/005.jpg",
-        "thumbnail": "assets/poze galerie/optimized/ziua-orasului-ardud-2026/005-thumb.jpg",
+        "image": "assets/poze galerie/optimized/v3/8bbbdbf8b69c66be910b3cae.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1066,
+        "thumbnail": "assets/poze galerie/optimized/v3/8bbbdbf8b69c66be910b3cae-thumb.jpg",
         "width": 520,
         "height": 347
       },
       {
-        "image": "assets/poze galerie/optimized/ziua-orasului-ardud-2026/006.jpg",
-        "thumbnail": "assets/poze galerie/optimized/ziua-orasului-ardud-2026/006-thumb.jpg",
+        "image": "assets/poze galerie/optimized/v3/75897dff10cdd5db97b6cef0.jpg",
+        "imageWidth": 1066,
+        "imageHeight": 1600,
+        "thumbnail": "assets/poze galerie/optimized/v3/75897dff10cdd5db97b6cef0-thumb.jpg",
         "width": 347,
         "height": 520
       }
@@ -95,780 +139,725 @@ export const portfolioEvents: PortfolioEvent[] = [
   {
     "id": "cupa-satmarului-2026",
     "title": "Cupa Sătmarului",
-    "titleEn": "Sătmar Cup",
     "year": 2026,
     "photos": [
       {
-        "image": "assets/poze galerie/optimized/cupa-satmarului-2026/001.jpg",
-        "thumbnail": "assets/poze galerie/optimized/cupa-satmarului-2026/001-thumb.jpg",
+        "image": "assets/poze galerie/optimized/v3/d0fd2680e835c6098aa8b9a6.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1202,
+        "thumbnail": "assets/poze galerie/optimized/v3/d0fd2680e835c6098aa8b9a6-thumb.jpg",
         "width": 520,
         "height": 391
       },
       {
-        "image": "assets/poze galerie/optimized/cupa-satmarului-2026/002.jpg",
-        "thumbnail": "assets/poze galerie/optimized/cupa-satmarului-2026/002-thumb.jpg",
+        "image": "assets/poze galerie/optimized/v3/236176f5a9654388bf84d80c.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1202,
+        "thumbnail": "assets/poze galerie/optimized/v3/236176f5a9654388bf84d80c-thumb.jpg",
         "width": 520,
         "height": 391
       },
       {
-        "image": "assets/poze galerie/optimized/cupa-satmarului-2026/003.jpg",
-        "thumbnail": "assets/poze galerie/optimized/cupa-satmarului-2026/003-thumb.jpg",
+        "image": "assets/poze galerie/optimized/v3/8c70aa5acbcd339f47a92c00.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1202,
+        "thumbnail": "assets/poze galerie/optimized/v3/8c70aa5acbcd339f47a92c00-thumb.jpg",
         "width": 520,
         "height": 391
       },
       {
-        "image": "assets/poze galerie/optimized/cupa-satmarului-2026/004.jpg",
-        "thumbnail": "assets/poze galerie/optimized/cupa-satmarului-2026/004-thumb.jpg",
+        "image": "assets/poze galerie/optimized/v3/14d75a2a43934d5576cc1806.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1202,
+        "thumbnail": "assets/poze galerie/optimized/v3/14d75a2a43934d5576cc1806-thumb.jpg",
         "width": 520,
         "height": 391
+      }
+    ]
+  },
+  {
+    "id": "festivalul-rozmarin-in-coltu-mesii-2026",
+    "title": "Festivalul Rozmarin în colțu mesii",
+    "year": 2026,
+    "photos": [
+      {
+        "image": "assets/poze galerie/optimized/v3/c322161f5a65938304aac782.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1200,
+        "thumbnail": "assets/poze galerie/optimized/v3/c322161f5a65938304aac782-thumb.jpg",
+        "width": 520,
+        "height": 390
+      },
+      {
+        "image": "assets/poze galerie/optimized/v3/456bd6f514ea59fd6d7c4f70.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1200,
+        "thumbnail": "assets/poze galerie/optimized/v3/456bd6f514ea59fd6d7c4f70-thumb.jpg",
+        "width": 520,
+        "height": 390
+      },
+      {
+        "image": "assets/poze galerie/optimized/v3/d80204878510be7f9a32421f.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1200,
+        "thumbnail": "assets/poze galerie/optimized/v3/d80204878510be7f9a32421f-thumb.jpg",
+        "width": 520,
+        "height": 390
+      },
+      {
+        "image": "assets/poze galerie/optimized/v3/328515bb5e5ae31e8a2060cc.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1200,
+        "thumbnail": "assets/poze galerie/optimized/v3/328515bb5e5ae31e8a2060cc-thumb.jpg",
+        "width": 520,
+        "height": 390
+      },
+      {
+        "image": "assets/poze galerie/optimized/v3/82eec5d3842e3900002ca1a6.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1200,
+        "thumbnail": "assets/poze galerie/optimized/v3/82eec5d3842e3900002ca1a6-thumb.jpg",
+        "width": 520,
+        "height": 390
+      }
+    ]
+  },
+  {
+    "id": "festivalul-folcloric-bogdand-2026",
+    "title": "Festivalul Folcloric Bogdand",
+    "year": 2026,
+    "photos": [
+      {
+        "image": "assets/poze galerie/optimized/v3/f99f09a8f795560e4bd48570.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1200,
+        "thumbnail": "assets/poze galerie/optimized/v3/f99f09a8f795560e4bd48570-thumb.jpg",
+        "width": 520,
+        "height": 390
+      }
+    ]
+  },
+  {
+    "id": "festivalul-folcloric-oteloaia-2026",
+    "title": "Festivalul Folcloric Oțeloaia",
+    "year": 2026,
+    "photos": [
+      {
+        "image": "assets/poze galerie/optimized/v3/dda58124b4352eeea58e0342.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1200,
+        "thumbnail": "assets/poze galerie/optimized/v3/dda58124b4352eeea58e0342-thumb.jpg",
+        "width": 520,
+        "height": 390
+      },
+      {
+        "image": "assets/poze galerie/optimized/v3/e66862927bd3cb0f62c0b0cb.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1200,
+        "thumbnail": "assets/poze galerie/optimized/v3/e66862927bd3cb0f62c0b0cb-thumb.jpg",
+        "width": 520,
+        "height": 390
+      }
+    ]
+  },
+  {
+    "id": "festivalul-folcloric-sambra-oilor-2026",
+    "title": "Festivalul Folcloric Sâmbra Oilor",
+    "year": 2026,
+    "photos": [
+      {
+        "image": "assets/poze galerie/optimized/v3/566a0356071c6bb775601fe7.jpg",
+        "imageWidth": 1440,
+        "imageHeight": 1080,
+        "thumbnail": "assets/poze galerie/optimized/v3/566a0356071c6bb775601fe7-thumb.jpg",
+        "width": 520,
+        "height": 390
+      },
+      {
+        "image": "assets/poze galerie/optimized/v3/8ba19d5b8dfe5f6ab2e534eb.jpg",
+        "imageWidth": 1440,
+        "imageHeight": 1080,
+        "thumbnail": "assets/poze galerie/optimized/v3/8ba19d5b8dfe5f6ab2e534eb-thumb.jpg",
+        "width": 520,
+        "height": 390
+      },
+      {
+        "image": "assets/poze galerie/optimized/v3/3b4703ffca70d9a2dbd242d6.jpg",
+        "imageWidth": 1440,
+        "imageHeight": 1080,
+        "thumbnail": "assets/poze galerie/optimized/v3/3b4703ffca70d9a2dbd242d6-thumb.jpg",
+        "width": 520,
+        "height": 390
+      }
+    ]
+  },
+  {
+    "id": "open-air-symphony-2026",
+    "title": "Open Air Symphony",
+    "year": 2026,
+    "photos": [
+      {
+        "image": "assets/poze galerie/optimized/v3/0a829f3898a588be53a0a58b.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1200,
+        "thumbnail": "assets/poze galerie/optimized/v3/0a829f3898a588be53a0a58b-thumb.jpg",
+        "width": 520,
+        "height": 390
+      },
+      {
+        "image": "assets/poze galerie/optimized/v3/6311933e95b2d31f2fc6741b.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1200,
+        "thumbnail": "assets/poze galerie/optimized/v3/6311933e95b2d31f2fc6741b-thumb.jpg",
+        "width": 520,
+        "height": 390
+      },
+      {
+        "image": "assets/poze galerie/optimized/v3/7230cf05a97f207b1196e806.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1200,
+        "thumbnail": "assets/poze galerie/optimized/v3/7230cf05a97f207b1196e806-thumb.jpg",
+        "width": 520,
+        "height": 390
+      },
+      {
+        "image": "assets/poze galerie/optimized/v3/523fc05baec2601d756caf6d.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1200,
+        "thumbnail": "assets/poze galerie/optimized/v3/523fc05baec2601d756caf6d-thumb.jpg",
+        "width": 520,
+        "height": 390
+      },
+      {
+        "image": "assets/poze galerie/optimized/v3/5ebc1cb24e108bb4bc2e80e0.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1200,
+        "thumbnail": "assets/poze galerie/optimized/v3/5ebc1cb24e108bb4bc2e80e0-thumb.jpg",
+        "width": 520,
+        "height": 390
+      },
+      {
+        "image": "assets/poze galerie/optimized/v3/ff9bebb0ffc6852283471c84.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1200,
+        "thumbnail": "assets/poze galerie/optimized/v3/ff9bebb0ffc6852283471c84-thumb.jpg",
+        "width": 520,
+        "height": 390
+      }
+    ]
+  },
+  {
+    "id": "regal-folcloric-impreuna-vedem-2026",
+    "title": "Regal folcloric – Împreună vedem",
+    "year": 2026,
+    "photos": [
+      {
+        "image": "assets/poze galerie/optimized/v3/00730bd2a30ac76ebeb74533.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1200,
+        "thumbnail": "assets/poze galerie/optimized/v3/00730bd2a30ac76ebeb74533-thumb.jpg",
+        "width": 520,
+        "height": 390
+      },
+      {
+        "image": "assets/poze galerie/optimized/v3/402e7763f69a3970369b5a94.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1200,
+        "thumbnail": "assets/poze galerie/optimized/v3/402e7763f69a3970369b5a94-thumb.jpg",
+        "width": 520,
+        "height": 390
+      },
+      {
+        "image": "assets/poze galerie/optimized/v3/8de1069f87451dcd0345f980.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1200,
+        "thumbnail": "assets/poze galerie/optimized/v3/8de1069f87451dcd0345f980-thumb.jpg",
+        "width": 520,
+        "height": 390
+      },
+      {
+        "image": "assets/poze galerie/optimized/v3/4bfa909efb0f857d5376fc32.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1200,
+        "thumbnail": "assets/poze galerie/optimized/v3/4bfa909efb0f857d5376fc32-thumb.jpg",
+        "width": 520,
+        "height": 390
+      },
+      {
+        "image": "assets/poze galerie/optimized/v3/8ba88a9e4291faa635119b31.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1200,
+        "thumbnail": "assets/poze galerie/optimized/v3/8ba88a9e4291faa635119b31-thumb.jpg",
+        "width": 520,
+        "height": 390
+      }
+    ]
+  },
+  {
+    "id": "street-music-festival-2026",
+    "title": "Street Music Festival",
+    "year": 2026,
+    "photos": [
+      {
+        "image": "assets/poze galerie/optimized/v3/d4905841fd6fe106f28c37d0.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1200,
+        "thumbnail": "assets/poze galerie/optimized/v3/d4905841fd6fe106f28c37d0-thumb.jpg",
+        "width": 520,
+        "height": 390
+      },
+      {
+        "image": "assets/poze galerie/optimized/v3/b349e91804fd87b32f23acfb.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1200,
+        "thumbnail": "assets/poze galerie/optimized/v3/b349e91804fd87b32f23acfb-thumb.jpg",
+        "width": 520,
+        "height": 390
+      },
+      {
+        "image": "assets/poze galerie/optimized/v3/4624e2e5d4b51ff19107047d.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1200,
+        "thumbnail": "assets/poze galerie/optimized/v3/4624e2e5d4b51ff19107047d-thumb.jpg",
+        "width": 520,
+        "height": 390
+      },
+      {
+        "image": "assets/poze galerie/optimized/v3/d047f5f6c76b4448ece73457.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1200,
+        "thumbnail": "assets/poze galerie/optimized/v3/d047f5f6c76b4448ece73457-thumb.jpg",
+        "width": 520,
+        "height": 390
+      }
+    ]
+  },
+  {
+    "id": "zilele-iancului-2026",
+    "title": "Zilele Iancului",
+    "year": 2026,
+    "photos": [
+      {
+        "image": "assets/poze galerie/optimized/v3/1592eea1ddc1e3d7f5505168.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1200,
+        "thumbnail": "assets/poze galerie/optimized/v3/1592eea1ddc1e3d7f5505168-thumb.jpg",
+        "width": 520,
+        "height": 390
+      },
+      {
+        "image": "assets/poze galerie/optimized/v3/8e4e61d4453e36a6cbfb603f.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1200,
+        "thumbnail": "assets/poze galerie/optimized/v3/8e4e61d4453e36a6cbfb603f-thumb.jpg",
+        "width": 520,
+        "height": 390
+      },
+      {
+        "image": "assets/poze galerie/optimized/v3/cf06b928ac04e7a225352048.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1200,
+        "thumbnail": "assets/poze galerie/optimized/v3/cf06b928ac04e7a225352048-thumb.jpg",
+        "width": 520,
+        "height": 390
+      }
+    ]
+  },
+  {
+    "id": "balul-caritabil-interact-2025",
+    "title": "Balul Caritabil Interact",
+    "year": 2025,
+    "photos": [
+      {
+        "image": "assets/poze galerie/optimized/v3/e3fac2117ff6e609e5d9d832.jpg",
+        "imageWidth": 1364,
+        "imageHeight": 908,
+        "thumbnail": "assets/poze galerie/optimized/v3/e3fac2117ff6e609e5d9d832-thumb.jpg",
+        "width": 520,
+        "height": 346
+      },
+      {
+        "image": "assets/poze galerie/optimized/v3/5ea2caa0a9e5c06fd56962b0.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 900,
+        "thumbnail": "assets/poze galerie/optimized/v3/5ea2caa0a9e5c06fd56962b0-thumb.jpg",
+        "width": 520,
+        "height": 293
+      },
+      {
+        "image": "assets/poze galerie/optimized/v3/8c6aad214393c3b66a1671f5.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 900,
+        "thumbnail": "assets/poze galerie/optimized/v3/8c6aad214393c3b66a1671f5-thumb.jpg",
+        "width": 520,
+        "height": 293
+      },
+      {
+        "image": "assets/poze galerie/optimized/v3/a99e8da3bd2784348053ee2d.jpg",
+        "imageWidth": 830,
+        "imageHeight": 467,
+        "thumbnail": "assets/poze galerie/optimized/v3/a99e8da3bd2784348053ee2d-thumb.jpg",
+        "width": 520,
+        "height": 293
+      },
+      {
+        "image": "assets/poze galerie/optimized/v3/75c1213f32984915608e3612.jpg",
+        "imageWidth": 1440,
+        "imageHeight": 810,
+        "thumbnail": "assets/poze galerie/optimized/v3/75c1213f32984915608e3612-thumb.jpg",
+        "width": 520,
+        "height": 293
+      },
+      {
+        "image": "assets/poze galerie/optimized/v3/00838eae655ed39d6934812c.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 900,
+        "thumbnail": "assets/poze galerie/optimized/v3/00838eae655ed39d6934812c-thumb.jpg",
+        "width": 520,
+        "height": 293
+      },
+      {
+        "image": "assets/poze galerie/optimized/v3/309b054e281dd640f54299d3.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 900,
+        "thumbnail": "assets/poze galerie/optimized/v3/309b054e281dd640f54299d3-thumb.jpg",
+        "width": 520,
+        "height": 293
+      }
+    ]
+  },
+  {
+    "id": "gala-loga-dance-school-2025",
+    "title": "Gala Loga Dance School",
+    "year": 2025,
+    "photos": [
+      {
+        "image": "assets/poze galerie/optimized/v3/fe4fc0b28ec9310d4a3772eb.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 900,
+        "thumbnail": "assets/poze galerie/optimized/v3/fe4fc0b28ec9310d4a3772eb-thumb.jpg",
+        "width": 520,
+        "height": 293
+      },
+      {
+        "image": "assets/poze galerie/optimized/v3/12dd393f3f8ddb8299cae7bc.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1200,
+        "thumbnail": "assets/poze galerie/optimized/v3/12dd393f3f8ddb8299cae7bc-thumb.jpg",
+        "width": 520,
+        "height": 390
+      },
+      {
+        "image": "assets/poze galerie/optimized/v3/58e2c963639557ddd313aa94.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 900,
+        "thumbnail": "assets/poze galerie/optimized/v3/58e2c963639557ddd313aa94-thumb.jpg",
+        "width": 520,
+        "height": 293
+      },
+      {
+        "image": "assets/poze galerie/optimized/v3/0ecd4de2075cbcf3e9242e4f.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 900,
+        "thumbnail": "assets/poze galerie/optimized/v3/0ecd4de2075cbcf3e9242e4f-thumb.jpg",
+        "width": 520,
+        "height": 293
+      }
+    ]
+  },
+  {
+    "id": "street-music-festival-2025",
+    "title": "Street Music Festival",
+    "year": 2025,
+    "photos": [
+      {
+        "image": "assets/poze galerie/optimized/v3/92a0ae12cd6cdb3e2fc8ff2b.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1067,
+        "thumbnail": "assets/poze galerie/optimized/v3/92a0ae12cd6cdb3e2fc8ff2b-thumb.jpg",
+        "width": 520,
+        "height": 347
+      },
+      {
+        "image": "assets/poze galerie/optimized/v3/cdc30311217cef050afb5179.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1067,
+        "thumbnail": "assets/poze galerie/optimized/v3/cdc30311217cef050afb5179-thumb.jpg",
+        "width": 520,
+        "height": 347
+      },
+      {
+        "image": "assets/poze galerie/optimized/v3/fd74994095064e3b5f30facf.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1067,
+        "thumbnail": "assets/poze galerie/optimized/v3/fd74994095064e3b5f30facf-thumb.jpg",
+        "width": 520,
+        "height": 347
       }
     ]
   },
   {
     "id": "ziua-orasului-satu-mare-2025",
     "title": "Ziua Orașului Satu Mare",
-    "titleEn": "Satu Mare city festival",
     "year": 2025,
     "photos": [
       {
-        "image": "assets/poze galerie/optimized/ziua-orasului-satu-mare-2025/001.jpg",
-        "thumbnail": "assets/poze galerie/optimized/ziua-orasului-satu-mare-2025/001-thumb.jpg",
+        "image": "assets/poze galerie/optimized/v3/db43b757c6e6b6c1135f5c83.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 900,
+        "thumbnail": "assets/poze galerie/optimized/v3/db43b757c6e6b6c1135f5c83-thumb.jpg",
         "width": 520,
         "height": 293
       },
       {
-        "image": "assets/poze galerie/optimized/ziua-orasului-satu-mare-2025/002.jpg",
-        "thumbnail": "assets/poze galerie/optimized/ziua-orasului-satu-mare-2025/002-thumb.jpg",
+        "image": "assets/poze galerie/optimized/v3/ce34c713cc5d6d53ad58a7c6.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1067,
+        "thumbnail": "assets/poze galerie/optimized/v3/ce34c713cc5d6d53ad58a7c6-thumb.jpg",
         "width": 520,
         "height": 347
       },
       {
-        "image": "assets/poze galerie/optimized/ziua-orasului-satu-mare-2025/003.jpg",
-        "thumbnail": "assets/poze galerie/optimized/ziua-orasului-satu-mare-2025/003-thumb.jpg",
+        "image": "assets/poze galerie/optimized/v3/af33ec9d867f4a13bbbecb3c.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1067,
+        "thumbnail": "assets/poze galerie/optimized/v3/af33ec9d867f4a13bbbecb3c-thumb.jpg",
         "width": 520,
         "height": 347
       },
       {
-        "image": "assets/poze galerie/optimized/ziua-orasului-satu-mare-2025/004.jpg",
-        "thumbnail": "assets/poze galerie/optimized/ziua-orasului-satu-mare-2025/004-thumb.jpg",
+        "image": "assets/poze galerie/optimized/v3/438c49172c0fc9228f49dcc2.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1067,
+        "thumbnail": "assets/poze galerie/optimized/v3/438c49172c0fc9228f49dcc2-thumb.jpg",
         "width": 520,
         "height": 347
-      }
-    ]
-  },
-  {
-    "id": "ziua-orasului-ardud-2023",
-    "title": "Ziua Orașului Ardud",
-    "titleEn": "Ardud city festival",
-    "year": 2023,
-    "photos": [
-      {
-        "image": "assets/poze galerie/optimized/ziua-orasului-ardud-2023/001.jpg",
-        "thumbnail": "assets/poze galerie/optimized/ziua-orasului-ardud-2023/001-thumb.jpg",
-        "width": 520,
-        "height": 293
-      },
-      {
-        "image": "assets/poze galerie/optimized/ziua-orasului-ardud-2023/002.jpg",
-        "thumbnail": "assets/poze galerie/optimized/ziua-orasului-ardud-2023/002-thumb.jpg",
-        "width": 520,
-        "height": 293
-      },
-      {
-        "image": "assets/poze galerie/optimized/ziua-orasului-ardud-2023/003.jpg",
-        "thumbnail": "assets/poze galerie/optimized/ziua-orasului-ardud-2023/003-thumb.jpg",
-        "width": 520,
-        "height": 293
-      },
-      {
-        "image": "assets/poze galerie/optimized/ziua-orasului-ardud-2023/004.jpg",
-        "thumbnail": "assets/poze galerie/optimized/ziua-orasului-ardud-2023/004-thumb.jpg",
-        "width": 520,
-        "height": 390
       }
     ]
   },
   {
     "id": "medieval-ardud-2023",
     "title": "Medieval Ardud",
-    "titleEn": "Ardud medieval festival",
     "year": 2023,
     "photos": [
       {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/001.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/001-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/002.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/002-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/003.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/003-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/004.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/004-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/005.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/005-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/006.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/006-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/007.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/007-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/008.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/008-thumb.jpg",
+        "image": "assets/poze galerie/optimized/v3/d2ca69525f8cb969c30bc519.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 900,
+        "thumbnail": "assets/poze galerie/optimized/v3/d2ca69525f8cb969c30bc519-thumb.jpg",
         "width": 520,
         "height": 293
       },
       {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/009.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/009-thumb.jpg",
+        "image": "assets/poze galerie/optimized/v3/a55583e3e211c7e6bdc406e7.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1200,
+        "thumbnail": "assets/poze galerie/optimized/v3/a55583e3e211c7e6bdc406e7-thumb.jpg",
         "width": 520,
         "height": 390
       },
       {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/010.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/010-thumb.jpg",
+        "image": "assets/poze galerie/optimized/v3/b62d3a51ea18bde5675c6c2f.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1200,
+        "thumbnail": "assets/poze galerie/optimized/v3/b62d3a51ea18bde5675c6c2f-thumb.jpg",
         "width": 520,
         "height": 390
       },
       {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/011.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/011-thumb.jpg",
+        "image": "assets/poze galerie/optimized/v3/bef0cfa20b47d0fa98bf9bd1.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1200,
+        "thumbnail": "assets/poze galerie/optimized/v3/bef0cfa20b47d0fa98bf9bd1-thumb.jpg",
         "width": 520,
         "height": 390
       },
       {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/012.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/012-thumb.jpg",
+        "image": "assets/poze galerie/optimized/v3/5dbdacbab16a0c3b2d22ae3a.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1200,
+        "thumbnail": "assets/poze galerie/optimized/v3/5dbdacbab16a0c3b2d22ae3a-thumb.jpg",
         "width": 520,
         "height": 390
       },
       {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/013.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/013-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/014.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/014-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/015.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/015-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/016.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/016-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/017.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/017-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/018.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/018-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/019.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/019-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/020.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/020-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/021.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/021-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/022.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/022-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/023.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/023-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/024.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/024-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/025.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/025-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/026.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/026-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/027.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/027-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/028.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/028-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/029.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/029-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/030.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/030-thumb.jpg",
+        "image": "assets/poze galerie/optimized/v3/68d1babdd0a900effa9ad287.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 900,
+        "thumbnail": "assets/poze galerie/optimized/v3/68d1babdd0a900effa9ad287-thumb.jpg",
         "width": 520,
         "height": 293
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/031.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/031-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/032.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/032-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/033.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/033-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/034.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/034-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/035.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/035-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/036.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/036-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/037.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/037-thumb.jpg",
-        "width": 520,
-        "height": 293
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/038.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/038-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/039.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/039-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/040.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/040-thumb.jpg",
-        "width": 390,
-        "height": 520
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/041.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/041-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/042.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/042-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/043.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/043-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/044.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/044-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/045.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/045-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/046.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/046-thumb.jpg",
-        "width": 520,
-        "height": 293
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/047.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/047-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/048.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/048-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/049.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/049-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/050.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/050-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/051.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/051-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/052.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/052-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/053.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/053-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/054.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/054-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/055.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/055-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/056.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/056-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/057.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/057-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/058.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/058-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/059.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/059-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2023/060.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2023/060-thumb.jpg",
-        "width": 520,
-        "height": 390
       }
     ]
   },
   {
-    "id": "ziua-orasului-ardud-2022",
+    "id": "ziua-orasului-ardud-2023",
     "title": "Ziua Orașului Ardud",
-    "titleEn": "Ardud city festival",
-    "year": 2022,
+    "year": 2023,
     "photos": [
       {
-        "image": "assets/poze galerie/optimized/ziua-orasului-ardud-2022/001.jpg",
-        "thumbnail": "assets/poze galerie/optimized/ziua-orasului-ardud-2022/001-thumb.jpg",
-        "width": 520,
-        "height": 292
-      },
-      {
-        "image": "assets/poze galerie/optimized/ziua-orasului-ardud-2022/002.jpg",
-        "thumbnail": "assets/poze galerie/optimized/ziua-orasului-ardud-2022/002-thumb.jpg",
-        "width": 520,
-        "height": 292
-      },
-      {
-        "image": "assets/poze galerie/optimized/ziua-orasului-ardud-2022/003.jpg",
-        "thumbnail": "assets/poze galerie/optimized/ziua-orasului-ardud-2022/003-thumb.jpg",
-        "width": 520,
-        "height": 292
-      },
-      {
-        "image": "assets/poze galerie/optimized/ziua-orasului-ardud-2022/004.jpg",
-        "thumbnail": "assets/poze galerie/optimized/ziua-orasului-ardud-2022/004-thumb.jpg",
-        "width": 520,
-        "height": 293
-      }
-    ]
-  },
-  {
-    "id": "medieval-ardud-2022",
-    "title": "Medieval Ardud",
-    "titleEn": "Ardud medieval festival",
-    "year": 2022,
-    "photos": [
-      {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2022/001.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2022/001-thumb.jpg",
+        "image": "assets/poze galerie/optimized/v3/e274d829d2db4aefb9969073.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 900,
+        "thumbnail": "assets/poze galerie/optimized/v3/e274d829d2db4aefb9969073-thumb.jpg",
         "width": 520,
         "height": 293
       },
       {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2022/002.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2022/002-thumb.jpg",
+        "image": "assets/poze galerie/optimized/v3/48e3c378e8758ceb95dd69db.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 900,
+        "thumbnail": "assets/poze galerie/optimized/v3/48e3c378e8758ceb95dd69db-thumb.jpg",
         "width": 520,
         "height": 293
       },
       {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2022/003.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2022/003-thumb.jpg",
+        "image": "assets/poze galerie/optimized/v3/bd6ffcf9dd6f324cc36a0038.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 900,
+        "thumbnail": "assets/poze galerie/optimized/v3/bd6ffcf9dd6f324cc36a0038-thumb.jpg",
         "width": 520,
         "height": 293
+      },
+      {
+        "image": "assets/poze galerie/optimized/v3/3f510c267d6230cd77cc7a12.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1200,
+        "thumbnail": "assets/poze galerie/optimized/v3/3f510c267d6230cd77cc7a12-thumb.jpg",
+        "width": 520,
+        "height": 390
       }
     ]
   },
   {
     "id": "cupa-satmarului-2022",
     "title": "Cupa Sătmarului",
-    "titleEn": "Sătmar Cup",
     "year": 2022,
     "photos": [
       {
-        "image": "assets/poze galerie/optimized/cupa-satmarului-2022/001.jpg",
-        "thumbnail": "assets/poze galerie/optimized/cupa-satmarului-2022/001-thumb.jpg",
+        "image": "assets/poze galerie/optimized/v3/c0da0e18e8758c1bd7826b85.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 720,
+        "thumbnail": "assets/poze galerie/optimized/v3/c0da0e18e8758c1bd7826b85-thumb.jpg",
         "width": 520,
         "height": 234
       },
       {
-        "image": "assets/poze galerie/optimized/cupa-satmarului-2022/002.jpg",
-        "thumbnail": "assets/poze galerie/optimized/cupa-satmarului-2022/002-thumb.jpg",
+        "image": "assets/poze galerie/optimized/v3/dd6d0ba26d764d3200ce2d72.jpg",
+        "imageWidth": 1440,
+        "imageHeight": 754,
+        "thumbnail": "assets/poze galerie/optimized/v3/dd6d0ba26d764d3200ce2d72-thumb.jpg",
         "width": 520,
         "height": 272
       }
     ]
   },
   {
-    "id": "medieval-ardud-2021",
+    "id": "medieval-ardud-2022",
     "title": "Medieval Ardud",
-    "titleEn": "Ardud medieval festival",
-    "year": 2021,
+    "year": 2022,
     "photos": [
       {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2021/001.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2021/001-thumb.jpg",
+        "image": "assets/poze galerie/optimized/v3/94f3854d1d837b12973c8c26.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 900,
+        "thumbnail": "assets/poze galerie/optimized/v3/94f3854d1d837b12973c8c26-thumb.jpg",
+        "width": 520,
+        "height": 293
+      },
+      {
+        "image": "assets/poze galerie/optimized/v3/edb7e9670d4ab7cf7f049914.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 900,
+        "thumbnail": "assets/poze galerie/optimized/v3/edb7e9670d4ab7cf7f049914-thumb.jpg",
+        "width": 520,
+        "height": 293
+      },
+      {
+        "image": "assets/poze galerie/optimized/v3/6fc23e0bf883cb003baaf8ce.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 900,
+        "thumbnail": "assets/poze galerie/optimized/v3/6fc23e0bf883cb003baaf8ce-thumb.jpg",
+        "width": 520,
+        "height": 293
+      }
+    ]
+  },
+  {
+    "id": "ziua-orasului-ardud-2022",
+    "title": "Ziua Orașului Ardud",
+    "year": 2022,
+    "photos": [
+      {
+        "image": "assets/poze galerie/optimized/v3/6d72aa9bc1898d1c8b1a9a35.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 900,
+        "thumbnail": "assets/poze galerie/optimized/v3/6d72aa9bc1898d1c8b1a9a35-thumb.jpg",
         "width": 520,
         "height": 292
       },
       {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2021/002.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2021/002-thumb.jpg",
+        "image": "assets/poze galerie/optimized/v3/9aec8b5eb6f1f034460a73e3.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 900,
+        "thumbnail": "assets/poze galerie/optimized/v3/9aec8b5eb6f1f034460a73e3-thumb.jpg",
+        "width": 520,
+        "height": 292
+      },
+      {
+        "image": "assets/poze galerie/optimized/v3/8750edba2b016997130ed23f.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 900,
+        "thumbnail": "assets/poze galerie/optimized/v3/8750edba2b016997130ed23f-thumb.jpg",
+        "width": 520,
+        "height": 292
+      },
+      {
+        "image": "assets/poze galerie/optimized/v3/3c8c21e59f48af8164bbe67e.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 901,
+        "thumbnail": "assets/poze galerie/optimized/v3/3c8c21e59f48af8164bbe67e-thumb.jpg",
+        "width": 520,
+        "height": 293
+      }
+    ]
+  },
+  {
+    "id": "medieval-ardud-2021",
+    "title": "Medieval Ardud",
+    "year": 2021,
+    "photos": [
+      {
+        "image": "assets/poze galerie/optimized/v3/f68d19b41150253e8892d218.jpg",
+        "imageWidth": 959,
+        "imageHeight": 539,
+        "thumbnail": "assets/poze galerie/optimized/v3/f68d19b41150253e8892d218-thumb.jpg",
+        "width": 520,
+        "height": 292
+      },
+      {
+        "image": "assets/poze galerie/optimized/v3/5b27f0bad91cb0df8d39b560.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 720,
+        "thumbnail": "assets/poze galerie/optimized/v3/5b27f0bad91cb0df8d39b560-thumb.jpg",
         "width": 520,
         "height": 234
       },
       {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2021/003.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2021/003-thumb.jpg",
+        "image": "assets/poze galerie/optimized/v3/92e486ab0fde9c90f7cc1474.jpg",
+        "imageWidth": 1422,
+        "imageHeight": 640,
+        "thumbnail": "assets/poze galerie/optimized/v3/92e486ab0fde9c90f7cc1474-thumb.jpg",
         "width": 520,
         "height": 234
       },
       {
-        "image": "assets/poze galerie/optimized/medieval-ardud-2021/004.jpg",
-        "thumbnail": "assets/poze galerie/optimized/medieval-ardud-2021/004-thumb.jpg",
+        "image": "assets/poze galerie/optimized/v3/9404b35ca4d324c46d61129b.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 720,
+        "thumbnail": "assets/poze galerie/optimized/v3/9404b35ca4d324c46d61129b-thumb.jpg",
         "width": 520,
         "height": 234
-      }
-    ]
-  },
-  {
-    "id": "rozmarin",
-    "title": "Rozmarin",
-    "titleEn": "Rozmarin",
-    "year": null,
-    "photos": [
-      {
-        "image": "assets/poze galerie/optimized/rozmarin/001.jpg",
-        "thumbnail": "assets/poze galerie/optimized/rozmarin/001-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/rozmarin/002.jpg",
-        "thumbnail": "assets/poze galerie/optimized/rozmarin/002-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/rozmarin/003.jpg",
-        "thumbnail": "assets/poze galerie/optimized/rozmarin/003-thumb.jpg",
-        "width": 520,
-        "height": 390
-      }
-    ]
-  },
-  {
-    "id": "oteloaia",
-    "title": "Oțeloaia",
-    "titleEn": "Oțeloaia",
-    "year": null,
-    "photos": [
-      {
-        "image": "assets/poze galerie/optimized/oteloaia/001.jpg",
-        "thumbnail": "assets/poze galerie/optimized/oteloaia/001-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/oteloaia/002.jpg",
-        "thumbnail": "assets/poze galerie/optimized/oteloaia/002-thumb.jpg",
-        "width": 520,
-        "height": 390
-      }
-    ]
-  },
-  {
-    "id": "nevazatori",
-    "title": "Eveniment nevăzători",
-    "titleEn": "Event for visually impaired people",
-    "year": null,
-    "photos": [
-      {
-        "image": "assets/poze galerie/optimized/nevazatori/001.jpg",
-        "thumbnail": "assets/poze galerie/optimized/nevazatori/001-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/nevazatori/002.jpg",
-        "thumbnail": "assets/poze galerie/optimized/nevazatori/002-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/nevazatori/003.jpg",
-        "thumbnail": "assets/poze galerie/optimized/nevazatori/003-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/nevazatori/004.jpg",
-        "thumbnail": "assets/poze galerie/optimized/nevazatori/004-thumb.jpg",
-        "width": 520,
-        "height": 390
-      }
-    ]
-  },
-  {
-    "id": "loga-dance",
-    "title": "Loga Dance",
-    "titleEn": "Loga Dance",
-    "year": null,
-    "photos": [
-      {
-        "image": "assets/poze galerie/optimized/loga-dance/001.jpg",
-        "thumbnail": "assets/poze galerie/optimized/loga-dance/001-thumb.jpg",
-        "width": 520,
-        "height": 293
-      },
-      {
-        "image": "assets/poze galerie/optimized/loga-dance/002.jpg",
-        "thumbnail": "assets/poze galerie/optimized/loga-dance/002-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/loga-dance/003.jpg",
-        "thumbnail": "assets/poze galerie/optimized/loga-dance/003-thumb.jpg",
-        "width": 520,
-        "height": 293
-      },
-      {
-        "image": "assets/poze galerie/optimized/loga-dance/004.jpg",
-        "thumbnail": "assets/poze galerie/optimized/loga-dance/004-thumb.jpg",
-        "width": 520,
-        "height": 293
-      }
-    ]
-  },
-  {
-    "id": "filarmonica",
-    "title": "Filarmonica",
-    "titleEn": "Philharmonic",
-    "year": null,
-    "photos": [
-      {
-        "image": "assets/poze galerie/optimized/filarmonica/001.jpg",
-        "thumbnail": "assets/poze galerie/optimized/filarmonica/001-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/filarmonica/002.jpg",
-        "thumbnail": "assets/poze galerie/optimized/filarmonica/002-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/filarmonica/003.jpg",
-        "thumbnail": "assets/poze galerie/optimized/filarmonica/003-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/filarmonica/004.jpg",
-        "thumbnail": "assets/poze galerie/optimized/filarmonica/004-thumb.jpg",
-        "width": 520,
-        "height": 390
-      }
-    ]
-  },
-  {
-    "id": "bogdand",
-    "title": "Bogdand",
-    "titleEn": "Bogdand",
-    "year": null,
-    "photos": [
-      {
-        "image": "assets/poze galerie/optimized/bogdand/001.jpg",
-        "thumbnail": "assets/poze galerie/optimized/bogdand/001-thumb.jpg",
-        "width": 520,
-        "height": 390
-      }
-    ]
-  },
-  {
-    "id": "bal-interact",
-    "title": "Bal Interact",
-    "titleEn": "Interact ball",
-    "year": null,
-    "photos": [
-      {
-        "image": "assets/poze galerie/optimized/bal-interact/001.jpg",
-        "thumbnail": "assets/poze galerie/optimized/bal-interact/001-thumb.jpg",
-        "width": 520,
-        "height": 346
-      },
-      {
-        "image": "assets/poze galerie/optimized/bal-interact/002.jpg",
-        "thumbnail": "assets/poze galerie/optimized/bal-interact/002-thumb.jpg",
-        "width": 520,
-        "height": 293
-      },
-      {
-        "image": "assets/poze galerie/optimized/bal-interact/003.jpg",
-        "thumbnail": "assets/poze galerie/optimized/bal-interact/003-thumb.jpg",
-        "width": 520,
-        "height": 293
-      },
-      {
-        "image": "assets/poze galerie/optimized/bal-interact/004.jpg",
-        "thumbnail": "assets/poze galerie/optimized/bal-interact/004-thumb.jpg",
-        "width": 520,
-        "height": 293
-      },
-      {
-        "image": "assets/poze galerie/optimized/bal-interact/005.jpg",
-        "thumbnail": "assets/poze galerie/optimized/bal-interact/005-thumb.jpg",
-        "width": 520,
-        "height": 293
-      },
-      {
-        "image": "assets/poze galerie/optimized/bal-interact/006.jpg",
-        "thumbnail": "assets/poze galerie/optimized/bal-interact/006-thumb.jpg",
-        "width": 520,
-        "height": 293
-      },
-      {
-        "image": "assets/poze galerie/optimized/bal-interact/007.jpg",
-        "thumbnail": "assets/poze galerie/optimized/bal-interact/007-thumb.jpg",
-        "width": 520,
-        "height": 293
       }
     ]
   }

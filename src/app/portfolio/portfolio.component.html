@@ -20,8 +20,7 @@
       <section class="event-gallery" *ngFor="let event of events" [id]="event.id" [attr.aria-labelledby]="event.id + '-title'">
         <header class="event-heading">
           <div>
-            <p>{{ event.year || ('[TODO: anul evenimentului]' | t) }}</p>
-            <h2 [id]="event.id + '-title'">{{ title(event) }}</h2>
+            <h2 [id]="event.id + '-title'" lang="ro">{{ title(event) }} <span>{{ event.year || ('[TODO: anul evenimentului]' | t) }}</span></h2>
           </div>
           <p>{{ event.photos.length }} {{ (event.photos.length === 1 ? 'fotografie' : 'fotografii') | t }}</p>
         </header>
@@ -40,7 +39,7 @@
         <button type="button" autofocus (click)="closePhoto()">{{ 'Închide galeria' | t }} <span aria-hidden="true">×</span></button>
       </div>
       <figure>
-        <img [src]="event.photos[selectedIndex].image" [alt]="photoLabel(event, selectedIndex)" width="1600" height="1067" (error)="imageFailed = true" [hidden]="imageFailed">
+        <img [src]="event.photos[selectedIndex].image" [alt]="photoLabel(event, selectedIndex)" [width]="event.photos[selectedIndex].imageWidth" [height]="event.photos[selectedIndex].imageHeight" (error)="imageFailed = true" [hidden]="imageFailed">
         <p *ngIf="imageFailed" role="alert">{{ 'Fotografia nu poate fi încărcată.' | t }} <a [href]="event.photos[selectedIndex].image" target="_blank" rel="noopener">{{ 'Deschide fotografia separat' | t }}</a></p>
         <figcaption id="photo-caption" aria-live="polite">{{ photoLabel(event, selectedIndex) }} / {{ event.photos.length }}</figcaption>
       </figure>
