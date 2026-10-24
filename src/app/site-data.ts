@@ -61,7 +61,8 @@ export const services: ServiceLine[] = [
     "equipment": [
       "DAS Audio Event-210A",
       "DAS Audio Event-218A",
-      "Yamaha TF5"
+      "Yamaha TF5",
+      "Yamaha TF1"
     ],
     "image": "assets/poze galerie/optimized/v3/236176f5a9654388bf84d80c.jpg",
     "imageAlt": "Boxe line-array suspendate într-o configurație de sonorizare indoor",
@@ -80,9 +81,12 @@ export const services: ServiceLine[] = [
       "operare live"
     ],
     "equipment": [
-      "FOS Beam 7R",
+      "Fos Beam 7r Hybrid Plus",
+      "Fos Odeum Wash",
+      "Fos Cyclone RGB 2",
       "Stairville MH-X 200",
-      "Daslight DVC 4 Gold"
+      "Fos Stage Haze",
+      "Showtec Stage Blinder"
     ],
     "image": "assets/poze galerie/optimized/v3/dae29f3a74fb5d1b2271d17e.jpg",
     "imageAlt": "Ziua Orașului Satu Mare 2026",
@@ -100,11 +104,11 @@ export const equipment: EquipmentCategory[] = [
   },
   {
     title: 'Mixere',
-    items: ['Yamaha TF5', 'Yamaha MG332-14 FX', 'Yamaha MG166 CX']
+    items: ['Yamaha TF5', 'Yamaha TF1', 'Yamaha MG332-14 FX', 'Yamaha MG166 CX']
   },
   {
     title: 'Lumini',
-    items: ['Stairville MH-X 200', 'FOS Beam 7R', 'Flash Wash RGBW', 'PAR LED RGBW']
+    items: ['Fos Beam 7r Hybrid Plus', 'Fos Odeum Wash', 'Fos Cyclone RGB 2', 'Stairville MH-X 200', 'Fos Stage Haze', 'Showtec Stage Blinder']
   },
   {
     title: 'Microfoane & efecte',
