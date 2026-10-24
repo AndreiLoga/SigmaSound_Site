@@ -15,7 +15,7 @@ import { portfolioEvents } from '../portfolio/portfolio-data';
 export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   readonly locale = inject(LocaleService);
   private readonly host = inject<ElementRef<HTMLElement>>(ElementRef);
-  readonly heroImages = heroImages;
+  readonly heroImages = [...heroImages].reverse();
   readonly services = services;
   readonly portfolioPreview = ['ziua-orasului-satu-mare-2026', 'ziua-orasului-ardud-2026', 'street-music-festival-2026'].map(id => {
     const event = portfolioEvents.find(item => item.id === id)!;
