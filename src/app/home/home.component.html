@@ -26,7 +26,6 @@
     </div>
     <div class="service-list">
       <article class="service-card" *ngFor="let item of services; trackBy: trackByTitle">
-        <div class="service-photo"><img [src]="item.image" [alt]="('Scenă și producție tehnică' | t) + ': ' + item.imageAlt" [width]="item.width" [height]="item.height" loading="lazy" decoding="async"></div>
         <div class="service-content">
           <h3>{{ item.title | t }}</h3>
           <p>{{ item.lead | t }}</p>

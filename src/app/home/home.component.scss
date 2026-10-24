@@ -89,3 +89,20 @@ dd { margin: 0; color: #e0e8e8; line-height: 1.75; overflow-wrap: anywhere; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
   .service-card:hover, .preview-card:hover img, .primary:hover { transform: none; }
 }
+
+/* A: retain the photographic split and service rows. */
+.hero { grid-template-areas: "media" "copy"; }
+.hero-media { grid-area: media; min-height: 400px; }
+.hero-copy { grid-area: copy; padding-top: 40px; }
+.service-content { padding: 28px; }
+@media (min-width: 900px) {
+  .service-content { display: grid; grid-template-columns: .55fr 1fr; gap: 0 48px; padding: 36px; }
+  .service-content h3 { grid-column: 1; grid-row: 1 / span 3; font-size: clamp(2rem,3vw,3rem); }
+  .service-content p, .capabilities, .service-equipment { grid-column: 2; }
+}
+@media (min-width: 1050px) {
+  .hero { grid-template-areas: "media copy"; grid-template-columns: 1.05fr .95fr; min-height: 800px; }
+  .hero-media { min-height: 800px; }
+  .hero-copy { padding: 150px 4vw 80px; }
+  h1 { font-size: clamp(2.8rem,4vw,4.7rem); }
+}
