@@ -1,31 +1,36 @@
-<main class="portfolio-page" id="main-content" tabindex="-1">
+﻿<main class="portfolio-page" id="main-content" tabindex="-1">
   <section class="portfolio-hero">
     <div>
       <h1>{{ 'Evenimente realizate împreună cu Sigma Sound.' | t }}</h1>
+      <p>{{ 'Scenă, sunet și lumini în imagini, de la montaj la spectacol.' | t }}</p>
     </div>
-    <a class="button secondary" routerLink="/" fragment="contact">{{ 'Cere ofertă' | t }}</a>
+    <a class="button" routerLink="/" fragment="contact">{{ 'Cere ofertă' | t }}</a>
   </section>
 
-  <section class="portfolio-shell">
-    <div class="portfolio-feature" aria-live="polite" aria-atomic="true" id="selected-event">
-      <img [src]="selectedImage.image" [alt]="selectedImage.title | t">
-      <div>
-        <p>{{ selectedImage.category | t }}</p>
-        <h2>{{ selectedImage.title | t }}</h2>
+  <div class="portfolio-shell">
+    <nav class="event-index" [attr.aria-label]="'Navigare evenimente' | t">
+      <h2>{{ 'Evenimente' | t }} <span>{{ events.length }}</span></h2>
+      <div class="event-links">
+        <a *ngFor="let event of events" [routerLink]="[]" [fragment]="event.id">
+          {{ title(event) }} <span *ngIf="event.year">{{ event.year }}</span>
+        </a>
       </div>
+    </nav>
+    <div class="event-list">
+      <section class="event-gallery" *ngFor="let event of events" [id]="event.id" [attr.aria-labelledby]="event.id + '-title'">
+        <header class="event-heading">
+          <div>
+            <p>{{ event.year || ('[TODO: anul evenimentului]' | t) }}</p>
+            <h2 [id]="event.id + '-title'">{{ title(event) }}</h2>
+          </div>
+          <p>{{ event.photos.length }} {{ 'fotografii' | t }}</p>
+        </header>
+        <div class="photo-grid">
+          <a class="photo-button" *ngFor="let photo of event.photos; let index = index" [href]="photo.image" target="_blank" rel="noopener" [attr.aria-label]="('Mărește' | t) + ': ' + photoLabel(event, index)">
+            <img [src]="photo.thumbnail" [alt]="photoLabel(event, index)" loading="lazy" decoding="async" [width]="photo.width" [height]="photo.height">
+          </a>
+        </div>
+      </section>
     </div>
-
-    <div class="portfolio-grid">
-      <button
-        type="button"
-        *ngFor="let item of portfolio; trackBy: trackByTitle"
-        [class.active]="item === selectedImage"
-        [attr.aria-pressed]="item === selectedImage"
-        aria-controls="selected-event"
-        (click)="selectImage(item)">
-        <img [src]="item.thumbnail" alt="" loading="lazy" decoding="async" width="480" height="320">
-        <span>{{ item.title | t }}</span>
-      </button>
-    </div>
-  </section>
+  </div>
 </main>

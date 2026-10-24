@@ -1,8 +1,8 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+﻿import { CommonModule } from '@angular/common';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { PortfolioImage, portfolioImages } from '../site-data';
-import { TranslatePipe } from '../locale.service';
+import { LocaleService, TranslatePipe } from '../locale.service';
+import { PortfolioEvent, portfolioEvents } from './portfolio-data';
 
 @Component({
   selector: 'app-portfolio',
@@ -12,14 +12,14 @@ import { TranslatePipe } from '../locale.service';
   styleUrl: './portfolio.component.scss'
 })
 export class PortfolioComponent {
-  readonly portfolio = portfolioImages;
-  selectedImage: PortfolioImage = this.portfolio[0];
+  readonly locale = inject(LocaleService);
+  readonly events = portfolioEvents;
 
-  selectImage(image: PortfolioImage): void {
-    this.selectedImage = image;
+  title(event: PortfolioEvent): string {
+    return this.locale.language() === 'en' ? event.titleEn : event.title;
   }
 
-  trackByTitle(_: number, item: PortfolioImage): string {
-    return item.title;
+  photoLabel(event: PortfolioEvent, index: number): string {
+    return `${this.title(event)}${event.year ? ' ' + event.year : ''}, ${this.locale.t('fotografia')} ${index + 1}`;
   }
 }

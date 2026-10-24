@@ -1,4 +1,15 @@
 export const english: Record<string, string> = {
+  'Scenă, sunet și lumini în imagini, de la montaj la spectacol.': 'Stage, sound and lighting in pictures, from setup to show.',
+  'Navigare evenimente': 'Event navigation',
+  'Evenimente': 'Events',
+  '[TODO: anul evenimentului]': '[TODO: event year]',
+  'fotografii': 'photos',
+  'fotografia': 'photo',
+  'Mărește': 'Enlarge',
+  'Închide galeria': 'Close gallery',
+  'Fotografia nu poate fi încărcată.': 'The photo could not be loaded.',
+  'Deschide fotografia separat': 'Open photo separately',
+
   '[TODO: fotografia originală Ziua Orașului Satu Mare din galeria principală]': '[TODO: original Satu Mare city festival photo from the homepage gallery]',
   'Servicii': 'Services',
   'Portofoliu': 'Portfolio',
