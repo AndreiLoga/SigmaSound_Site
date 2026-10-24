@@ -5,13 +5,14 @@
         *ngFor="let image of heroImages; let index = index"
         [src]="image"
         [class.active]="index === activeHero"
-        alt="">
+        alt="" width="1600" height="1067">
     </div>
     <div class="hero-media">
       <img
         *ngFor="let image of heroImages; let index = index"
         [src]="image"
         [class.active]="index === activeHero"
+        width="1600" height="1067" decoding="async"
         [attr.fetchpriority]="index === 0 ? 'high' : 'low'"
         [alt]="'Scenă Sigma Sound cu lumini și public' | t">
       <div class="hero-dots">
@@ -86,6 +87,7 @@
     </div>
     <div class="portfolio-copy">
       <h2>{{ 'Portofoliu' | t }}</h2>
+      <p>{{ '[TODO: fotografia originală Ziua Orașului Satu Mare din galeria principală]' | t }}</p>
       <a class="portfolio-link" routerLink="/portofoliu">{{ 'Arată galeria' | t }}</a>
     </div>
     <a class="portfolio-link portfolio-link-mobile" routerLink="/portofoliu">{{ 'Arată galeria' | t }}</a>

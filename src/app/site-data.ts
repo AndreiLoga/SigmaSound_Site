@@ -74,11 +74,6 @@ export const portfolioImages: PortfolioImage[] = [
   { title: 'Lumini concert', category: 'lumini', image: 'assets/poze galerie/web/event-02.jpg', thumbnail: 'assets/poze galerie/web/event-02-thumb.jpg' },
   { title: 'Zilele Ardudului', category: 'eveniment public', image: 'assets/poze galerie/web/event-01.jpg', thumbnail: 'assets/poze galerie/web/event-01-thumb.jpg' },
   { title: 'Gala Loga Dance', category: 'gală', image: 'assets/poze galerie/web/event-05.jpg', thumbnail: 'assets/poze galerie/web/event-05-thumb.jpg' },
-  { title: 'Ziua Orașului Satu Mare', category: 'concert', image: 'assets/poze galerie/web/event-06.jpg', thumbnail: 'assets/poze galerie/web/event-06-thumb.jpg' },
   { title: 'Rock Filarmonica', category: 'live', image: 'assets/poze galerie/web/event-07.jpg', thumbnail: 'assets/poze galerie/web/event-07-thumb.jpg' },
-  { title: 'Producție lumini', category: 'show', image: 'assets/poze galerie/web/event-08.jpg', thumbnail: 'assets/poze galerie/web/event-08-thumb.jpg' },
-  { title: 'Bal Interact', category: 'indoor', image: 'assets/poze galerie/web/event-09.jpg', thumbnail: 'assets/poze galerie/web/event-09-thumb.jpg' },
-  { title: 'Sunet outdoor', category: 'audio', image: 'assets/poze galerie/web/event-10.jpg', thumbnail: 'assets/poze galerie/web/event-10-thumb.jpg' },
   { title: 'Lumini indoor', category: 'lumini', image: 'assets/poze galerie/web/event-11.jpg', thumbnail: 'assets/poze galerie/web/event-11-thumb.jpg' },
-  { title: 'Ziua Orașului 2022', category: 'eveniment public', image: 'assets/poze galerie/web/event-12.jpg', thumbnail: 'assets/poze galerie/web/event-12-thumb.jpg' }
 ];

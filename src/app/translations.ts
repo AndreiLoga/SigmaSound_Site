@@ -1,4 +1,5 @@
 export const english: Record<string, string> = {
+  '[TODO: fotografia originală Ziua Orașului Satu Mare din galeria principală]': '[TODO: original Satu Mare city festival photo from the homepage gallery]',
   'Servicii': 'Services',
   'Portofoliu': 'Portfolio',
   'Contact': 'Contact',
