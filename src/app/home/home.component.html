@@ -1,10 +1,10 @@
 <main class="home-page" id="main-content" tabindex="-1">
-  <section class="hero" aria-labelledby="home-title" tabindex="0" (mouseenter)="setHeroHover(true)" (mouseleave)="setHeroHover(false)" (focusin)="setHeroFocus(true)" (focusout)="onHeroFocusOut($event)">
+  <section class="hero" aria-labelledby="home-title" (focusin)="setHeroFocus(true)" (focusout)="onHeroFocusOut($event)">
     <div class="hero-copy">
       <p class="hero-location">Sigma Sound · Satu Mare</p>
       <h1 id="home-title">{{ 'De la montaj la ultimul acord.' | t }}</h1>
       <p class="hero-lead">{{ 'Scenă, sonorizare și lumini pentru concerte, festivaluri și evenimente corporate. Soluția tehnică se adaptează locației și programului tău.' | t }}</p>
-      <div class="hero-actions">
+      <div class="hero-actions" (mouseenter)="setHeroHover(true)" (mouseleave)="setHeroHover(false)">
         <a class="button primary" href="#contact">{{ 'Cere ofertă' | t }}</a>
         <a class="button secondary" href="#servicii">{{ 'Descoperă serviciile' | t }}</a>
       </div>
