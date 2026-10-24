@@ -1,4 +1,4 @@
-﻿<main class="portfolio-page" id="main-content" tabindex="-1">
+<main class="portfolio-page" id="main-content" tabindex="-1">
   <section class="portfolio-hero">
     <div>
       <h1>{{ 'Evenimente realizate împreună cu Sigma Sound.' | t }}</h1>
@@ -26,11 +26,28 @@
           <p>{{ event.photos.length }} {{ 'fotografii' | t }}</p>
         </header>
         <div class="photo-grid">
-          <a class="photo-button" *ngFor="let photo of event.photos; let index = index" [href]="photo.image" target="_blank" rel="noopener" [attr.aria-label]="('Mărește' | t) + ': ' + photoLabel(event, index)">
+          <button type="button" class="photo-button" *ngFor="let photo of event.photos; let index = index" (click)="openPhoto(event, index, $event)" aria-haspopup="dialog" [attr.aria-label]="('Mărește' | t) + ': ' + photoLabel(event, index)">
             <img [src]="photo.thumbnail" [alt]="photoLabel(event, index)" loading="lazy" decoding="async" [width]="photo.width" [height]="photo.height">
-          </a>
+          </button>
         </div>
       </section>
     </div>
   </div>
+  <dialog #lightbox class="lightbox" aria-labelledby="photo-caption" aria-describedby="gallery-help" (close)="onClose()" (keydown)="onLightboxKey($event)">
+    <ng-container *ngIf="selectedEvent as event">
+      <div class="lightbox-toolbar">
+        <p id="gallery-help">{{ 'Folosește săgețile pentru navigare și Esc pentru închidere.' | t }}</p>
+        <button type="button" autofocus (click)="closePhoto()">{{ 'Închide galeria' | t }} <span aria-hidden="true">×</span></button>
+      </div>
+      <figure>
+        <img [src]="event.photos[selectedIndex].image" [alt]="photoLabel(event, selectedIndex)" width="1600" height="1067" (error)="imageFailed = true" [hidden]="imageFailed">
+        <p *ngIf="imageFailed" role="alert">{{ 'Fotografia nu poate fi încărcată.' | t }} <a [href]="event.photos[selectedIndex].image" target="_blank" rel="noopener">{{ 'Deschide fotografia separat' | t }}</a></p>
+        <figcaption id="photo-caption" aria-live="polite">{{ photoLabel(event, selectedIndex) }} / {{ event.photos.length }}</figcaption>
+      </figure>
+      <div class="lightbox-controls">
+        <button type="button" (click)="movePhoto(-1)" [disabled]="event.photos.length < 2">{{ 'Imaginea anterioară' | t }}</button>
+        <button type="button" (click)="movePhoto(1)" [disabled]="event.photos.length < 2">{{ 'Imaginea următoare' | t }}</button>
+      </div>
+    </ng-container>
+  </dialog>
 </main>
