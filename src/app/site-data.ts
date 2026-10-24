@@ -63,12 +63,12 @@ export const services: ServiceLine[] = [
       "DAS Audio Event-218A",
       "Yamaha TF5"
     ],
-    "image": "assets/poze galerie/optimized/v3/4624e2e5d4b51ff19107047d.jpg",
-    "imageAlt": "Consolă de mixaj și echipamente audio lângă scenă",
+    "image": "assets/poze galerie/optimized/v3/236176f5a9654388bf84d80c.jpg",
+    "imageAlt": "Boxe line-array suspendate într-o configurație de sonorizare indoor",
     "width": 1600,
-    "height": 1200,
-    "imageSrcset": "assets/poze%20galerie/optimized/v3/4624e2e5d4b51ff19107047d-thumb.jpg 520w, assets/poze%20galerie/optimized/v3/4624e2e5d4b51ff19107047d.jpg 1600w",
-    "imageSizes": "(min-width: 1050px) 28vw, (min-width: 600px) 90vw, calc(100vw - 40px)"
+    "height": 1202,
+    "imageSrcset": "assets/poze%20galerie/optimized/v3/236176f5a9654388bf84d80c-thumb.jpg 520w, assets/poze%20galerie/optimized/v3/236176f5a9654388bf84d80c.jpg 1600w",
+    "imageSizes": "(min-width: 1050px) 46vw, (min-width: 600px) 148vw, calc((100vw - 40px) * 1.65)"
   },
   {
     "title": "Lumini",
