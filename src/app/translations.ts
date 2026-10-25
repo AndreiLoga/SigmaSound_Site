@@ -1,5 +1,4 @@
 export const english: Record<string, string> = {
-  'better than the best': 'better than the best',
   'Spune-ne ce pregătești. Stabilim împreună soluția perfectă.': 'Tell us what you are planning. Together, we will find the perfect solution.',
   'Online': 'Online',
   'WhatsApp (se deschide într-un tab nou)': 'WhatsApp (opens in a new tab)',
