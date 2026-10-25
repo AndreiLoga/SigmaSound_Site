@@ -46,7 +46,7 @@ h2 { max-width: 22ch; margin: 0; font-size: clamp(2rem, 3.8vw, 3.7rem); line-hei
 .contact { display: grid; gap: 24px; padding: 36px 20px; background: #173b3d; color: #fff; scroll-margin-top: 100px; }
 .contact-copy { min-width: 0; }
 .contact h2 { font-size: clamp(1.6rem,2.4vw,2rem); }
-.contact-lead { max-width: 46ch; margin: 12px 0 0; color: #e0e8e8; line-height: 1.6; }
+.contact-lead { max-width: 52ch; margin: 12px 0 0; color: #e0e8e8; line-height: 1.6; }
 .contact-details { display: grid; gap: 16px; min-width: 0; margin: 0; }
 .contact-details > div { min-width: 0; }
 .contact-details dt { margin-bottom: 4px; color: #e0e8e8; font-size: .9rem; }
@@ -78,7 +78,7 @@ h2 { max-width: 22ch; margin: 0; font-size: clamp(2rem, 3.8vw, 3.7rem); line-hei
   .section-space { padding-top: 104px; padding-bottom: 104px; }
   .section-heading { flex-direction: row; justify-content: space-between; align-items: flex-end; gap: 48px; }
   .section-heading > p { max-width: 44ch; }
-  .contact { grid-template-columns: minmax(0,1fr) minmax(0,1.4fr); align-items: center; gap: 48px; }
+  .contact { grid-template-columns: minmax(0,1.2fr) minmax(0,1.4fr); align-items: center; gap: 32px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .hero-copy { animation: none; }
