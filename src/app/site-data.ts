@@ -64,11 +64,11 @@ export const services: ServiceLine[] = [
       "Yamaha TF5",
       "Yamaha TF1"
     ],
-    "image": "assets/poze galerie/optimized/v3/236176f5a9654388bf84d80c.jpg",
+    "image": "assets/poze galerie/optimized/v3/dadba6e770ecf2642ab9d3a6.jpg",
     "imageAlt": "Boxe line-array suspendate într-o configurație de sonorizare indoor",
     "width": 1600,
     "height": 1202,
-    "imageSrcset": "assets/poze%20galerie/optimized/v3/236176f5a9654388bf84d80c-thumb.jpg 520w, assets/poze%20galerie/optimized/v3/236176f5a9654388bf84d80c.jpg 1600w",
+    "imageSrcset": "assets/poze%20galerie/optimized/v3/dadba6e770ecf2642ab9d3a6-thumb.jpg 520w, assets/poze%20galerie/optimized/v3/dadba6e770ecf2642ab9d3a6.jpg 1600w",
     "imageSizes": "(min-width: 1050px) 46vw, (min-width: 600px) 148vw, calc((100vw - 40px) * 1.65)"
   },
   {

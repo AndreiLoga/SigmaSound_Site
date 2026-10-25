@@ -150,10 +150,10 @@ export const portfolioEvents: PortfolioEvent[] = [
         "height": 391
       },
       {
-        "image": "assets/poze galerie/optimized/v3/236176f5a9654388bf84d80c.jpg",
+        "image": "assets/poze galerie/optimized/v3/dadba6e770ecf2642ab9d3a6.jpg",
         "imageWidth": 1600,
         "imageHeight": 1202,
-        "thumbnail": "assets/poze galerie/optimized/v3/236176f5a9654388bf84d80c-thumb.jpg",
+        "thumbnail": "assets/poze galerie/optimized/v3/dadba6e770ecf2642ab9d3a6-thumb.jpg",
         "width": 520,
         "height": 391
       },
