@@ -161,21 +161,6 @@ export const portfolioEvents: PortfolioEvent[] = [
     ]
   },
   {
-    "id": "festivalul-folcloric-bogdand-2026",
-    "title": "Festivalul Folcloric Bogdand",
-    "year": 2026,
-    "photos": [
-      {
-        "image": "assets/poze galerie/optimized/v3/f99f09a8f795560e4bd48570.jpg",
-        "imageWidth": 1600,
-        "imageHeight": 1200,
-        "thumbnail": "assets/poze galerie/optimized/v3/f99f09a8f795560e4bd48570-thumb.jpg",
-        "width": 520,
-        "height": 390
-      }
-    ]
-  },
-  {
     "id": "festivalul-folcloric-oteloaia-2026",
     "title": "Festivalul Folcloric Oțeloaia",
     "year": 2026,
@@ -419,6 +404,21 @@ export const portfolioEvents: PortfolioEvent[] = [
         "imageWidth": 1600,
         "imageHeight": 1200,
         "thumbnail": "assets/poze galerie/optimized/v3/cf06b928ac04e7a225352048-thumb.jpg",
+        "width": 520,
+        "height": 390
+      }
+    ]
+  },
+  {
+    "id": "festivalul-folcloric-bogdand-2026",
+    "title": "Festivalul Folcloric Bogdand",
+    "year": 2026,
+    "photos": [
+      {
+        "image": "assets/poze galerie/optimized/v3/f99f09a8f795560e4bd48570.jpg",
+        "imageWidth": 1600,
+        "imageHeight": 1200,
+        "thumbnail": "assets/poze galerie/optimized/v3/f99f09a8f795560e4bd48570-thumb.jpg",
         "width": 520,
         "height": 390
       }
