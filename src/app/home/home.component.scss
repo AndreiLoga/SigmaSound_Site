@@ -56,9 +56,9 @@ h2 { max-width: 22ch; margin: 0; font-size: clamp(2rem, 3.8vw, 3.7rem); line-hei
 .contact-details a:focus-visible { outline: 2px solid #f1a934; outline-offset: 4px; }
 
 .contact-details .contact-socials { flex-direction: row; gap: 8px; }
-.contact-socials a { justify-content: center; width: 44px; border: 1px solid #829b9b; border-radius: 50%; color: #fff; }
+.contact-socials a { justify-content: center; flex: 0 0 50px; width: 50px; min-height: 50px; border: 1px solid #829b9b; border-radius: 50%; color: #fff; }
 .contact-socials a:hover { background: #326463; }
-.contact-socials svg { width: 23px; height: 23px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.contact-socials svg { width: 28px; height: 28px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 .contact-socials .icon-dot, .contact-socials .icon-fill { fill: currentColor; stroke: none; }
 
 [data-reveal] { transition: opacity .65s ease, transform .65s ease; }
