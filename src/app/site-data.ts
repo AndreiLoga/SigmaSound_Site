@@ -129,14 +129,15 @@ export const portfolioImages: PortfolioImage[] = [
 
 export interface ContactChannel {
   label: string;
-  value: string;
-  href: string | null;
+  links: { value: string; href: string }[];
 }
 
-// Add confirmed values and tel:, mailto: or https://wa.me/ URLs together.
-// Pending contact details stay readable without creating fictitious links.
 export const contactChannels: ContactChannel[] = [
-  { label: 'Telefon', value: '[TODO: telefon]', href: null },
-  { label: 'Email', value: '[TODO: email]', href: null },
-  { label: 'WhatsApp', value: '[TODO: WhatsApp]', href: null }
+  { label: 'Telefon', links: [
+    { value: '0744 125 740', href: 'tel:+40744125740' },
+    { value: '0744 845 891', href: 'tel:+40744845891' }
+  ] },
+  { label: 'Email', links: [
+    { value: 'vaviloga76@gmail.com', href: 'mailto:vaviloga76@gmail.com' }
+  ] }
 ];

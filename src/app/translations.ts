@@ -1,4 +1,10 @@
 export const english: Record<string, string> = {
+  'Spune-ne ce pregătești. Stabilim împreună soluția perfectă.': 'Tell us what you are planning. Together, we will find the perfect solution.',
+  'Online': 'Online',
+  'WhatsApp (se deschide într-un tab nou)': 'WhatsApp (opens in a new tab)',
+  'Instagram (se deschide într-un tab nou)': 'Instagram (opens in a new tab)',
+  'Facebook (se deschide într-un tab nou)': 'Facebook (opens in a new tab)',
+
   'Fotografia': 'Photo',
   'Anterioară': 'Previous',
   'Următoare': 'Next',

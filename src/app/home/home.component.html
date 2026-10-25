@@ -51,14 +51,27 @@
   <section class="contact" id="contact" aria-labelledby="contact-title" data-reveal>
     <div class="contact-copy">
       <h2 id="contact-title">{{ 'Contact' | t }}</h2>
-      <p class="contact-lead">{{ 'Spune-ne ce pregătești. Stabilim împreună soluția de scenă, sunet și lumini.' | t }}</p>
+      <p class="contact-lead">{{ 'Spune-ne ce pregătești. Stabilim împreună soluția perfectă.' | t }}</p>
     </div>
     <dl class="contact-details">
       <div *ngFor="let channel of contactChannels">
         <dt>{{ channel.label | t }}</dt>
         <dd>
-          <a *ngIf="channel.href; else pendingContact" [href]="channel.href" [attr.target]="channel.label === 'WhatsApp' ? '_blank' : null" [attr.rel]="channel.label === 'WhatsApp' ? 'noopener noreferrer' : null">{{ channel.value }}</a>
-          <ng-template #pendingContact><span>{{ channel.value | t }}</span></ng-template>
+          <a *ngFor="let link of channel.links" [href]="link.href">{{ link.value }}</a>
+        </dd>
+      </div>
+      <div>
+        <dt>{{ 'Online' | t }}</dt>
+        <dd class="contact-socials">
+          <a href="https://wa.me/40744845891" target="_blank" rel="noopener noreferrer" [attr.aria-label]="'WhatsApp (se deschide într-un tab nou)' | t" [attr.title]="'WhatsApp (se deschide într-un tab nou)' | t">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.5 11.6a8.5 8.5 0 0 1-12.6 7.5L3 20.5l1.4-4.7a8.5 8.5 0 1 1 16.1-4.2Z"/><path d="m8.2 7.2 1.7 2.7-1 1.2a9 9 0 0 0 4 4l1.2-1 2.7 1.7c-.3 1.8-1.7 2-3.1 1.4-3.3-1.3-6.2-4.2-7.5-7.5-.6-1.4-.4-2.8 1.4-3.1Z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/sigma.sound/" target="_blank" rel="noopener noreferrer" [attr.aria-label]="'Instagram (se deschide într-un tab nou)' | t" [attr.title]="'Instagram (se deschide într-un tab nou)' | t">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle class="icon-dot" cx="17.5" cy="6.5" r="1"/></svg>
+          </a>
+          <a href="https://www.facebook.com/Sonorizari.Evenimente.SatuMare.SigmaSound" target="_blank" rel="noopener noreferrer" [attr.aria-label]="'Facebook (se deschide într-un tab nou)' | t" [attr.title]="'Facebook (se deschide într-un tab nou)' | t">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path class="icon-fill" d="M14 22v-9h3l.5-4H14V7c0-1.2.4-2 2-2h2V1.4A24 24 0 0 0 15 1c-3 0-5 1.9-5 5.4V9H7v4h3v9Z"/></svg>
+          </a>
         </dd>
       </div>
     </dl>
