@@ -48,3 +48,18 @@ img {
   display: block;
   max-width: 100%;
 }
+
+/* Scroll entrances use translate independently from image crops and hover transforms. */
+.scroll-reveal-page { overflow-x: clip; }
+[data-scroll-reveal] { --reveal-x: 0px; --reveal-y: 24px; transition: opacity .65s ease var(--reveal-delay, 0ms), translate .65s cubic-bezier(.2,.7,.2,1) var(--reveal-delay, 0ms); }
+[data-scroll-reveal="left"] { --reveal-x: -36px; --reveal-y: 0px; }
+[data-scroll-reveal="right"] { --reveal-x: 36px; --reveal-y: 0px; }
+[data-scroll-reveal].reveal-pending { opacity: 0; translate: var(--reveal-x) var(--reveal-y); }
+[data-scroll-reveal]:focus-within { opacity: 1; translate: none; transition: none; }
+@media (max-width: 767px) {
+  [data-scroll-reveal="left"] { --reveal-x: -20px; }
+  [data-scroll-reveal="right"] { --reveal-x: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-scroll-reveal].reveal-pending { opacity: 1; translate: none; }
+}

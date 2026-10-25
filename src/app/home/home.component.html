@@ -1,4 +1,4 @@
-<main class="home-page" id="main-content" tabindex="-1">
+<main class="home-page scroll-reveal-page" id="main-content" tabindex="-1">
   <section class="hero" aria-labelledby="home-title" (focusin)="setHeroFocus(true)" (focusout)="onHeroFocusOut($event)">
     <div class="hero-copy">
       <p class="hero-location">Sigma Sound · Satu Mare</p>
@@ -14,15 +14,15 @@
     </div>
   </section>
 
-  <section class="services-section section-space" id="servicii" aria-labelledby="services-title" data-reveal>
+  <section class="services-section section-space" id="servicii" aria-labelledby="services-title">
     <div class="section-heading">
-      <h2 id="services-title">{{ 'Trei servicii. Aceeași echipă tehnică.' | t }}</h2>
-      <p>{{ 'De la structura scenei la mixaj și operarea luminilor, configurăm fiecare componentă în jurul evenimentului.' | t }}</p>
+      <h2 id="services-title" appScrollReveal="left">{{ 'Trei servicii. Aceeași echipă tehnică.' | t }}</h2>
+      <p appScrollReveal="right" [revealDelay]="80">{{ 'De la structura scenei la mixaj și operarea luminilor, configurăm fiecare componentă în jurul evenimentului.' | t }}</p>
     </div>
     <div class="service-list">
-      <article class="service-card" *ngFor="let item of services; trackBy: trackByTitle" [class.service-lighting]="item.title === 'Lumini'" [class.service-audio]="item.title === 'Sunet'">
-        <div class="service-photo"><img [src]="item.image" [attr.srcset]="item.imageSrcset || null" [attr.sizes]="item.imageSizes || null" [alt]="('Scenă și producție tehnică' | t) + ': ' + (item.imageAlt | t)" [width]="item.width" [height]="item.height" loading="lazy" decoding="async"></div>
-        <div class="service-content">
+      <article class="service-card" *ngFor="let item of services; let index = index; trackBy: trackByTitle" [class.service-lighting]="item.title === 'Lumini'" [class.service-audio]="item.title === 'Sunet'">
+        <div class="service-photo" [appScrollReveal]="index % 2 === 0 ? 'left' : 'right'"><img [src]="item.image" [attr.srcset]="item.imageSrcset || null" [attr.sizes]="item.imageSizes || null" [alt]="('Scenă și producție tehnică' | t) + ': ' + (item.imageAlt | t)" [width]="item.width" [height]="item.height" loading="lazy" decoding="async"></div>
+        <div class="service-content" [appScrollReveal]="index % 2 === 0 ? 'right' : 'left'" [revealDelay]="80">
           <h3>{{ item.title | t }}</h3>
           <p>{{ item.lead | t }}</p>
           <ul class="capabilities"><li *ngFor="let capability of item.capabilities">{{ capability | t }}</li></ul>
@@ -35,25 +35,25 @@
     </div>
   </section>
 
-  <section class="portfolio-section section-space" aria-labelledby="portfolio-title" data-reveal>
+  <section class="portfolio-section section-space" aria-labelledby="portfolio-title">
     <div class="section-heading">
-      <div><h2 id="portfolio-title">{{ 'Pe scenă, în imagini.' | t }}</h2><p>{{ 'Configurații reale, din portofoliul Sigma Sound.' | t }}</p></div>
-      <a class="text-link" routerLink="/galerie">{{ 'Vezi toate evenimentele' | t }}</a>
+      <div appScrollReveal="left"><h2 id="portfolio-title">{{ 'Pe scenă, în imagini.' | t }}</h2><p>{{ 'Configurații reale, din portofoliul Sigma Sound.' | t }}</p></div>
+      <a class="text-link" appScrollReveal="right" routerLink="/galerie">{{ 'Vezi toate evenimentele' | t }}</a>
     </div>
     <div class="preview-grid">
-      <a class="preview-card" *ngFor="let item of portfolioPreview" routerLink="/galerie" [fragment]="item.id">
+      <a class="preview-card" [appScrollReveal]="index === 0 ? 'left' : index === 1 ? 'right' : 'up'" [revealDelay]="index * 70" *ngFor="let item of portfolioPreview; let index = index" routerLink="/galerie" [fragment]="item.id">
         <div class="preview-image"><img [src]="item.thumbnail" [attr.srcset]="item.imageSrcset" [attr.sizes]="item.imageSizes" [alt]="('Producție tehnică de eveniment' | t) + ': ' + item.title + ' ' + item.year" [width]="item.width" [height]="item.height" loading="lazy" decoding="async"></div>
         <div class="preview-caption"><h3 [attr.lang]="item.id === 'open-air-symphony-2026' ? 'en' : 'ro'">{{ item.title }}</h3><span>{{ item.year }}</span></div>
       </a>
     </div>
   </section>
 
-  <section class="contact" id="contact" aria-labelledby="contact-title" data-reveal>
-    <div class="contact-copy">
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="contact-copy" appScrollReveal="left">
       <h2 id="contact-title">{{ 'Contact' | t }}</h2>
       <p class="contact-lead">{{ 'Spune-ne ce pregătești. Stabilim împreună soluția perfectă.' | t }}</p>
     </div>
-    <dl class="contact-details">
+    <dl class="contact-details" appScrollReveal="right" [revealDelay]="100">
       <div *ngFor="let channel of contactChannels">
         <dt>{{ channel.label | t }}</dt>
         <dd>

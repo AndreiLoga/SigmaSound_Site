@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, inject } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ScrollRevealDirective } from '../scroll-reveal.directive';
 import { RouterLink } from '@angular/router';
 import { TranslatePipe } from '../locale.service';
 import { contactChannels, heroImages, services } from '../site-data';
@@ -8,12 +9,11 @@ import { portfolioEvents } from '../portfolio/portfolio-data';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterLink, TranslatePipe],
+  imports: [CommonModule, RouterLink, TranslatePipe, ScrollRevealDirective],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
-  private readonly host = inject<ElementRef<HTMLElement>>(ElementRef);
+export class HomeComponent implements OnInit, OnDestroy {
   readonly heroImages = heroImages;
   readonly services = services;
   readonly contactChannels = contactChannels;
@@ -33,7 +33,6 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   private heroFocused = false;
   private motionPreference?: MediaQueryList;
   private heroTimer?: ReturnType<typeof setInterval>;
-  private revealObserver?: IntersectionObserver;
   private readonly onPlaybackPreferenceChange = (): void => this.updateHeroPlayback();
 
   ngOnInit(): void {
@@ -43,23 +42,10 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     this.updateHeroPlayback();
   }
 
-  ngAfterViewInit(): void {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
-    this.revealObserver = new IntersectionObserver(entries => {
-      for (const entry of entries) if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        this.revealObserver?.unobserve(entry.target);
-      }
-    }, { threshold: 0.08 });
-    this.host.nativeElement.classList.add('motion-ready');
-    this.host.nativeElement.querySelectorAll('[data-reveal]').forEach(section => this.revealObserver?.observe(section));
-  }
-
   ngOnDestroy(): void {
     if (this.heroTimer) clearInterval(this.heroTimer);
     this.motionPreference?.removeEventListener('change', this.onPlaybackPreferenceChange);
     document.removeEventListener('visibilitychange', this.onPlaybackPreferenceChange);
-    this.revealObserver?.disconnect();
   }
 
   private updateHeroPlayback(): void {

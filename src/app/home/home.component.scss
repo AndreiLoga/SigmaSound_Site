@@ -61,8 +61,6 @@ h2 { max-width: 22ch; margin: 0; font-size: clamp(2rem, 3.8vw, 3.7rem); line-hei
 .contact-socials svg { width: 28px; height: 28px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 .contact-socials .icon-dot, .contact-socials .icon-fill { fill: currentColor; stroke: none; }
 
-[data-reveal] { transition: opacity .65s ease, transform .65s ease; }
-:host(.motion-ready) [data-reveal]:not(.is-visible) { opacity: 0; transform: translateY(18px); }
 @keyframes hero-arrive { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
 @media (min-width: 600px) {
   .section-space { padding: 80px 5vw; }
@@ -82,7 +80,6 @@ h2 { max-width: 22ch; margin: 0; font-size: clamp(2rem, 3.8vw, 3.7rem); line-hei
 }
 @media (prefers-reduced-motion: reduce) {
   .hero-copy { animation: none; }
-  :host(.motion-ready) [data-reveal]:not(.is-visible) { opacity: 1; transform: none; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
   .service-card:hover, .preview-card:hover img, .primary:hover { transform: none; }
 }

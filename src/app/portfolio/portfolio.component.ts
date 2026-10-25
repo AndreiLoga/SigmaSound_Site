@@ -1,3 +1,4 @@
+import { ScrollRevealDirective } from '../scroll-reveal.directive';
 import { CommonModule } from '@angular/common';
 import { ChangeDetectorRef, Component, ElementRef, OnDestroy, ViewChild, inject } from '@angular/core';
 import { LocaleService, TranslatePipe } from '../locale.service';
@@ -6,7 +7,7 @@ import { EventPhoto, PortfolioEvent, portfolioEvents } from './portfolio-data';
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [CommonModule, TranslatePipe],
+  imports: [CommonModule, TranslatePipe, ScrollRevealDirective],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.scss'
 })

@@ -1,13 +1,13 @@
-<main class="portfolio-page" id="main-content" tabindex="-1">
-  <h1>{{ 'Galerie' | t }}</h1>
+<main class="portfolio-page scroll-reveal-page" id="main-content" tabindex="-1">
+  <h1 appScrollReveal="up">{{ 'Galerie' | t }}</h1>
     <div class="event-list">
-      <section class="event-gallery" *ngFor="let event of events" [id]="event.id" [attr.aria-labelledby]="event.id + '-title'">
-        <header class="event-heading">
+      <section class="event-gallery" *ngFor="let event of events; let eventIndex = index" [id]="event.id" [attr.aria-labelledby]="event.id + '-title'">
+        <header class="event-heading" appScrollReveal="left">
           <div>
             <h2 [id]="event.id + '-title'" lang="ro">{{ event.title }} <span>{{ event.year || ('[TODO: anul evenimentului]' | t) }}</span></h2>
           </div>
         </header>
-        <div class="mobile-gallery" role="group" [attr.aria-label]="event.title + ' ' + event.year" (keydown)="onEventGalleryKey($event, event)">
+        <div class="mobile-gallery" [appScrollReveal]="eventIndex % 2 === 0 ? 'right' : 'left'" role="group" [attr.aria-label]="event.title + ' ' + event.year" (keydown)="onEventGalleryKey($event, event)">
           <figure class="event-feature">
             <button type="button" class="featured-photo" [id]="event.id + '-featured'" (click)="openPhoto(event, activeIndex(event), $event)" aria-haspopup="dialog" [attr.aria-label]="('Mărește' | t) + ': ' + photoLabel(event, activeIndex(event))">
               <img [src]="activePhoto(event).thumbnail" [attr.srcset]="photoSources(activePhoto(event))" sizes="calc(100vw - 40px)" [alt]="photoLabel(event, activeIndex(event))" [width]="activePhoto(event).imageWidth" [height]="activePhoto(event).imageHeight" loading="lazy" decoding="async">
@@ -28,7 +28,7 @@
             </button>
           </div>
         </div>
-        <div class="photo-grid desktop-gallery">
+        <div class="photo-grid desktop-gallery" [appScrollReveal]="eventIndex % 2 === 0 ? 'right' : 'left'">
           <button type="button" class="photo-button" *ngFor="let photo of event.photos; let index = index" (click)="openPhoto(event, index, $event)" aria-haspopup="dialog" [attr.aria-label]="('Mărește' | t) + ': ' + photoLabel(event, index)">
             <img [src]="photo.thumbnail" [alt]="photoLabel(event, index)" loading="lazy" decoding="async" [width]="photo.width" [height]="photo.height">
           </button>
