@@ -53,7 +53,7 @@ Paginile RO/EN /confidentialitate, /cookies și /informatii-legale au fost cură
 
 **Limită juridică cunoscută:** utilizatorul a refuzat furnizarea/publicarea identității juridice și a datelor firmei. Acestea nu au fost inventate sau căutate din alte surse. Eliminarea marcajelor de lucru nu îndeplinește obligațiile de identificare/informare; nu se declară conformitate GDPR/legală completă. Această limită a fost comunicată utilizatorului. Confirmarea temeiurilor și a fluxurilor interne, retenția efectivă și contractele cu furnizorii țin și de activitatea operatorului, nu doar de codul site-ului.
 
-Footerul include linkurile către pagini, ANPC și pictograma SAL oficială de 250x50px, servită local și legată de https://reclamatiisal.anpc.ro/ . Sursa imaginii: https://www.anpc.ro/download/sal/SAL-PICTOGRAMA.png, accesată prin pagina oficială https://www.anpc.ro/sal . Nu se folosește vechiul link SOL/ODR.
+Footerul include linkurile către pagini, ANPC și un link text SAL spre https://reclamatiisal.anpc.ro/ . Pictograma a fost eliminată la cererea utilizatorului pentru alinierea subsolului; cerința de afișare a modelului oficial, unde este aplicabilă, trebuie reevaluată înainte de lansare. Nu se folosește vechiul link SOL/ODR.
 
 ## Fișiere pentru Claus Web și migrare
 

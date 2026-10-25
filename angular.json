@@ -76,11 +76,6 @@
                 "glob": "*.{txt,xml}",
                 "input": "src/hosting",
                 "output": "/"
-              },
-              {
-                "glob": "sal.png",
-                "input": "src/hosting",
-                "output": "assets"
               }
             ],
             "styles": [
