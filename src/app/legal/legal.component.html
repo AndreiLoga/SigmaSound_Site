@@ -1,10 +1,12 @@
 <main class="legal-page" id="main-content" tabindex="-1" *ngIf="document() as page">
   <a class="back-link" routerLink="/">{{ 'Înapoi la pagina principală' | t }}</a>
   <h1>{{ text(page.title) }}</h1>
-  <p class="legal-status">{{ 'Document în pregătire. Câmpurile [TODO] trebuie completate înainte de publicarea site-ului.' | t }}</p>
   <section *ngFor="let section of page.sections; let index = index" [attr.aria-labelledby]="'legal-section-' + index">
     <h2 [id]="'legal-section-' + index">{{ text(section.title) }}</h2>
     <p *ngFor="let paragraph of section.paragraphs">{{ text(paragraph) }}</p>
+    <ul class="provider-links" *ngIf="section.links?.length">
+      <li *ngFor="let link of section.links"><a [href]="link.href" target="_blank" rel="noopener noreferrer">{{ text(link.label) }} <span class="sr-only">{{ '(tab nou)' | t }}</span></a></li>
+    </ul>
   </section>
   <p class="legal-contact"><a href="mailto:vaviloga76@gmail.com">vaviloga76@gmail.com</a></p>
   <nav class="legal-authorities" [attr.aria-label]="'Autorități și informații utile' | t">

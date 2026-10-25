@@ -1,0 +1,31 @@
+# Static Angular site on Apache 2.4 / compatible LiteSpeed hosting.
+# Publish from the build output, not from the repository root.
+Options -Indexes
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "no-referrer"
+  Header always set X-Frame-Options "DENY"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+  # Complements the hash-based script CSP generated in index.html.
+  Header always set Content-Security-Policy "frame-ancestors 'none'; form-action 'none'; object-src 'none'; base-uri 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; manifest-src 'self'"
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # Keep certificate validation reachable.
+  RewriteRule ^\.well-known/acme-challenge/ - [L]
+  # Never expose project files, source originals or legacy PHP diagnostics.
+  RewriteRule (^|/)\. - [F,L]
+  RewriteRule \.(?:php[0-9]?|phtml|phar|env|ini|log|bak|sql|map)$ - [F,L,NC]
+  RewriteRule ^(?:poze|poze[ ]galerie|node_modules|Codex_work|src)(?:/|$) - [F,L,NC]
+  RewriteRule ^(?:package(?:-lock)?\.json|angular\.json|tsconfig(?:\.[^/]+)?\.json|AGENTS\.md|README\.md)$ - [F,L,NC]
+  # Old entry points must not serve a leftover HTML page.
+  RewriteRule ^evenimente\.html$ /galerie [R=301,L]
+  RewriteRule ^portofoliu/?$ /galerie [R=301,L]
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+  # Only application routes receive the SPA document. Missing assets stay 404.
+  RewriteRule ^(?:galerie|confidentialitate|cookies|informatii-legale)/?$ index.html [L]
+</IfModule>

@@ -25,8 +25,17 @@ export class LocaleService {
   }
 
   private updateMetadata(): void {
-    const path = this.router.url.split(/[?#]/)[0];
+    const path = this.router.url.split(/[?#]/)[0].replace(/\/+$/, '') || '/';
     const gallery = path === '/galerie';
+    const canonical = `https://www.sigmasound.ro${path === '' ? '/' : path}`;
+    let canonicalLink = this.document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    if (!canonicalLink) {
+      canonicalLink = this.document.createElement('link');
+      canonicalLink.rel = 'canonical';
+      this.document.head.appendChild(canonicalLink);
+    }
+    canonicalLink.href = canonical;
+    this.meta.updateTag({ property: 'og:url', content: canonical });
     const legal = legalDocuments.find(item => item.path === path);
     const title = legal ? `${legal.title[this.language()]} | Sigma Sound` : this.t(gallery ? 'Galerie | Sigma Sound' : 'Sigma Sound | Scenă, sunet și lumini');
     const description = legal ? legal.description[this.language()] : this.t(gallery

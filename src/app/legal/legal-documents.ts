@@ -3,81 +3,301 @@ export interface LegalDocument {
   path: string;
   title: LegalText;
   description: LegalText;
-  sections: { title: LegalText; paragraphs: LegalText[] }[];
+  sections: { title: LegalText; paragraphs: LegalText[]; links?: { label: LegalText; href: string }[] }[];
 }
 
 export const legalDocuments: LegalDocument[] = [
   {
-    path: '/confidentialitate',
-    title: { ro: 'Confidențialitate', en: 'Privacy' },
-    description: { ro: 'Informații despre prelucrarea datelor personale în legătură cu site-ul Sigma Sound.', en: 'Information about personal data processing in connection with the Sigma Sound website.' },
-    sections: [
-      { title: { ro: 'Cine răspunde de datele tale', en: 'Who is responsible for your data' }, paragraphs: [
-        { ro: 'Operator: [TODO: denumirea juridică, forma juridică și sediul firmei care operează Sigma Sound]. Pentru întrebări sau solicitări privind datele personale ne poți scrie la vaviloga76@gmail.com.', en: 'Controller: [TODO: legal name, legal form and registered address of the company operating Sigma Sound]. For questions or requests about personal data, email vaviloga76@gmail.com.' }
-      ] },
-      { title: { ro: 'Când vizitezi site-ul', en: 'When you visit the website' }, paragraphs: [
-        { ro: 'Aplicația de prezentare nu are conturi, formular de contact, plăți online sau instrumente de analiză și publicitate. Nu solicită acces la locația, camera sau microfonul dispozitivului tău.', en: 'This presentation website has no accounts, contact form, online payments, analytics or advertising tools. It does not request access to your device location, camera or microphone.' },
-        { ro: 'Furnizorul de găzduire poate înregistra date tehnice, precum adresa IP, momentul accesării, resursa solicitată și informații despre browser, pentru livrarea și securitatea site-ului. [TODO: confirmarea furnizorului, datelor înregistrate, temeiului juridic și perioadei de păstrare a logurilor].', en: 'The hosting provider may record technical data such as IP address, access time, requested resource and browser information for website delivery and security. [TODO: confirm the provider, recorded data, legal basis and log retention period].' }
-      ] },
-      { title: { ro: 'Când ne contactezi', en: 'When you contact us' }, paragraphs: [
-        { ro: 'Dacă ne contactezi prin telefon, email sau WhatsApp, putem primi numele, datele de contact și informațiile pe care ni le comunici despre eveniment. Le folosim pentru a răspunde solicitării, a pregăti oferta și a gestiona colaborarea. Trimite doar informațiile necesare solicitării tale.', en: 'If you contact us by phone, email or WhatsApp, we may receive your name, contact details and the event information you choose to share. We use these to answer your enquiry, prepare a quote and manage our work together. Please share only information needed for your enquiry.' },
-        { ro: 'Când soliciți demersuri pentru încheierea unui contract în nume propriu, temeiul poate fi art. 6 alin. (1) lit. b) GDPR. Pentru comunicarea cu reprezentanții firmelor, temeiul poate fi interesul legitim de a răspunde solicitărilor profesionale, conform art. 6 alin. (1) lit. f). Obligațiile legale aplicabile se bazează pe art. 6 alin. (1) lit. c). [TODO: validarea temeiurilor și intereselor pentru fluxurile efective ale firmei].', en: 'When you request steps towards a contract in your own name, Article 6(1)(b) GDPR may apply. For communication with business representatives, the basis may be the legitimate interest in responding to business enquiries under Article 6(1)(f). Applicable legal obligations rely on Article 6(1)(c). [TODO: validate the legal bases and interests for the company’s actual processes].' },
-        { ro: 'O solicitare de ofertă nu te înscrie automat la mesaje de marketing.', en: 'Requesting a quote does not automatically subscribe you to marketing messages.' }
-      ] },
-      { title: { ro: 'Furnizori și servicii externe', en: 'Providers and external services' }, paragraphs: [
-        { ro: 'Linkurile WhatsApp, Instagram și Facebook deschid serviciile respective numai când alegi să le accesezi. Nu includem widgeturi sociale în pagină. Platformele și serviciul de email au propriile condiții și politici privind datele.', en: 'WhatsApp, Instagram and Facebook links open those services only when you choose to visit them. We do not embed social widgets. These platforms and the email service have their own terms and data policies.' },
-        { ro: '[TODO: identificarea furnizorilor de găzduire și email, rolurilor lor, destinatarilor, eventualelor transferuri în afara SEE și garanțiilor aplicabile].', en: '[TODO: identify hosting and email providers, their roles, recipients, any transfers outside the EEA and applicable safeguards].' }
-      ] },
-      { title: { ro: 'Cât timp păstrăm datele', en: 'How long we keep data' }, paragraphs: [
-        { ro: '[TODO: stabilirea perioadelor sau criteriilor reale de păstrare pentru solicitări de ofertă, corespondență, documente contractuale și loguri tehnice]. Perioadele trebuie corelate cu scopul prelucrării și obligațiile legale aplicabile.', en: '[TODO: establish actual retention periods or criteria for quote requests, correspondence, contractual records and technical logs]. Retention must reflect the processing purpose and applicable legal obligations.' }
-      ] },
-      { title: { ro: 'Fotografiile din galerie', en: 'Gallery photographs' }, paragraphs: [
-        { ro: 'Galeria prezintă configurații tehnice și imagini de la evenimente. Dacă te recunoști într-o fotografie și ai o întrebare sau o solicitare privind utilizarea imaginii tale, scrie-ne la vaviloga76@gmail.com și indică evenimentul și fotografia. Analizăm solicitarea în raport cu drepturile tale și cadrul legal aplicabil.', en: 'The gallery shows technical setups and event photographs. If you recognise yourself in a photograph and have a question or request about use of your image, email vaviloga76@gmail.com with the event and photograph details. We assess requests in light of your rights and applicable law.' },
-        { ro: '[TODO: documentarea temeiului publicării persoanelor identificabile și a informării acestora, inclusiv situațiile care implică minori].', en: '[TODO: document the basis for publishing identifiable individuals and informing them, including situations involving minors].' }
-      ] },
-      { title: { ro: 'Drepturile tale', en: 'Your rights' }, paragraphs: [
-        { ro: 'În condițiile GDPR, poți solicita acces, rectificare, ștergere, restricționare sau portabilitate și te poți opune anumitor prelucrări. Când prelucrarea se bazează pe consimțământ, îl poți retrage fără a afecta legalitatea prelucrării anterioare. Drepturile se aplică potrivit condițiilor și excepțiilor legale.', en: 'Subject to GDPR conditions, you may request access, rectification, erasure, restriction or portability and object to certain processing. Where processing relies on consent, you may withdraw it without affecting the lawfulness of earlier processing. Rights are subject to legal conditions and exceptions.' },
-        { ro: 'Trimite solicitarea la vaviloga76@gmail.com. Răspundem în termenul GDPR, în mod obișnuit o lună; eventualele prelungiri se aplică în condițiile legii și îți sunt comunicate. Poți depune o plângere la ANSPDCP, prin www.dataprotection.ro, și poți folosi căile judiciare disponibile.', en: 'Send your request to vaviloga76@gmail.com. We respond within the GDPR deadline, normally one month; any extension follows legal conditions and is communicated to you. You may lodge a complaint with ANSPDCP at www.dataprotection.ro and seek available judicial remedies.' }
-      ] }
+    "path": "/confidentialitate",
+    "title": {
+      "ro": "Confidențialitate",
+      "en": "Privacy"
+    },
+    "description": {
+      "ro": "Cum sunt folosite datele personale în legătură cu site-ul Sigma Sound și solicitările de contact.",
+      "en": "How personal data is used in connection with the Sigma Sound website and contact enquiries."
+    },
+    "sections": [
+      {
+        "title": {
+          "ro": "Site-ul și contactul pentru date personale",
+          "en": "Website and privacy contact"
+        },
+        "paragraphs": [
+          {
+            "ro": "Această informare privește site-ul www.sigmasound.ro și comunicările adresate Sigma Sound. Pentru întrebări privind datele personale sau pentru exercitarea drepturilor tale, scrie la vaviloga76@gmail.com.",
+            "en": "This notice concerns www.sigmasound.ro and communications addressed to Sigma Sound. For privacy questions or to exercise your rights, email vaviloga76@gmail.com."
+          }
+        ]
+      },
+      {
+        "title": {
+          "ro": "Datele pe care le putem primi",
+          "en": "Data we may receive"
+        },
+        "paragraphs": [
+          {
+            "ro": "La navigare, infrastructura de găzduire poate prelucra adresa IP, momentul accesării, pagina sau fișierul solicitat și informații despre browser, pentru livrarea site-ului, diagnosticarea erorilor și prevenirea abuzurilor. Găzduirea este asigurată de Claus Web.",
+            "en": "When you browse, the hosting infrastructure may process your IP address, access time, requested page or file and browser information for website delivery, error diagnosis and abuse prevention. Hosting is provided by Claus Web."
+          },
+          {
+            "ro": "Dacă ne contactezi prin telefon, email sau WhatsApp, putem primi numele, datele de contact și detaliile despre eveniment pe care alegi să ni le comunici. Trimite doar informațiile necesare solicitării tale.",
+            "en": "If you contact us by phone, email or WhatsApp, we may receive your name, contact details and the event information you choose to share. Please send only information needed for your enquiry."
+          },
+          {
+            "ro": "Versiunea nouă a site-ului nu are conturi, formular de contact, plăți online, Google Analytics sau pixeli publicitari. Nu solicită acces la locația, camera sau microfonul dispozitivului.",
+            "en": "The new website has no accounts, contact form, online payments, Google Analytics or advertising pixels. It does not request access to your device location, camera or microphone."
+          }
+        ]
+      },
+      {
+        "title": {
+          "ro": "Scopurile și temeiurile prelucrării",
+          "en": "Purposes and legal bases"
+        },
+        "paragraphs": [
+          {
+            "ro": "Folosim informațiile din solicitări pentru a răspunde, a pregăti oferte și a stabili detaliile colaborării. Pentru demersurile contractuale cerute de o persoană în nume propriu, temeiul este art. 6 alin. (1) lit. b) GDPR. Pentru comunicarea cu reprezentanții firmelor, interesul legitim este gestionarea solicitărilor și a relațiilor profesionale, conform art. 6 alin. (1) lit. f).",
+            "en": "We use enquiry information to reply, prepare quotes and discuss working together. Steps towards a contract requested by an individual in their own name rely on Article 6(1)(b) GDPR. For communication with business representatives, the legitimate interest is managing enquiries and business relationships under Article 6(1)(f)."
+          },
+          {
+            "ro": "Livrarea și protejarea site-ului urmăresc interesul legitim de a menține un serviciu funcțional și de a preveni incidentele. Datele necesare îndeplinirii obligațiilor legale sunt prelucrate în temeiul art. 6 alin. (1) lit. c). O solicitare de ofertă nu te înscrie automat la mesaje de marketing.",
+            "en": "Website delivery and protection pursue the legitimate interest in maintaining a working service and preventing incidents. Data needed to meet legal obligations is processed under Article 6(1)(c). Requesting a quote does not automatically subscribe you to marketing messages."
+          }
+        ]
+      },
+      {
+        "title": {
+          "ro": "Furnizori și destinatari",
+          "en": "Providers and recipients"
+        },
+        "paragraphs": [
+          {
+            "ro": "Claus Web furnizează infrastructura de găzduire. Rolul său depinde de operațiune: pentru datele găzduite poate acționa ca persoană împuternicită, iar pentru propriile obligații și securitatea serviciului poate acționa separat, potrivit documentelor sale contractuale.",
+            "en": "Claus Web provides hosting infrastructure. Its role depends on the operation: it may act as a processor for hosted data and separately for its own obligations and service security, as described in its contractual documents."
+          },
+          {
+            "ro": "Adresa de contact folosește Gmail, serviciu Google. Dacă alegi WhatsApp, comunicarea se desfășoară prin serviciul respectiv. Linkurile Instagram și Facebook deschid platformele numai când le accesezi; nu includem widgeturi sociale în pagină.",
+            "en": "The contact email address uses Gmail, a Google service. If you choose WhatsApp, communication takes place through that service. Instagram and Facebook links open those platforms only when you visit them; we do not embed social widgets."
+          },
+          {
+            "ro": "Serviciile Google și Meta pot implica prelucrarea datelor în afara Spațiului Economic European. Informațiile despre țările, mecanismele de transfer și protecțiile oferite de fiecare serviciu sunt descrise în politicile furnizorilor. Datele pot fi comunicate și autorităților atunci când există o obligație legală.",
+            "en": "Google and Meta services may involve processing outside the European Economic Area. Their policies describe the countries, transfer mechanisms and safeguards offered by each service. Data may also be disclosed to authorities where legally required."
+          }
+        ],
+        "links": [
+          {
+            "label": {
+              "ro": "Claus Web: confidențialitate",
+              "en": "Claus Web: privacy"
+            },
+            "href": "https://www.clausweb.ro/confidentialitate.html"
+          },
+          {
+            "label": {
+              "ro": "Claus Web: acord de prelucrare a datelor",
+              "en": "Claus Web: data processing agreement"
+            },
+            "href": "https://www.clausweb.ro/acord-prelucrare-date.html"
+          },
+          {
+            "label": {
+              "ro": "Google: confidențialitate",
+              "en": "Google: privacy"
+            },
+            "href": "https://policies.google.com/privacy?hl=ro"
+          },
+          {
+            "label": {
+              "ro": "WhatsApp: confidențialitate",
+              "en": "WhatsApp: privacy"
+            },
+            "href": "https://www.whatsapp.com/legal/privacy-policy-eea"
+          }
+        ]
+      },
+      {
+        "title": {
+          "ro": "Păstrarea datelor",
+          "en": "Data retention"
+        },
+        "paragraphs": [
+          {
+            "ro": "Păstrăm informațiile din solicitări cât timp sunt necesare pentru răspuns, pregătirea ofertei și eventualele discuții de colaborare. Dacă se încheie un contract, documentele relevante se păstrează pe durata necesară executării sale și respectării obligațiilor legale sau apărării drepturilor. Corespondența fără utilitate pentru aceste scopuri nu trebuie păstrată pe termen nelimitat.",
+            "en": "We retain enquiry information for as long as needed to reply, prepare a quote and discuss potential work. If a contract is concluded, relevant records are retained as needed to perform it, meet legal obligations or defend rights. Correspondence no longer useful for these purposes should not be kept indefinitely."
+          },
+          {
+            "ro": "Păstrarea jurnalelor tehnice și a copiilor de siguranță depinde de configurația serviciului de găzduire și de necesitatea investigării incidentelor. Pentru informații despre datele care te privesc și criteriile aplicate situației tale, ne poți contacta la adresa de mai sus.",
+            "en": "Technical log and backup retention depends on the hosting service configuration and any need to investigate incidents. You can contact us at the address above for information about your data and the criteria applied to your situation."
+          }
+        ]
+      },
+      {
+        "title": {
+          "ro": "Fotografiile din galerie",
+          "en": "Gallery photographs"
+        },
+        "paragraphs": [
+          {
+            "ro": "Fotografiile prezintă configurații tehnice și evenimente la care a lucrat Sigma Sound. Dacă te recunoști într-o imagine și ai o întrebare sau o solicitare privind utilizarea ei, trimite-ne evenimentul și fotografia la vaviloga76@gmail.com. Analizăm fiecare solicitare potrivit drepturilor persoanelor vizate și cadrului legal aplicabil.",
+            "en": "Photographs show technical setups and events involving Sigma Sound. If you recognise yourself in an image and have a question or request about its use, email the event and photograph details to vaviloga76@gmail.com. We assess each request in light of data subject rights and applicable law."
+          }
+        ]
+      },
+      {
+        "title": {
+          "ro": "Drepturile tale",
+          "en": "Your rights"
+        },
+        "paragraphs": [
+          {
+            "ro": "În condițiile GDPR, poți cere acces la date, rectificare, ștergere, restricționarea prelucrării sau portabilitate și te poți opune prelucrărilor bazate pe interes legitim. Când o prelucrare se bazează pe consimțământ, acesta poate fi retras fără a afecta legalitatea operațiunilor anterioare. Drepturile se aplică în condițiile și cu excepțiile prevăzute de lege.",
+            "en": "Subject to GDPR conditions, you may request access, rectification, erasure, restriction or portability and object to processing based on legitimate interests. Where processing relies on consent, it may be withdrawn without affecting the lawfulness of earlier processing. Rights are subject to legal conditions and exceptions."
+          },
+          {
+            "ro": "Trimite solicitarea la vaviloga76@gmail.com. Termenul obișnuit de răspuns este o lună; o eventuală prelungire este comunicată și justificată conform GDPR. Ai dreptul să depui o plângere la ANSPDCP și să folosești căile judiciare disponibile.",
+            "en": "Send your request to vaviloga76@gmail.com. The normal response period is one month; any extension is communicated and justified under the GDPR. You may complain to ANSPDCP and seek available judicial remedies."
+          }
+        ]
+      }
     ]
   },
   {
-    path: '/cookies',
-    title: { ro: 'Cookies și stocare', en: 'Cookies and storage' },
-    description: { ro: 'Cum folosește aplicația Sigma Sound cookies și stocarea din browser.', en: 'How the Sigma Sound application uses cookies and browser storage.' },
-    sections: [
-      { title: { ro: 'Ce folosește aplicația', en: 'What the application uses' }, paragraphs: [
-        { ro: 'Versiunea actuală a aplicației nu setează cookies și nu folosește localStorage, sessionStorage sau IndexedDB. Nu include Google Analytics, Meta Pixel sau alte instrumente de urmărire publicitară.', en: 'The current application does not set cookies or use localStorage, sessionStorage or IndexedDB. It does not include Google Analytics, Meta Pixel or other advertising tracking tools.' },
-        { ro: 'Limba selectată este păstrată doar în memoria aplicației cât timp navighezi. Browserul poate păstra în cache fișierele site-ului pentru încărcare mai rapidă; acest cache nu este utilizat de noi pentru profilare.', en: 'Your selected language is held only in application memory while you browse. Your browser may cache website files for faster loading; we do not use that cache for profiling.' }
-      ] },
-      { title: { ro: 'Găzduire și servicii externe', en: 'Hosting and external services' }, paragraphs: [
-        { ro: '[TODO: verificarea cookies și tehnologiilor de stocare introduse de hosting sau CDN pe domeniul final, înainte de publicare].', en: '[TODO: check cookies and storage technologies introduced by hosting or a CDN on the final domain before publication].' },
-        { ro: 'Linkurile spre WhatsApp, Instagram și Facebook sunt linkuri obișnuite. Nu încarcă în pagină conținutul platformelor. După accesare, utilizarea datelor de către platforma aleasă este descrisă în politica acesteia.', en: 'Links to WhatsApp, Instagram and Facebook are ordinary links. They do not embed platform content in the page. Once you visit a platform, its policy describes how it uses your data.' }
-      ] },
-      { title: { ro: 'Alegerea ta', en: 'Your choice' }, paragraphs: [
-        { ro: 'Pentru aplicația actuală, nu cerem acord pentru instrumente de urmărire pe care nu le folosim. Dacă adăugăm tehnologii neesențiale care necesită consimțământ, vom solicita alegerea ta înainte de activare și vom oferi refuzul și retragerea acordului.', en: 'For the current application, we do not ask you to agree to tracking tools we do not use. If we add non-essential technologies requiring consent, we will ask for your choice before activation and provide refusal and withdrawal options.' },
-        { ro: 'Poți gestiona datele și cache-ul site-ului din setările browserului. Pentru întrebări, scrie-ne la vaviloga76@gmail.com.', en: 'You can manage site data and cache through your browser settings. For questions, email vaviloga76@gmail.com.' }
-      ] }
+    "path": "/cookies",
+    "title": {
+      "ro": "Cookies și stocare",
+      "en": "Cookies and storage"
+    },
+    "description": {
+      "ro": "Informații despre cookies, stocarea din browser și renunțarea la Google Analytics în noul site Sigma Sound.",
+      "en": "Information about cookies, browser storage and removal of Google Analytics from the new Sigma Sound website."
+    },
+    "sections": [
+      {
+        "title": {
+          "ro": "Ce folosește noul site",
+          "en": "What the new website uses"
+        },
+        "paragraphs": [
+          {
+            "ro": "Aplicația nu utilizează cookies de analiză sau publicitate, Google Analytics ori Meta Pixel. Nu folosește localStorage, sessionStorage sau IndexedDB. Limba aleasă este ținută numai în memoria aplicației în timpul navigării.",
+            "en": "The application does not use analytics or advertising cookies, Google Analytics or Meta Pixel. It does not use localStorage, sessionStorage or IndexedDB. Your selected language is held only in application memory while browsing."
+          },
+          {
+            "ro": "Browserul poate păstra în cache imagini și fișiere pentru încărcare mai rapidă. Nu folosim acest cache pentru profilare sau publicitate.",
+            "en": "Your browser may cache images and files for faster loading. We do not use that cache for profiling or advertising."
+          }
+        ]
+      },
+      {
+        "title": {
+          "ro": "Cookies din versiunea anterioară",
+          "en": "Cookies from the previous version"
+        },
+        "paragraphs": [
+          {
+            "ro": "Site-ul anterior folosea Google Analytics, cu cookies _ga și _ga_ZMB567ZTWB. Noua aplicație nu încarcă Google Analytics și șterge aceste cookies accesibile pe domeniul sigmasound.ro, dacă ele mai există în browser. Nu este necesară acceptarea cookies publicitare pentru a vedea site-ul.",
+            "en": "The previous website used Google Analytics cookies named _ga and _ga_ZMB567ZTWB. The new application does not load Google Analytics and deletes these accessible cookies on sigmasound.ro if they remain in your browser. Accepting advertising cookies is not required to view the website."
+          }
+        ]
+      },
+      {
+        "title": {
+          "ro": "Găzduire și linkuri externe",
+          "en": "Hosting and external links"
+        },
+        "paragraphs": [
+          {
+            "ro": "Infrastructura Claus Web poate aplica măsuri tehnice de securitate și protecție împotriva traficului abuziv. Aceste funcții sunt distincte de analiza publicitară și depind de serviciul de găzduire.",
+            "en": "Claus Web infrastructure may apply technical security and abuse-protection measures. These are separate from advertising analytics and depend on the hosting service."
+          },
+          {
+            "ro": "WhatsApp, Instagram și Facebook sunt accesibile prin linkuri obișnuite. Nu încărcăm widgeturi sociale în pagină. După ce alegi să deschizi o platformă, se aplică politica acelei platforme.",
+            "en": "WhatsApp, Instagram and Facebook are available through ordinary links. We do not load social widgets in the page. Once you choose to open a platform, its policy applies."
+          }
+        ]
+      },
+      {
+        "title": {
+          "ro": "Cum gestionezi datele din browser",
+          "en": "Managing browser data"
+        },
+        "paragraphs": [
+          {
+            "ro": "Poți vedea și șterge cookies și cache-ul pentru sigmasound.ro din setările browserului. Dacă ștergi datele păstrate din versiunea veche, unele resurse vor fi descărcate din nou la următoarea vizită.",
+            "en": "You can inspect and delete cookies and cache for sigmasound.ro through your browser settings. If you delete data retained from the old version, some resources will download again on your next visit."
+          },
+          {
+            "ro": "Dacă adăugăm instrumente neesențiale care necesită consimțământ, îți vom cere alegerea înainte de activarea lor și vom oferi posibilitatea de refuz și retragere. Pentru întrebări, ne poți scrie la vaviloga76@gmail.com.",
+            "en": "If we add non-essential tools requiring consent, we will ask for your choice before activation and provide refusal and withdrawal options. For questions, email vaviloga76@gmail.com."
+          }
+        ]
+      }
     ]
   },
   {
-    path: '/informatii-legale',
-    title: { ro: 'Informații legale', en: 'Legal information' },
-    description: { ro: 'Datele operatorului și informații despre site-ul de prezentare Sigma Sound.', en: 'Operator details and information about the Sigma Sound presentation website.' },
-    sections: [
-      { title: { ro: 'Operatorul site-ului', en: 'Website operator' }, paragraphs: [
-        { ro: 'Denumire și formă juridică: [TODO: denumire juridică și formă juridică].', en: 'Legal name and form: [TODO: legal name and legal form].' },
-        { ro: 'Sediu social: [TODO: sediu social].', en: 'Registered address: [TODO: registered address].' },
-        { ro: 'Cod unic de înregistrare: [TODO: CUI]. Număr Registrul Comerțului: [TODO: număr RC].', en: 'Tax identification number: [TODO: CUI]. Trade Register number: [TODO: registration number].' },
-        { ro: 'Capital social, dacă este aplicabil: [TODO: capital social].', en: 'Share capital, where applicable: [TODO: share capital].' },
-        { ro: 'Contact: vaviloga76@gmail.com; 0744 125 740; 0744 845 891.', en: 'Contact: vaviloga76@gmail.com; +40 744 125 740; +40 744 845 891.' }
-      ] },
-      { title: { ro: 'Despre acest site', en: 'About this website' }, paragraphs: [
-        { ro: 'Sigma Sound prezintă servicii de scenă, sonorizare și lumini pentru evenimente și fotografii din activitatea sa. Site-ul nu include comandă, rezervare sau plată online. Configurația tehnică, disponibilitatea și condițiile colaborării se stabilesc prin contact direct.', en: 'Sigma Sound presents stage, sound and lighting services for events and photographs from its work. The website has no online ordering, booking or payment. The technical setup, availability and terms of engagement are agreed through direct contact.' }
-      ] },
-      { title: { ro: 'Conținut și fotografii', en: 'Content and photographs' }, paragraphs: [
-        { ro: 'Utilizarea imaginilor și textelor de către terți trebuie să respecte drepturile titularilor. Pentru solicitări privind conținutul sau o fotografie, contactează-ne la adresa de email de mai sus.', en: 'Third-party use of images and text must respect the rights of their holders. For content or photograph requests, contact us at the email address above.' }
-      ] }
+    "path": "/informatii-legale",
+    "title": {
+      "ro": "Informații despre site",
+      "en": "Website information"
+    },
+    "description": {
+      "ro": "Contact, utilizare și informații despre site-ul de prezentare Sigma Sound.",
+      "en": "Contact, use and information about the Sigma Sound presentation website."
+    },
+    "sections": [
+      {
+        "title": {
+          "ro": "Sigma Sound",
+          "en": "Sigma Sound"
+        },
+        "paragraphs": [
+          {
+            "ro": "Website: www.sigmasound.ro. Email: vaviloga76@gmail.com. Telefon: 0744 125 740 și 0744 845 891.",
+            "en": "Website: www.sigmasound.ro. Email: vaviloga76@gmail.com. Phone: +40 744 125 740 and +40 744 845 891."
+          }
+        ]
+      },
+      {
+        "title": {
+          "ro": "Serviciile prezentate",
+          "en": "Services presented"
+        },
+        "paragraphs": [
+          {
+            "ro": "Site-ul prezintă servicii de scenă, sonorizare și lumini pentru evenimente, împreună cu imagini din activitatea Sigma Sound. Configurația tehnică, disponibilitatea, prețul și condițiile colaborării se stabilesc prin contact direct.",
+            "en": "The website presents stage, sound and lighting services for events, with images from Sigma Sound’s work. The technical setup, availability, price and terms of engagement are agreed through direct contact."
+          },
+          {
+            "ro": "Navigarea pe site nu plasează o comandă și nu încheie automat un contract. Nu există rezervări sau plăți online.",
+            "en": "Browsing the website does not place an order or automatically conclude a contract. There are no online bookings or payments."
+          }
+        ]
+      },
+      {
+        "title": {
+          "ro": "Utilizarea conținutului",
+          "en": "Use of content"
+        },
+        "paragraphs": [
+          {
+            "ro": "Imaginile și textele trebuie utilizate cu respectarea drepturilor titularilor. Pentru folosirea unui material sau pentru o solicitare privind o fotografie, contactează-ne la adresa de email de mai sus.",
+            "en": "Images and text must be used in accordance with their holders’ rights. To use material or make a request about a photograph, contact us at the email address above."
+          }
+        ]
+      },
+      {
+        "title": {
+          "ro": "Găzduire și servicii externe",
+          "en": "Hosting and external services"
+        },
+        "paragraphs": [
+          {
+            "ro": "Site-ul este găzduit la Claus Web. Linkurile către alte platforme deschid servicii independente, cu propriile politici. Informațiile despre datele personale și stocarea în browser sunt disponibile în paginile Confidențialitate și Cookies și stocare.",
+            "en": "The website is hosted by Claus Web. Links to other platforms open independent services with their own policies. Information about personal data and browser storage is available on the Privacy and Cookies and storage pages."
+          }
+        ]
+      }
     ]
   }
 ];

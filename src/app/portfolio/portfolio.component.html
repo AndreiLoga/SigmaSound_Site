@@ -4,7 +4,7 @@
       <section class="event-gallery" *ngFor="let event of events; let eventIndex = index" [id]="event.id" [attr.aria-labelledby]="event.id + '-title'">
         <header class="event-heading" appScrollReveal="left">
           <div>
-            <h2 [id]="event.id + '-title'" lang="ro">{{ event.title }} <span>{{ event.year || ('[TODO: anul evenimentului]' | t) }}</span></h2>
+            <h2 [id]="event.id + '-title'" lang="ro">{{ event.title }} <span>{{ event.year || '' }}</span></h2>
           </div>
         </header>
         <div class="mobile-gallery" [appScrollReveal]="eventIndex % 2 === 0 ? 'right' : 'left'" role="group" [attr.aria-label]="event.title + ' ' + event.year" (keydown)="onEventGalleryKey($event, event)">

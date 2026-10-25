@@ -66,6 +66,21 @@
                 "glob": "*.{png,svg,ico,webmanifest,xml}",
                 "input": "poze galerie/poze icon",
                 "output": "assets/poze galerie/poze icon"
+              },
+              {
+                "glob": ".htaccess",
+                "input": "src/hosting",
+                "output": "/"
+              },
+              {
+                "glob": "*.{txt,xml}",
+                "input": "src/hosting",
+                "output": "/"
+              },
+              {
+                "glob": "sal.png",
+                "input": "src/hosting",
+                "output": "assets"
               }
             ],
             "styles": [

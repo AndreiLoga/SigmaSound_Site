@@ -1,6 +1,5 @@
 export const english: Record<string, string> = {
   "Înapoi la pagina principală": "Back to the homepage",
-  "Document în pregătire. Câmpurile [TODO] trebuie completate înainte de publicarea site-ului.": "Draft document. The [TODO] fields must be completed before the website is published.",
   "Autorități și informații utile": "Authorities and useful information",
   "(tab nou)": "(new tab)",
   "Soluționarea alternativă a litigiilor (SAL)": "Alternative dispute resolution (SAL)",
@@ -45,11 +44,7 @@ export const english: Record<string, string> = {
   "Data": "Date",
   "Numărul estimat de participanți": "Estimated audience size",
   "Zona de acoperire": "Coverage area",
-  "[TODO: zona de acoperire]": "[TODO: coverage area]",
   "Contact direct": "Contact us directly",
-  "[TODO: telefon]": "[TODO: phone]",
-  "[TODO: email]": "[TODO: email]",
-  "[TODO: WhatsApp]": "[TODO: WhatsApp]",
 
   'Boxe line-array suspendate într-o configurație de sonorizare indoor': 'Suspended line-array loudspeakers in an indoor sound setup',
   "Scenă, sonorizare și lumini pentru concerte, festivaluri și evenimente corporate. Soluția tehnică se adaptează locației și programului tău.": "Stage, sound and lighting for concerts, festivals and corporate events. The technical setup is tailored to your venue and programme.",
@@ -84,7 +79,6 @@ export const english: Record<string, string> = {
 
   'Producție tehnică de eveniment': 'Technical event production',
   'Folosește săgețile pentru navigare și Esc pentru închidere.': 'Use the arrow keys to browse and Esc to close.',
-  '[TODO: anul evenimentului]': '[TODO: event year]',
   'fotografia': 'photo',
   'Mărește': 'Enlarge',
   'Închide galeria': 'Close gallery',

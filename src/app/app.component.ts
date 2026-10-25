@@ -1,3 +1,4 @@
+import { clearLegacyAnalyticsCookies } from './legacy-privacy';
 import { Component, ElementRef, HostListener, ViewChild, inject } from '@angular/core';
 import { DOCUMENT, ViewportScroller } from '@angular/common';
 import { LocaleService, TranslatePipe } from './locale.service';
@@ -18,6 +19,7 @@ export class AppComponent {
   private readonly scroller = inject(ViewportScroller);
 
   constructor() {
+    clearLegacyAnalyticsCookies(this.document);
     this.scroller.setOffset(() => [0, (this.document.querySelector('.site-header')?.getBoundingClientRect().bottom ?? 0) + 24]);
   }
 
