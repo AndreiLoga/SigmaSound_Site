@@ -1,4 +1,5 @@
 export interface EventPhoto {
+  uncropped?: boolean;
   image: string;
   thumbnail: string;
   width: number;
@@ -429,12 +430,13 @@ export const portfolioEvents: PortfolioEvent[] = [
     "year": 2025,
     "photos": [
       {
-        "image": "assets/poze galerie/optimized/v3/e3fac2117ff6e609e5d9d832.jpg",
+        "image": "assets/poze galerie/optimized/v3/832c45dbb2e68851b25221dd.jpg",
         "imageWidth": 1364,
-        "imageHeight": 908,
-        "thumbnail": "assets/poze galerie/optimized/v3/e3fac2117ff6e609e5d9d832-thumb.jpg",
+        "imageHeight": 853,
+        "thumbnail": "assets/poze galerie/optimized/v3/832c45dbb2e68851b25221dd-thumb.jpg",
         "width": 520,
-        "height": 346
+        "height": 325,
+        "uncropped": true
       },
       {
         "image": "assets/poze galerie/optimized/v3/5ea2caa0a9e5c06fd56962b0.jpg",

@@ -30,7 +30,7 @@
         </div>
         <div class="photo-grid desktop-gallery" [appScrollReveal]="eventIndex % 2 === 0 ? 'right' : 'left'">
           <button type="button" class="photo-button" *ngFor="let photo of event.photos; let index = index" (click)="openPhoto(event, index, $event)" aria-haspopup="dialog" [attr.aria-label]="('Mărește' | t) + ': ' + photoLabel(event, index)">
-            <img [src]="photo.thumbnail" [alt]="photoLabel(event, index)" loading="lazy" decoding="async" [width]="photo.width" [height]="photo.height">
+            <img [src]="photo.thumbnail" [class.uncropped]="photo.uncropped" [alt]="photoLabel(event, index)" loading="lazy" decoding="async" [width]="photo.width" [height]="photo.height">
           </button>
         </div>
       </section>
