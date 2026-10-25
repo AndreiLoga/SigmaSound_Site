@@ -16,13 +16,6 @@ export interface EquipmentCategory {
   items: string[];
 }
 
-export interface PortfolioImage {
-  title: string;
-  image: string;
-  category: string;
-  thumbnail: string;
-}
-
 export const heroImages = [
   'assets/poze galerie/web/event-01.jpg',
   'assets/poze galerie/web/event-02.jpg'
@@ -115,15 +108,6 @@ export const equipment: EquipmentCategory[] = [
   }
 ];
 
-export const portfolioImages: PortfolioImage[] = [
-  { title: 'MedievArtFest Ardud', category: 'festival', image: 'assets/poze galerie/web/event-03.jpg', thumbnail: 'assets/poze galerie/web/event-03-thumb.jpg' },
-  { title: 'Scenă outdoor', category: 'scenă', image: 'assets/poze galerie/web/event-04.jpg', thumbnail: 'assets/poze galerie/web/event-04-thumb.jpg' },
-  { title: 'Lumini concert', category: 'lumini', image: 'assets/poze galerie/web/event-02.jpg', thumbnail: 'assets/poze galerie/web/event-02-thumb.jpg' },
-  { title: 'Zilele Ardudului', category: 'eveniment public', image: 'assets/poze galerie/web/event-01.jpg', thumbnail: 'assets/poze galerie/web/event-01-thumb.jpg' },
-  { title: 'Gala Loga Dance', category: 'gală', image: 'assets/poze galerie/web/event-05.jpg', thumbnail: 'assets/poze galerie/web/event-05-thumb.jpg' },
-  { title: 'Rock Filarmonica', category: 'live', image: 'assets/poze galerie/web/event-07.jpg', thumbnail: 'assets/poze galerie/web/event-07-thumb.jpg' },
-  { title: 'Lumini indoor', category: 'lumini', image: 'assets/poze galerie/web/event-11.jpg', thumbnail: 'assets/poze galerie/web/event-11-thumb.jpg' },
-];
 
 
 export interface ContactChannel {

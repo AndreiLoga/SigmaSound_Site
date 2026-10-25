@@ -27,14 +27,45 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               {
-                "glob": "**/*",
-                "input": "poze",
-                "output": "assets/poze"
+                "glob": "*.jpg",
+                "input": "poze galerie/optimized/v3",
+                "ignore": [
+                  "0ecd4de2075cbcf3e9242e4f-thumb.jpg",
+                  "0ecd4de2075cbcf3e9242e4f.jpg",
+                  "236176f5a9654388bf84d80c-thumb.jpg",
+                  "236176f5a9654388bf84d80c.jpg",
+                  "328515bb5e5ae31e8a2060cc-thumb.jpg",
+                  "328515bb5e5ae31e8a2060cc.jpg",
+                  "3c8c21e59f48af8164bbe67e-thumb.jpg",
+                  "3c8c21e59f48af8164bbe67e.jpg",
+                  "3f510c267d6230cd77cc7a12-thumb.jpg",
+                  "3f510c267d6230cd77cc7a12.jpg",
+                  "438c49172c0fc9228f49dcc2-thumb.jpg",
+                  "438c49172c0fc9228f49dcc2.jpg",
+                  "4624e2e5d4b51ff19107047d-thumb.jpg",
+                  "4624e2e5d4b51ff19107047d.jpg",
+                  "82eec5d3842e3900002ca1a6-thumb.jpg",
+                  "82eec5d3842e3900002ca1a6.jpg",
+                  "8c70aa5acbcd339f47a92c00-thumb.jpg",
+                  "8c70aa5acbcd339f47a92c00.jpg",
+                  "9404b35ca4d324c46d61129b-thumb.jpg",
+                  "9404b35ca4d324c46d61129b.jpg",
+                  "a99e8da3bd2784348053ee2d-thumb.jpg",
+                  "a99e8da3bd2784348053ee2d.jpg",
+                  "f91589e6903faabe9375b67a-thumb.jpg",
+                  "f91589e6903faabe9375b67a.jpg"
+                ],
+                "output": "assets/poze galerie/optimized/v3"
               },
               {
-                "glob": "**/*",
-                "input": "poze galerie",
-                "output": "assets/poze galerie"
+                "glob": "event-0[12].jpg",
+                "input": "poze galerie/web",
+                "output": "assets/poze galerie/web"
+              },
+              {
+                "glob": "*.{png,svg,ico,webmanifest,xml}",
+                "input": "poze galerie/poze icon",
+                "output": "assets/poze galerie/poze icon"
               }
             ],
             "styles": [
@@ -56,7 +87,10 @@
                   "maximumError": "24kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "security": {
+                "autoCsp": true
+              }
             },
             "development": {
               "optimization": false,
