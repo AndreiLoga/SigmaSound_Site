@@ -10,7 +10,7 @@
       </div>
     </div>
     <div class="hero-media">
-      <img *ngFor="let image of heroImages; let index = index" [src]="image.image" [attr.srcset]="image.srcset" sizes="100vw" [style.--hero-position]="image.position" [style.--hero-mobile-position]="image.mobilePosition" [class.active]="index === activeHero" [attr.aria-hidden]="index !== activeHero" [attr.fetchpriority]="index === 0 ? 'high' : 'low'" [alt]="'Scenă Sigma Sound cu lumini și public' | t" [width]="image.width" [height]="image.height" decoding="async">
+      <img *ngFor="let image of heroImages; let index = index" [src]="image.image" [attr.srcset]="image.srcset" sizes="100vw" [style.--hero-position]="image.position" [style.--hero-mobile-position]="image.mobilePosition" [class.mirrored]="index < 4" [class.active]="index === activeHero" [attr.aria-hidden]="index !== activeHero" [attr.fetchpriority]="index === 0 ? 'high' : 'low'" [alt]="'Scenă Sigma Sound cu lumini și public' | t" [width]="image.width" [height]="image.height" decoding="async">
     </div>
   </section>
 
