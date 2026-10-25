@@ -31,11 +31,11 @@ export const heroImages = [
 export const services: ServiceLine[] = [
   {
     "title": "Scenă",
-    "lead": "Scene și structuri adaptate locației, pentru concerte, festivaluri și evenimente publice.",
+    "lead": "Închiriem și montăm scene pentru concerte, festivaluri și evenimente publice, în interior și în aer liber. Configurăm scena și structurile de susținere în funcție de spațiu și de cerințele producției.",
     "capabilities": [
-      "structuri de scenă",
-      "montaj și demontaj",
-      "adaptare la locație"
+      "Scene și structuri",
+      "Montaj și demontaj",
+      "Indoor și outdoor"
     ],
     "equipment": [
       "scene mobile",
@@ -51,12 +51,11 @@ export const services: ServiceLine[] = [
   },
   {
     "title": "Sunet",
-    "lead": "Sonorizare pentru public și artiști, cu mixaj live și monitorizare de scenă.",
+    "lead": "Asigurăm sonorizarea pentru public și monitorizarea pentru artiști, cu sisteme audio adaptate locației și numărului de participanți. Ne ocupăm de instalare, probe de sunet și mixaj pe durata evenimentului.",
     "capabilities": [
-      "sonorizare",
-      "mixaj live",
-      "monitoare de scenă",
-      "probe de sunet"
+      "Sisteme line-array",
+      "Mixaj live",
+      "Monitoare de scenă"
     ],
     "equipment": [
       "DAS Audio Event-210A",
@@ -73,12 +72,11 @@ export const services: ServiceLine[] = [
   },
   {
     "title": "Lumini",
-    "lead": "Lumină pentru scenă, artiști și decor, programată în ritmul spectacolului.",
+    "lead": "Configurăm iluminatul scenei pentru vizibilitatea artiștilor și atmosfera spectacolului. Combinăm lumini beam, wash și efecte de scenă, cu programare și operare adaptate fiecărui moment din eveniment.",
     "capabilities": [
-      "moving heads",
-      "beam și wash",
-      "efecte de scenă",
-      "operare live"
+      "Iluminat de scenă",
+      "Beam, wash și efecte",
+      "Operare live"
     ],
     "equipment": [
       "Fos Beam 7r Hybrid Plus",

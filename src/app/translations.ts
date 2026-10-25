@@ -1,4 +1,17 @@
 export const english: Record<string, string> = {
+  "Închiriem și montăm scene pentru concerte, festivaluri și evenimente publice, în interior și în aer liber. Configurăm scena și structurile de susținere în funcție de spațiu și de cerințele producției.": "We supply and install stages for concerts, festivals and public events, indoors and outdoors. We configure the stage and support structures to suit the venue and production requirements.",
+  "Asigurăm sonorizarea pentru public și monitorizarea pentru artiști, cu sisteme audio adaptate locației și numărului de participanți. Ne ocupăm de instalare, probe de sunet și mixaj pe durata evenimentului.": "We provide sound reinforcement for the audience and stage monitoring for performers, with audio systems suited to the venue and audience size. We handle installation, soundchecks and live mixing throughout the event.",
+  "Configurăm iluminatul scenei pentru vizibilitatea artiștilor și atmosfera spectacolului. Combinăm lumini beam, wash și efecte de scenă, cu programare și operare adaptate fiecărui moment din eveniment.": "We configure stage lighting to keep performers visible and create the atmosphere of the show. We combine beam and wash fixtures with stage effects, programming and operating them to suit each moment of the event.",
+  "Scene și structuri": "Stages and structures",
+  "Montaj și demontaj": "Installation and dismantling",
+  "Indoor și outdoor": "Indoors and outdoors",
+  "Sisteme line-array": "Line-array systems",
+  "Mixaj live": "Live mixing",
+  "Monitoare de scenă": "Stage monitors",
+  "Iluminat de scenă": "Stage lighting",
+  "Beam, wash și efecte": "Beam, wash and effects",
+  "Operare live": "Live operation",
+
   'Spune-ne ce pregătești. Stabilim împreună soluția perfectă.': 'Tell us what you are planning. Together, we will find the perfect solution.',
   'Online': 'Online',
   'WhatsApp (se deschide într-un tab nou)': 'WhatsApp (opens in a new tab)',
