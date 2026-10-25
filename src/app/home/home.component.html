@@ -48,33 +48,19 @@
     </div>
   </section>
 
-  <section class="contact section-space" id="contact" aria-labelledby="contact-title" data-reveal>
+  <section class="contact" id="contact" aria-labelledby="contact-title" data-reveal>
     <div class="contact-copy">
-      <h2 id="contact-title">{{ 'Cere o ofertă pentru evenimentul tău.' | t }}</h2>
+      <h2 id="contact-title">{{ 'Contact' | t }}</h2>
       <p class="contact-lead">{{ 'Spune-ne ce pregătești. Stabilim împreună soluția de scenă, sunet și lumini.' | t }}</p>
-      <h3>{{ 'Pentru o ofertă, pregătește:' | t }}</h3>
-      <ul class="quote-checklist">
-        <li>{{ 'Tipul de eveniment' | t }}</li>
-        <li>{{ 'Locația' | t }}</li>
-        <li>{{ 'Data' | t }}</li>
-        <li>{{ 'Numărul estimat de participanți' | t }}</li>
-      </ul>
-      <div class="coverage">
-        <h3>{{ 'Zona de acoperire' | t }}</h3>
-        <p>{{ '[TODO: zona de acoperire]' | t }}</p>
+    </div>
+    <dl class="contact-details">
+      <div *ngFor="let channel of contactChannels">
+        <dt>{{ channel.label | t }}</dt>
+        <dd>
+          <a *ngIf="channel.href; else pendingContact" [href]="channel.href" [attr.target]="channel.label === 'WhatsApp' ? '_blank' : null" [attr.rel]="channel.label === 'WhatsApp' ? 'noopener noreferrer' : null">{{ channel.value }}</a>
+          <ng-template #pendingContact><span>{{ channel.value | t }}</span></ng-template>
+        </dd>
       </div>
-    </div>
-    <div class="contact-panel">
-      <h3>{{ 'Contact direct' | t }}</h3>
-      <dl class="contact-details">
-        <div *ngFor="let channel of contactChannels">
-          <dt>{{ channel.label | t }}</dt>
-          <dd>
-            <a *ngIf="channel.href; else pendingContact" [href]="channel.href" [attr.target]="channel.label === 'WhatsApp' ? '_blank' : null" [attr.rel]="channel.label === 'WhatsApp' ? 'noopener noreferrer' : null">{{ channel.value }}</a>
-            <ng-template #pendingContact><span>{{ channel.value | t }}</span></ng-template>
-          </dd>
-        </div>
-      </dl>
-    </div>
+    </dl>
   </section>
 </main>
