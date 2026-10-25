@@ -38,10 +38,10 @@
   <section class="portfolio-section section-space" aria-labelledby="portfolio-title" data-reveal>
     <div class="section-heading">
       <div><h2 id="portfolio-title">{{ 'Pe scenă, în imagini.' | t }}</h2><p>{{ 'Configurații reale, din portofoliul Sigma Sound.' | t }}</p></div>
-      <a class="text-link" routerLink="/portofoliu">{{ 'Vezi toate evenimentele' | t }}</a>
+      <a class="text-link" routerLink="/galerie">{{ 'Vezi toate evenimentele' | t }}</a>
     </div>
     <div class="preview-grid">
-      <a class="preview-card" *ngFor="let item of portfolioPreview" routerLink="/portofoliu" [fragment]="item.id">
+      <a class="preview-card" *ngFor="let item of portfolioPreview" routerLink="/galerie" [fragment]="item.id">
         <div class="preview-image"><img [src]="item.thumbnail" [attr.srcset]="item.imageSrcset" [attr.sizes]="item.imageSizes" [alt]="('Producție tehnică de eveniment' | t) + ': ' + item.title + ' ' + item.year" [width]="item.width" [height]="item.height" loading="lazy" decoding="async"></div>
         <div class="preview-caption"><h3 [attr.lang]="item.id === 'open-air-symphony-2026' ? 'en' : 'ro'">{{ item.title }}</h3><span>{{ item.year }}</span></div>
       </a>

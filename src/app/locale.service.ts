@@ -24,9 +24,9 @@ export class LocaleService {
   }
 
   private updateMetadata(): void {
-    const portfolio = this.router.url.split(/[?#]/)[0] === '/portofoliu';
-    const title = this.t(portfolio ? 'Portofoliu | Sigma Sound' : 'Sigma Sound | Scenă, sunet și lumini');
-    const description = this.t(portfolio
+    const gallery = this.router.url.split(/[?#]/)[0] === '/galerie';
+    const title = this.t(gallery ? 'Galerie | Sigma Sound' : 'Sigma Sound | Scenă, sunet și lumini');
+    const description = this.t(gallery
       ? 'Fotografii de la evenimente din portofoliul Sigma Sound: scenă, sunet și lumini pentru producții live.'
       : 'Sigma Sound: scenă, sunet și lumini pentru concerte, festivaluri și evenimente corporate, indoor și outdoor, în Satu Mare.');
     this.document.documentElement.lang = this.language();

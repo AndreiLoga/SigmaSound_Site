@@ -122,8 +122,9 @@ h2 { max-width: 22ch; margin: 0; font-size: clamp(2rem, 3.8vw, 3.7rem); line-hei
 @media (max-width: 767px) {
   .hero { display: flex; flex-direction: column; align-items: stretch; min-height: 0; padding: 0; }
   .hero-media { position: relative; inset: auto; order: 0; width: 100%; height: auto; min-height: 0; aspect-ratio: 16 / 10; margin-top: 76px; }
-  .hero-media::after { content: none; }
-  .hero-copy { order: 1; width: 100%; padding: 28px 20px 40px; }
+  .hero-media::after { content: ''; inset: auto 0 0; height: 40px; background: linear-gradient(180deg,transparent,#173b3d); pointer-events: none; }
+  .hero-copy { order: 1; width: 100%; padding: 28px 20px 112px; background: linear-gradient(180deg,#173b3d calc(100% - 88px),#b1bcbd 100%); }
+  .services-section { padding-top: 32px; }
   .hero-location { margin: 0 0 16px; font-size: .9rem; }
   .hero-copy h1 { max-width: 18ch; font-size: clamp(2.1rem,8.4vw,2.65rem); line-height: 1.08; }
   .hero-lead { max-width: none; margin-top: 20px; font-size: 1rem; line-height: 1.6; }

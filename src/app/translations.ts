@@ -1,4 +1,6 @@
 export const english: Record<string, string> = {
+  'Galerie': 'Gallery',
+  'Galerie | Sigma Sound': 'Gallery | Sigma Sound',
   "Probe de sunet": "Soundchecks",
   "Închiriem și montăm scene pentru concerte, festivaluri și evenimente publice, în interior și în aer liber. Configurăm scena și structurile de susținere în funcție de spațiu și de cerințele producției.": "We supply and install stages for concerts, festivals and public events, indoors and outdoors. We configure the stage and support structures to suit the venue and production requirements.",
   "Asigurăm sonorizarea pentru public și monitorizarea pentru artiști, cu sisteme audio adaptate locației și numărului de participanți. Ne ocupăm de instalare, probe de sunet și mixaj pe durata evenimentului.": "We provide sound reinforcement for the audience and stage monitoring for performers, with audio systems suited to the venue and audience size. We handle installation, soundchecks and live mixing throughout the event.",

@@ -10,7 +10,7 @@
   <button #menuToggle class="menu-toggle" type="button" aria-controls="primary-nav" [attr.aria-expanded]="menuOpen" [attr.aria-label]="(menuOpen ? 'Închide meniul' : 'Deschide meniul') | t" (click)="toggleMenu()"><span aria-hidden="true">{{ menuOpen ? '×' : '☰' }}</span></button>
   <nav id="primary-nav" [class.is-open]="menuOpen" [attr.aria-label]="'Navigare principală' | t">
     <a routerLink="/" fragment="servicii" (click)="closeMenu()">{{ 'Servicii' | t }}</a>
-    <a routerLink="/portofoliu" routerLinkActive="active" ariaCurrentWhenActive="page" (click)="closeMenu()">{{ 'Portofoliu' | t }}</a>
+    <a routerLink="/galerie" routerLinkActive="active" ariaCurrentWhenActive="page" (click)="closeMenu()">{{ 'Galerie' | t }}</a>
     <a routerLink="/" fragment="contact" (click)="closeMenu()">{{ 'Contact' | t }}</a>
   </nav>
 </header>

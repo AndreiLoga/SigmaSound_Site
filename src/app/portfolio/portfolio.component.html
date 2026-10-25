@@ -1,5 +1,5 @@
 <main class="portfolio-page" id="main-content" tabindex="-1">
-  <h1>{{ 'Portofoliu' | t }}</h1>
+  <h1>{{ 'Galerie' | t }}</h1>
     <div class="event-list">
       <section class="event-gallery" *ngFor="let event of events" [id]="event.id" [attr.aria-labelledby]="event.id + '-title'">
         <header class="event-heading">
@@ -12,12 +12,16 @@
             <button type="button" class="featured-photo" [id]="event.id + '-featured'" (click)="openPhoto(event, activeIndex(event), $event)" aria-haspopup="dialog" [attr.aria-label]="('Mărește' | t) + ': ' + photoLabel(event, activeIndex(event))">
               <img [src]="activePhoto(event).thumbnail" [attr.srcset]="photoSources(activePhoto(event))" sizes="calc(100vw - 40px)" [alt]="photoLabel(event, activeIndex(event))" [width]="activePhoto(event).imageWidth" [height]="activePhoto(event).imageHeight" loading="lazy" decoding="async">
             </button>
-            <figcaption class="gallery-position" aria-live="polite">{{ 'Fotografia' | t }} {{ activeIndex(event) + 1 }} / {{ event.photos.length }}</figcaption>
+            <figcaption class="gallery-navigation">
+              <button *ngIf="event.photos.length > 1" class="gallery-arrow" type="button" (click)="moveEventPhoto(event, -1)" [attr.aria-controls]="event.id + '-featured'" [attr.aria-label]="'Imaginea anterioară' | t">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m14 6-6 6 6 6"/></svg>
+              </button>
+              <span class="gallery-position" aria-live="polite">{{ 'Fotografia' | t }} <strong>{{ activeIndex(event) + 1 }}</strong> / {{ event.photos.length }}</span>
+              <button *ngIf="event.photos.length > 1" class="gallery-arrow" type="button" (click)="moveEventPhoto(event, 1)" [attr.aria-controls]="event.id + '-featured'" [attr.aria-label]="'Imaginea următoare' | t">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m10 6 6 6-6 6"/></svg>
+              </button>
+            </figcaption>
           </figure>
-          <div class="event-controls" *ngIf="event.photos.length > 1">
-            <button type="button" (click)="moveEventPhoto(event, -1)" [attr.aria-controls]="event.id + '-featured'"><span aria-hidden="true">‹</span> {{ 'Anterioară' | t }}</button>
-            <button type="button" (click)="moveEventPhoto(event, 1)" [attr.aria-controls]="event.id + '-featured'">{{ 'Următoare' | t }} <span aria-hidden="true">›</span></button>
-          </div>
           <div class="event-thumbnails" *ngIf="event.photos.length > 1" role="group" [attr.aria-label]="'Alege fotografia' | t">
             <button type="button" class="event-thumbnail" *ngFor="let photo of event.photos; let index = index" [class.active]="index === activeIndex(event)" [attr.aria-pressed]="index === activeIndex(event)" [attr.tabindex]="index === activeIndex(event) ? 0 : -1" [attr.aria-controls]="event.id + '-featured'" [attr.aria-label]="('Vezi fotografia' | t) + ': ' + photoLabel(event, index)" (click)="selectEventPhoto(event, index)">
               <img [src]="photo.thumbnail" alt="" [width]="photo.width" [height]="photo.height" loading="lazy" decoding="async">
