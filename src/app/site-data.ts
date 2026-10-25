@@ -55,7 +55,8 @@ export const services: ServiceLine[] = [
     "capabilities": [
       "Sisteme line-array",
       "Mixaj live",
-      "Monitoare de scenă"
+      "Monitoare de scenă",
+      "Probe de sunet"
     ],
     "equipment": [
       "DAS Audio Event-210A",
