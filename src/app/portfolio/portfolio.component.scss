@@ -69,3 +69,7 @@
 @media (max-width: 767px) {
   .portfolio-page h1, .event-heading h2, .lightbox-toolbar p, .lightbox figure p { text-align: center; }
 }
+
+@media (min-width: 768px) {
+  .portfolio-page h1, .event-heading h2, .lightbox-toolbar p, .lightbox figure p { text-align: center; }
+}
