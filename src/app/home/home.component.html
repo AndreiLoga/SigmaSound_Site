@@ -25,7 +25,7 @@
         <div class="service-content" [appScrollReveal]="index % 2 === 0 ? 'right' : 'left'" [revealDelay]="80">
           <h3>{{ item.title | t }}</h3>
           <p>{{ item.lead | t }}</p>
-          <ul class="capabilities"><li *ngFor="let capability of item.capabilities">{{ capability | t }}</li></ul>
+          <ul class="capabilities" lang="en"><li *ngFor="let capability of item.capabilities">{{ capability }}</li></ul>
           <details class="service-equipment">
             <summary>{{ 'Echipamente' | t }}</summary>
             <ul><li *ngFor="let device of item.equipment">{{ device | t }}</li></ul>

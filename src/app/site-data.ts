@@ -65,9 +65,9 @@ export const services: ServiceLine[] = [
     "title": "Scenă",
     "lead": "Închiriem și montăm scene pentru concerte, festivaluri și evenimente publice, în interior și în aer liber. Configurăm scena și structurile de susținere în funcție de spațiu și de cerințele producției.",
     "capabilities": [
-      "Scene și structuri",
-      "Montaj și demontaj",
-      "Indoor și outdoor"
+      "Stages and structures",
+      "Installation and dismantling",
+      "Indoors and outdoors"
     ],
     "equipment": [
       "scene mobile",
@@ -85,10 +85,10 @@ export const services: ServiceLine[] = [
     "title": "Sunet",
     "lead": "Asigurăm sonorizarea pentru public și monitorizarea pentru artiști, cu sisteme audio adaptate locației și numărului de participanți. Ne ocupăm de instalare, probe de sunet și mixaj pe durata evenimentului.",
     "capabilities": [
-      "Sisteme line-array",
-      "Mixaj live",
-      "Monitoare de scenă",
-      "Probe de sunet"
+      "Line-array systems",
+      "Live mixing",
+      "Stage monitors",
+      "Soundchecks"
     ],
     "equipment": [
       "DAS Audio Event-210A",
@@ -107,9 +107,9 @@ export const services: ServiceLine[] = [
     "title": "Lumini",
     "lead": "Configurăm iluminatul scenei pentru vizibilitatea artiștilor și atmosfera spectacolului. Combinăm lumini beam, wash și efecte de scenă, cu programare și operare adaptate fiecărui moment din eveniment.",
     "capabilities": [
-      "Iluminat de scenă",
-      "Beam, wash și efecte",
-      "Operare live"
+      "Stage lighting",
+      "Beam, wash and effects",
+      "Live operation"
     ],
     "equipment": [
       "Fos Beam 7r Hybrid Plus",
