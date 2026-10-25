@@ -146,3 +146,6 @@ h2 { max-width: 22ch; margin: 0; font-size: clamp(2rem, 3.8vw, 3.7rem); line-hei
 }
 
 .portfolio-section { padding-top: 24px; }
+@media (min-width: 768px) and (max-width: 1366px) {
+  .preview-card:first-child .preview-image img { object-position: left center; }
+}
