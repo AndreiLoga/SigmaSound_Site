@@ -26,7 +26,7 @@ h2 { max-width: 22ch; margin: 0; font-size: clamp(2rem, 3.8vw, 3.7rem); line-hei
 .service-photo { overflow: hidden; }
 .service-photo img { width: 100%; height: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
 .service-lighting .service-photo img { aspect-ratio: 3 / 2; object-position: center center; }
-.service-audio .service-photo img { object-position: center top; transform: scale(1.65); transform-origin: 54% 24%; }
+.service-audio .service-photo img { object-position: center bottom; transform: scale(1.65); transform-origin: 54% 100%; }
 .service-content { padding: 28px; }
 .service-content h3 { margin: 0 0 16px; font-size: 1.8rem; line-height: 1.15; }
 .service-content p { margin: 0; color: #e0e8e8; line-height: 1.65; }
