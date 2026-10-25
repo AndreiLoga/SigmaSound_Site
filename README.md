@@ -9,7 +9,9 @@ npm.cmd ci
 npm.cmd start
 ```
 
-Implicit: http://localhost:4200. Pentru alt port: `npm.cmd start -- --port 4312`.
+Varianta final? este pe branch-ul `main` ?i ruleaz? la http://localhost:4200.
+
+Aplica?ia are o singur? versiune a paginii principale; nu exist? selector sau rute pentru variante alternative.
 
 ```powershell
 npm.cmd run build
