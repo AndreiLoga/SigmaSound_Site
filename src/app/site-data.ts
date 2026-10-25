@@ -16,9 +16,48 @@ export interface EquipmentCategory {
   items: string[];
 }
 
+// Optimized from poze galerie/hero, in filename order; framing follows each photo.
 export const heroImages = [
-  'assets/poze galerie/web/event-01.jpg',
-  'assets/poze galerie/web/event-02.jpg'
+  {
+    "image": "assets/poze galerie/optimized/v3/47bd68684fcbfceed3c6fde0-hero.jpg",
+    "srcset": "assets/poze%20galerie/optimized/v3/47bd68684fcbfceed3c6fde0-hero-small.jpg 960w, assets/poze%20galerie/optimized/v3/47bd68684fcbfceed3c6fde0-hero.jpg 1600w",
+    "width": 1600,
+    "height": 900,
+    "position": "60% 50%",
+    "mobilePosition": "60% 50%"
+  },
+  {
+    "image": "assets/poze galerie/optimized/v3/b4475a244d72457c1b6ca999-hero.jpg",
+    "srcset": "assets/poze%20galerie/optimized/v3/b4475a244d72457c1b6ca999-hero-small.jpg 960w, assets/poze%20galerie/optimized/v3/b4475a244d72457c1b6ca999-hero.jpg 1920w",
+    "width": 1920,
+    "height": 1281,
+    "position": "40% 45%",
+    "mobilePosition": "40% 45%"
+  },
+  {
+    "image": "assets/poze galerie/optimized/v3/a02ad641d9d2d7e3e99aeb05-hero.jpg",
+    "srcset": "assets/poze%20galerie/optimized/v3/a02ad641d9d2d7e3e99aeb05-hero-small.jpg 960w, assets/poze%20galerie/optimized/v3/a02ad641d9d2d7e3e99aeb05-hero.jpg 1600w",
+    "width": 1600,
+    "height": 900,
+    "position": "50% 50%",
+    "mobilePosition": "50% 50%"
+  },
+  {
+    "image": "assets/poze galerie/optimized/v3/5923eac2871f59413459381b-hero.jpg",
+    "srcset": "assets/poze%20galerie/optimized/v3/5923eac2871f59413459381b-hero-small.jpg 960w, assets/poze%20galerie/optimized/v3/5923eac2871f59413459381b-hero.jpg 1600w",
+    "width": 1600,
+    "height": 900,
+    "position": "50% 50%",
+    "mobilePosition": "50% 50%"
+  },
+  {
+    "image": "assets/poze galerie/optimized/v3/83f87b0328807adc26b9d93e-hero.jpg",
+    "srcset": "assets/poze%20galerie/optimized/v3/83f87b0328807adc26b9d93e-hero-small.jpg 960w, assets/poze%20galerie/optimized/v3/83f87b0328807adc26b9d93e-hero.jpg 1920w",
+    "width": 1920,
+    "height": 1440,
+    "position": "50% 35%",
+    "mobilePosition": "50% 35%"
+  }
 ];
 
 export const services: ServiceLine[] = [
