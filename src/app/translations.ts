@@ -1,4 +1,13 @@
 export const english: Record<string, string> = {
+  "Înapoi la pagina principală": "Back to the homepage",
+  "Document în pregătire. Câmpurile [TODO] trebuie completate înainte de publicarea site-ului.": "Draft document. The [TODO] fields must be completed before the website is published.",
+  "Autorități și informații utile": "Authorities and useful information",
+  "(tab nou)": "(new tab)",
+  "Soluționarea alternativă a litigiilor (SAL)": "Alternative dispute resolution (SAL)",
+  "Confidențialitate": "Privacy",
+  "Cookies și stocare": "Cookies and storage",
+  "Informații legale": "Legal information",
+
   'Galerie': 'Gallery',
   'Galerie | Sigma Sound': 'Gallery | Sigma Sound',
   "Probe de sunet": "Soundchecks",

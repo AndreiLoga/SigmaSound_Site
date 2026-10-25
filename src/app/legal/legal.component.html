@@ -1,0 +1,15 @@
+<main class="legal-page" id="main-content" tabindex="-1" *ngIf="document() as page">
+  <a class="back-link" routerLink="/">{{ 'Înapoi la pagina principală' | t }}</a>
+  <h1>{{ text(page.title) }}</h1>
+  <p class="legal-status">{{ 'Document în pregătire. Câmpurile [TODO] trebuie completate înainte de publicarea site-ului.' | t }}</p>
+  <section *ngFor="let section of page.sections; let index = index" [attr.aria-labelledby]="'legal-section-' + index">
+    <h2 [id]="'legal-section-' + index">{{ text(section.title) }}</h2>
+    <p *ngFor="let paragraph of section.paragraphs">{{ text(paragraph) }}</p>
+  </section>
+  <p class="legal-contact"><a href="mailto:vaviloga76@gmail.com">vaviloga76@gmail.com</a></p>
+  <nav class="legal-authorities" [attr.aria-label]="'Autorități și informații utile' | t">
+    <a href="https://www.dataprotection.ro/" target="_blank" rel="noopener noreferrer">ANSPDCP <span class="sr-only">{{ '(tab nou)' | t }}</span></a>
+    <a href="https://anpc.ro/" target="_blank" rel="noopener noreferrer">ANPC <span class="sr-only">{{ '(tab nou)' | t }}</span></a>
+    <a href="https://reclamatiisal.anpc.ro/" target="_blank" rel="noopener noreferrer">{{ 'Soluționarea alternativă a litigiilor (SAL)' | t }} <span class="sr-only">{{ '(tab nou)' | t }}</span></a>
+  </nav>
+</main>

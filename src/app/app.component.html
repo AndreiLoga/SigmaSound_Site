@@ -18,6 +18,11 @@
 <router-outlet></router-outlet>
 
 <footer>
-  <span>Sigma Sound</span>
-  <span>{{ 'Scenă · Sunet · Lumini' | t }}</span>
+  <div class="footer-brand"><span>Sigma Sound</span><span>{{ 'Scenă · Sunet · Lumini' | t }}</span></div>
+  <nav class="footer-links" [attr.aria-label]="'Informații legale' | t">
+    <a routerLink="/confidentialitate">{{ 'Confidențialitate' | t }}</a>
+    <a routerLink="/cookies">{{ 'Cookies și stocare' | t }}</a>
+    <a routerLink="/informatii-legale">{{ 'Informații legale' | t }}</a>
+    <a href="https://anpc.ro/" target="_blank" rel="noopener noreferrer">ANPC <span class="sr-only">{{ '(tab nou)' | t }}</span></a>
+  </nav>
 </footer>

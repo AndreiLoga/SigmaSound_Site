@@ -2,6 +2,7 @@ import { DOCUMENT } from '@angular/common';
 import { Injectable, Pipe, PipeTransform, effect, inject, signal } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { NavigationEnd, Router } from '@angular/router';
+import { legalDocuments } from './legal/legal-documents';
 import { english } from './translations';
 
 @Injectable({ providedIn: 'root' })
@@ -24,9 +25,11 @@ export class LocaleService {
   }
 
   private updateMetadata(): void {
-    const gallery = this.router.url.split(/[?#]/)[0] === '/galerie';
-    const title = this.t(gallery ? 'Galerie | Sigma Sound' : 'Sigma Sound | Scenă, sunet și lumini');
-    const description = this.t(gallery
+    const path = this.router.url.split(/[?#]/)[0];
+    const gallery = path === '/galerie';
+    const legal = legalDocuments.find(item => item.path === path);
+    const title = legal ? `${legal.title[this.language()]} | Sigma Sound` : this.t(gallery ? 'Galerie | Sigma Sound' : 'Sigma Sound | Scenă, sunet și lumini');
+    const description = legal ? legal.description[this.language()] : this.t(gallery
       ? 'Fotografii de la evenimente din portofoliul Sigma Sound: scenă, sunet și lumini pentru producții live.'
       : 'Sigma Sound: scenă, sunet și lumini pentru concerte, festivaluri și evenimente corporate, indoor și outdoor, în Satu Mare.');
     this.document.documentElement.lang = this.language();

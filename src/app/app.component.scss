@@ -31,3 +31,10 @@ footer { display: flex; justify-content: space-between; gap: 16px; padding: 24px
   nav a { text-align: center; }
   footer { align-items: center; text-align: center; }
 }
+
+.footer-brand { display: flex; flex-direction: column; gap: 8px; }
+.footer-links { position: static; order: initial; display: flex; flex-direction: row; align-items: center; flex-wrap: wrap; justify-content: flex-end; gap: 4px 20px; max-height: none; overflow: visible; margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; font-size: .88rem; font-weight: 500; }
+.footer-links a { min-height: 44px; padding: 10px 0; border-radius: 0; color: #d5dfdf; text-decoration: underline; text-underline-offset: 4px; }
+.footer-links a::after { content: none; }
+.footer-links a:hover { color: #fff; background: transparent; }
+@media (max-width: 767px) { .footer-brand { align-items: center; } .footer-links { justify-content: center; } }
