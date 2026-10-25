@@ -132,3 +132,15 @@ h2 { max-width: 22ch; margin: 0; font-size: clamp(2rem, 3.8vw, 3.7rem); line-hei
   .hero-lead { max-width: none; margin-top: 20px; font-size: 1rem; line-height: 1.6; }
   .hero-actions { margin-top: 24px; }
 }
+
+@media (max-width: 767px) {
+  .home-page { text-align: center; }
+  .hero-copy h1, .hero-lead, .section-heading h2, .section-heading p, .contact h2, .contact-lead { margin-right: auto; margin-left: auto; }
+  .hero-actions, .capabilities { justify-content: center; }
+  .section-heading { align-items: center; }
+  .service-equipment summary { margin-right: auto; margin-left: auto; }
+  .service-equipment ul { padding-left: 0; list-style: none; }
+  .preview-caption { flex-direction: column; align-items: center; gap: 4px; }
+  .contact-details dd { align-items: center; }
+  .contact-details .contact-socials { justify-content: center; }
+}

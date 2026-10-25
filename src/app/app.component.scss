@@ -26,3 +26,8 @@ footer { display: flex; justify-content: space-between; gap: 16px; padding: 24px
   nav a::after { content: none; }
   footer { flex-direction: column; }
 }
+
+@media (max-width: 767px) {
+  nav a { text-align: center; }
+  footer { align-items: center; text-align: center; }
+}

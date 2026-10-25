@@ -65,3 +65,7 @@
   .lightbox-toolbar button { max-width: 150px; }
   .lightbox-controls button { flex: 1; padding: 10px 8px; border-radius: 999px; }
 }
+
+@media (max-width: 767px) {
+  .portfolio-page h1, .event-heading h2, .lightbox-toolbar p, .lightbox figure p { text-align: center; }
+}
