@@ -70,14 +70,6 @@ export const portfolioEvents: PortfolioEvent[] = [
         "thumbnail": "assets/poze galerie/optimized/v3/83f87b0328807adc26b9d93e-thumb.jpg",
         "width": 520,
         "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/v3/f91589e6903faabe9375b67a.jpg",
-        "imageWidth": 1600,
-        "imageHeight": 1200,
-        "thumbnail": "assets/poze galerie/optimized/v3/f91589e6903faabe9375b67a-thumb.jpg",
-        "width": 520,
-        "height": 390
       }
     ]
   },
@@ -154,14 +146,6 @@ export const portfolioEvents: PortfolioEvent[] = [
         "imageWidth": 1600,
         "imageHeight": 1202,
         "thumbnail": "assets/poze galerie/optimized/v3/dadba6e770ecf2642ab9d3a6-thumb.jpg",
-        "width": 520,
-        "height": 391
-      },
-      {
-        "image": "assets/poze galerie/optimized/v3/8c70aa5acbcd339f47a92c00.jpg",
-        "imageWidth": 1600,
-        "imageHeight": 1202,
-        "thumbnail": "assets/poze galerie/optimized/v3/8c70aa5acbcd339f47a92c00-thumb.jpg",
         "width": 520,
         "height": 391
       },
@@ -270,22 +254,6 @@ export const portfolioEvents: PortfolioEvent[] = [
         "imageWidth": 1600,
         "imageHeight": 1200,
         "thumbnail": "assets/poze galerie/optimized/v3/d80204878510be7f9a32421f-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/v3/328515bb5e5ae31e8a2060cc.jpg",
-        "imageWidth": 1600,
-        "imageHeight": 1200,
-        "thumbnail": "assets/poze galerie/optimized/v3/328515bb5e5ae31e8a2060cc-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
-        "image": "assets/poze galerie/optimized/v3/82eec5d3842e3900002ca1a6.jpg",
-        "imageWidth": 1600,
-        "imageHeight": 1200,
-        "thumbnail": "assets/poze galerie/optimized/v3/82eec5d3842e3900002ca1a6-thumb.jpg",
         "width": 520,
         "height": 390
       }
@@ -415,14 +383,6 @@ export const portfolioEvents: PortfolioEvent[] = [
         "height": 390
       },
       {
-        "image": "assets/poze galerie/optimized/v3/4624e2e5d4b51ff19107047d.jpg",
-        "imageWidth": 1600,
-        "imageHeight": 1200,
-        "thumbnail": "assets/poze galerie/optimized/v3/4624e2e5d4b51ff19107047d-thumb.jpg",
-        "width": 520,
-        "height": 390
-      },
-      {
         "image": "assets/poze galerie/optimized/v3/d047f5f6c76b4448ece73457.jpg",
         "imageWidth": 1600,
         "imageHeight": 1200,
@@ -493,14 +453,6 @@ export const portfolioEvents: PortfolioEvent[] = [
         "height": 293
       },
       {
-        "image": "assets/poze galerie/optimized/v3/a99e8da3bd2784348053ee2d.jpg",
-        "imageWidth": 830,
-        "imageHeight": 467,
-        "thumbnail": "assets/poze galerie/optimized/v3/a99e8da3bd2784348053ee2d-thumb.jpg",
-        "width": 520,
-        "height": 293
-      },
-      {
         "image": "assets/poze galerie/optimized/v3/75c1213f32984915608e3612.jpg",
         "imageWidth": 1440,
         "imageHeight": 810,
@@ -552,14 +504,6 @@ export const portfolioEvents: PortfolioEvent[] = [
         "imageWidth": 1600,
         "imageHeight": 900,
         "thumbnail": "assets/poze galerie/optimized/v3/58e2c963639557ddd313aa94-thumb.jpg",
-        "width": 520,
-        "height": 293
-      },
-      {
-        "image": "assets/poze galerie/optimized/v3/0ecd4de2075cbcf3e9242e4f.jpg",
-        "imageWidth": 1600,
-        "imageHeight": 900,
-        "thumbnail": "assets/poze galerie/optimized/v3/0ecd4de2075cbcf3e9242e4f-thumb.jpg",
         "width": 520,
         "height": 293
       }
@@ -622,14 +566,6 @@ export const portfolioEvents: PortfolioEvent[] = [
         "imageWidth": 1600,
         "imageHeight": 1067,
         "thumbnail": "assets/poze galerie/optimized/v3/af33ec9d867f4a13bbbecb3c-thumb.jpg",
-        "width": 520,
-        "height": 347
-      },
-      {
-        "image": "assets/poze galerie/optimized/v3/438c49172c0fc9228f49dcc2.jpg",
-        "imageWidth": 1600,
-        "imageHeight": 1067,
-        "thumbnail": "assets/poze galerie/optimized/v3/438c49172c0fc9228f49dcc2-thumb.jpg",
         "width": 520,
         "height": 347
       }
@@ -718,14 +654,6 @@ export const portfolioEvents: PortfolioEvent[] = [
         "thumbnail": "assets/poze galerie/optimized/v3/bd6ffcf9dd6f324cc36a0038-thumb.jpg",
         "width": 520,
         "height": 293
-      },
-      {
-        "image": "assets/poze galerie/optimized/v3/3f510c267d6230cd77cc7a12.jpg",
-        "imageWidth": 1600,
-        "imageHeight": 1200,
-        "thumbnail": "assets/poze galerie/optimized/v3/3f510c267d6230cd77cc7a12-thumb.jpg",
-        "width": 520,
-        "height": 390
       }
     ]
   },
@@ -811,14 +739,6 @@ export const portfolioEvents: PortfolioEvent[] = [
         "thumbnail": "assets/poze galerie/optimized/v3/8750edba2b016997130ed23f-thumb.jpg",
         "width": 520,
         "height": 292
-      },
-      {
-        "image": "assets/poze galerie/optimized/v3/3c8c21e59f48af8164bbe67e.jpg",
-        "imageWidth": 1600,
-        "imageHeight": 901,
-        "thumbnail": "assets/poze galerie/optimized/v3/3c8c21e59f48af8164bbe67e-thumb.jpg",
-        "width": 520,
-        "height": 293
       }
     ]
   },
@@ -848,14 +768,6 @@ export const portfolioEvents: PortfolioEvent[] = [
         "imageWidth": 1422,
         "imageHeight": 640,
         "thumbnail": "assets/poze galerie/optimized/v3/92e486ab0fde9c90f7cc1474-thumb.jpg",
-        "width": 520,
-        "height": 234
-      },
-      {
-        "image": "assets/poze galerie/optimized/v3/9404b35ca4d324c46d61129b.jpg",
-        "imageWidth": 1600,
-        "imageHeight": 720,
-        "thumbnail": "assets/poze galerie/optimized/v3/9404b35ca4d324c46d61129b-thumb.jpg",
         "width": 520,
         "height": 234
       }
