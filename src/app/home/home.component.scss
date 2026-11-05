@@ -12,8 +12,8 @@ h1 { max-width: 15ch; margin: 0; font-size: clamp(2.8rem, 5vw, 5.6rem); line-hei
 .secondary { color: #fff; background: #173b3d; }
 .secondary:hover { background: #326463; }
 .hero-media { position: relative; min-height: 340px; overflow: hidden; }
-.hero-media > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: var(--hero-position, center); opacity: 0; transition: opacity 1s ease; }
-.hero-media > img.mirrored { transform: scaleX(-1); }
+.hero-media > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: var(--hero-position, center); opacity: 0; transition: opacity 1s ease; transform: translateZ(0); will-change: opacity; backface-visibility: hidden; }
+.hero-media > img.mirrored { transform: scaleX(-1) translateZ(0); }
 .hero-media > img.active { opacity: 1; }
 .section-space { padding: 64px 20px; }
 .section-space[id] { scroll-margin-top: 140px; }
@@ -117,10 +117,10 @@ h2 { max-width: 22ch; margin: 0; font-size: clamp(2rem, 3.8vw, 3.7rem); line-hei
 }
 @media (max-width: 767px) {
   .hero { display: flex; flex-direction: column; align-items: stretch; height: auto; max-height: 100svh; min-height: 0; padding: 0; }
-  .hero-media { position: relative; inset: auto; order: 0; flex: 0 1 auto; width: 100%; height: auto; min-height: 0; aspect-ratio: 16 / 10; margin-top: 76px; }
-  .hero-media { border-radius: 0 0 20px 20px; }
+  .hero-media { position: relative; inset: auto; order: 0; flex: 0 1 auto; width: auto; height: auto; min-height: 0; aspect-ratio: 4 / 3; margin: 88px 20px 0; border-radius: 22px; box-shadow: 0 0 0 1px rgba(255,255,255,.14), 0 18px 36px -12px rgba(0,0,0,.55); isolation: isolate; }
   .hero-media::after { content: none; }
-  .hero-media > img { object-position: var(--hero-mobile-position, center); }
+  .hero-media > img { object-position: var(--hero-mobile-position, center); transform: translateX(var(--hero-mobile-shift, 0)) scale(var(--hero-mobile-zoom, 1)) translateZ(0); }
+  .hero-media > img.mirrored { transform: translateX(var(--hero-mobile-shift, 0)) scaleX(-1) scale(var(--hero-mobile-zoom, 1)) translateZ(0); }
   .hero-copy { order: 1; flex: 0 0 auto; width: 100%; padding: 20px 20px 56px; background: #173b3d; }
   .hero::after { position: absolute; right: 0; bottom: -1px; left: 0; z-index: 3; height: 33px; content: ''; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 32' preserveAspectRatio='none'%3E%3Cpath fill='%23b1bcbd' d='M0 0Q50 56 100 0V32H0Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat; pointer-events: none; }
   .services-section { padding-top: 32px; }
@@ -148,6 +148,18 @@ h2 { max-width: 22ch; margin: 0; font-size: clamp(2rem, 3.8vw, 3.7rem); line-hei
 }
 
 @media (min-width: 768px) {
+  /* Desktop/tablet: hero fills the screen, but the photo is a framed card, not full-bleed. */
+  .hero { flex-direction: column; align-items: center; justify-content: center; gap: clamp(24px,4svh,40px); height: auto; min-height: 100vh; min-height: 100svh; padding-top: clamp(104px,14svh,140px); padding-bottom: clamp(32px,6svh,72px); }
+  .hero-media { position: relative; inset: auto; order: 0; width: min(100%,760px); aspect-ratio: 4 / 3; max-height: 46svh; border-radius: 24px; box-shadow: 0 0 0 1px rgba(255,255,255,.14), 0 24px 48px -16px rgba(0,0,0,.6); isolation: isolate; }
+  .hero-media::after { content: none; }
+  .hero-copy { order: 1; width: min(720px,100%); }
+}
+@media (min-width: 1050px) {
+  .hero { flex-direction: row; gap: 0; padding-right: 3vw; background: radial-gradient(ellipse 60% 70% at 72% 50%, rgba(74,150,150,.28), transparent 70%), #173b3d; }
+  .hero-media { order: 2; flex: 1 1 64%; width: auto; max-width: 1100px; margin-left: -4vw; aspect-ratio: 4 / 3; max-height: min(84svh,820px); border-radius: 28px; box-shadow: none; -webkit-mask-image: linear-gradient(90deg,transparent 0,#000 24%), linear-gradient(180deg,#000 78%,transparent); -webkit-mask-composite: source-in; mask-image: linear-gradient(90deg,transparent 0,#000 24%), linear-gradient(180deg,#000 78%,transparent); mask-composite: intersect; }
+  .hero-copy { order: 1; z-index: 3; flex: 0 1 38%; width: auto; max-width: 560px; }
+}
+@media (min-width: 768px) {
   .services-section, .portfolio-section .section-heading, .contact { text-align: center; }
   .section-heading { flex-direction: column; align-items: center; gap: 24px; }
   .section-heading h2, .section-heading p, .contact h2, .contact-lead { margin-right: auto; margin-left: auto; }
@@ -173,4 +185,23 @@ h2 { max-width: 22ch; margin: 0; font-size: clamp(2rem, 3.8vw, 3.7rem); line-hei
   .hero-lead { margin-top: 12px; font-size: .9rem; line-height: 1.5; }
   .hero-actions { gap: 8px; margin-top: 16px; }
   .hero-actions .button { min-height: 44px; padding: 10px 14px; font-size: .85rem; }
+}
+
+/* Desktop/tablet hero motion: staggered entrance + slow zoom on the active photo. */
+@keyframes hero-media-arrive { from { opacity: 0; transform: translateX(48px) scale(.985); } to { opacity: 1; transform: none; } }
+@keyframes hero-zoom { from { scale: 1; } to { scale: 1.06; } }
+@media (min-width: 768px) {
+  .hero-copy { animation: none; }
+  .hero-copy > * { animation: hero-arrive .9s cubic-bezier(.2,.7,.2,1) both; }
+  .hero-copy > :nth-child(1) { animation-delay: .1s; }
+  .hero-copy > :nth-child(2) { animation-delay: .25s; }
+  .hero-copy > :nth-child(3) { animation-delay: .4s; }
+  .hero-copy > :nth-child(4) { animation-delay: .55s; }
+  .hero-media { animation: hero-media-arrive 1.2s cubic-bezier(.2,.7,.2,1) .15s both; }
+  .hero-media > img { scale: 1.06; }
+  .hero-media > img.active { animation: hero-zoom 5.4s linear both; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-copy > *, .hero-media, .hero-media > img.active { animation: none; }
+  .hero-media > img { scale: 1; }
 }
