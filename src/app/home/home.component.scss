@@ -116,8 +116,8 @@ h2 { max-width: 22ch; margin: 0; font-size: clamp(2rem, 3.8vw, 3.7rem); line-hei
   .preview-grid { grid-template-columns: 1.8fr 1fr; grid-template-rows: repeat(2,260px); }
 }
 @media (max-width: 767px) {
-  .hero { display: flex; flex-direction: column; align-items: stretch; height: auto; max-height: 100svh; min-height: 0; padding: 0; }
-  .hero-media { position: relative; inset: auto; order: 0; flex: 0 1 auto; width: auto; height: auto; min-height: 0; aspect-ratio: 4 / 3; margin: 88px 20px 0; border-radius: 22px; box-shadow: 0 0 0 1px rgba(255,255,255,.14), 0 18px 36px -12px rgba(0,0,0,.55); isolation: isolate; }
+  .hero { display: flex; flex-direction: column; align-items: stretch; height: auto; min-height: 0; padding: 0; }
+  .hero-media { position: relative; inset: auto; order: 0; flex: 0 0 auto; width: auto; height: auto; min-height: 0; aspect-ratio: 4 / 3; margin: 88px 20px 0; border-radius: 22px; box-shadow: 0 0 0 1px rgba(255,255,255,.14), 0 18px 36px -12px rgba(0,0,0,.55); isolation: isolate; }
   .hero-media::after { content: none; }
   .hero-media > img { object-position: var(--hero-mobile-position, center); transform: translateX(var(--hero-mobile-shift, 0)) scale(var(--hero-mobile-zoom, 1)) translateZ(0); }
   .hero-media > img.mirrored { transform: translateX(var(--hero-mobile-shift, 0)) scaleX(-1) scale(var(--hero-mobile-zoom, 1)) translateZ(0); }
@@ -204,4 +204,11 @@ h2 { max-width: 22ch; margin: 0; font-size: clamp(2rem, 3.8vw, 3.7rem); line-hei
 @media (prefers-reduced-motion: reduce) {
   .hero-copy > *, .hero-media, .hero-media > img.active { animation: none; }
   .hero-media > img { scale: 1; }
+}
+
+/* Contact: keep the email on one line; stack the contact block on landscape tablets / small laptops where the side column is too narrow. */
+.contact-details a[href^="mailto:"] { overflow-wrap: normal; white-space: nowrap; }
+@media (min-width: 1050px) and (max-width: 1366px) {
+  .contact { grid-template-columns: minmax(0,1fr); gap: 28px; }
+  .contact-details { grid-template-columns: repeat(3,max-content); justify-content: center; gap: 24px clamp(32px,6vw,72px); }
 }
