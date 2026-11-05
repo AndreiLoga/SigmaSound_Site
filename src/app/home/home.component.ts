@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, inject } from '@angular/core';
 import { ScrollRevealDirective } from '../scroll-reveal.directive';
 import { RouterLink } from '@angular/router';
 import { TranslatePipe } from '../locale.service';
@@ -13,7 +13,8 @@ import { portfolioEvents } from '../portfolio/portfolio-data';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent implements OnInit, OnDestroy {
+export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
+  private readonly host = inject<ElementRef<HTMLElement>>(ElementRef);
   readonly heroImages = heroImages;
   readonly services = services;
   readonly contactChannels = contactChannels;
@@ -40,6 +41,14 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.motionPreference.addEventListener('change', this.onPlaybackPreferenceChange);
     document.addEventListener('visibilitychange', this.onPlaybackPreferenceChange);
     this.updateHeroPlayback();
+  }
+
+  ngAfterViewInit(): void {
+    // Decode every slide up front so a new image never sharpens/pops in mid-fade.
+    this.host.nativeElement.querySelectorAll<HTMLImageElement>('.hero-media > img').forEach(img => {
+      img.loading = 'eager';
+      img.decode?.().catch(() => undefined);
+    });
   }
 
   ngOnDestroy(): void {

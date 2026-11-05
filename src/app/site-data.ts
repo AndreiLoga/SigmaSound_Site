@@ -32,7 +32,7 @@ export const heroImages = [
     "width": 1920,
     "height": 1281,
     "position": "40% 45%",
-    "mobilePosition": "40% 45%"
+    "mobilePosition": "0% 45%"
   },
   {
     "image": "assets/poze galerie/optimized/v3/a02ad641d9d2d7e3e99aeb05-hero.jpg",
@@ -47,8 +47,10 @@ export const heroImages = [
     "srcset": "assets/poze%20galerie/optimized/v3/5923eac2871f59413459381b-hero-small.jpg 960w, assets/poze%20galerie/optimized/v3/5923eac2871f59413459381b-hero.jpg 1600w",
     "width": 1600,
     "height": 900,
-    "position": "50% 50%",
-    "mobilePosition": "50% 50%"
+    "position": "5% 50%",
+    "mobilePosition": "15% 50%",
+    "mobileZoom": 1.25,
+    "mobileShift": "-12%"
   },
   {
     "image": "assets/poze galerie/optimized/v3/83f87b0328807adc26b9d93e-hero.jpg",
