@@ -63,6 +63,11 @@
                 "output": "assets/poze galerie/web"
               },
               {
+                "glob": "og-image.jpg",
+                "input": "poze galerie/web",
+                "output": "assets"
+              },
+              {
                 "glob": "*.{png,svg,ico,webmanifest,xml}",
                 "input": "poze galerie/poze icon",
                 "output": "assets/poze galerie/poze icon"
@@ -124,5 +129,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
